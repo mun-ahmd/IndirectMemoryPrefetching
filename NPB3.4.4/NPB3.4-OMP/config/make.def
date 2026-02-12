@@ -1,0 +1,47 @@
+#---------------------------------------------------------------------------
+# ARCHITECTURE SELECTOR
+# Set ARCH to 'LOONGARCH' for cross-compilation
+# Set ARCH to 'NATIVE' for local gcc/gfortran
+#---------------------------------------------------------------------------
+ARCH = LOONGARCH
+
+#---------------------------------------------------------------------------
+# CONDITIONALS BASED ON ARCH
+#---------------------------------------------------------------------------
+ifeq ($(ARCH), LOONGARCH)
+    # LoongArch64 Cross-Compiler Setup
+    CC         = loongarch64-unknown-linux-gnu-gcc
+    FC         = loongarch64-unknown-linux-gnu-gfortran
+    STATIC_FLG = -static-libgcc -static-libgfortran
+else
+    # Regular Local GCC Setup
+    CC         = gcc
+    FC         = gfortran
+    STATIC_FLG =
+endif
+
+#---------------------------------------------------------------------------
+# Parallel Fortran
+#---------------------------------------------------------------------------
+FLINK      = $(FC)
+F_LIB      =
+F_INC      =
+FFLAGS     = -O3 -fopenmp
+FLINKFLAGS = $(FFLAGS) $(STATIC_FLG)
+
+#---------------------------------------------------------------------------
+# Parallel C
+#---------------------------------------------------------------------------
+CLINK      = $(CC)
+C_LIB      = -lm
+C_INC      =
+CFLAGS     = -O3 -fopenmp -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE
+CLINKFLAGS = $(CFLAGS) $(STATIC_FLG)
+
+#---------------------------------------------------------------------------
+# Utilities and Defaults
+#---------------------------------------------------------------------------
+UCC        = gcc
+BINDIR     = ../bin
+RAND       = randi8
+WTIME      = wtime.c
