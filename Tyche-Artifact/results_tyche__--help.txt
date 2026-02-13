@@ -1,0 +1,4 @@
+
+*** ChampSim Multicore Out-of-Order Simulator ***
+
+bin/champsim: unrecognized option '--help'

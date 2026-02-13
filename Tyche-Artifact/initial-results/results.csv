@@ -1,0 +1,7 @@
+Task,Prefetcher,IPC,L1D_Prefetch_Requests,L1D_Prefetch_Hits,L1D_Prefetch_Misses
+dfs_higgs,ipcp_l1d,3.2259,173531,13776,159205
+sssp_higgs,ipcp_l1d,3.22446,171609,13897,157211
+dfs_higgs,no_prefetcher,2.17352,0,0,0
+sssp_higgs,no_prefetcher,2.17819,0,0,0
+dfs_higgs,tyche,3.30713,353311,106000,108558
+sssp_higgs,tyche,3.30499,350878,106071,107278
