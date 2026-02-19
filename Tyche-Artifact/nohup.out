@@ -376,3 +376,697 @@ Running: make -j8
     Finished. Output saved to results_no_NAS_cg_A_out_champsim.trace_7916000000.champsim.trace.xz.txt
 
 All experiments completed.
+rm -f inc/champsim_constants.h
+rm -f src/core_inst.cc
+rm -f inc/cache_modules.inc
+rm -f inc/ooo_cpu_modules.inc
+find . -name \*.o -delete
+find . -name \*.d -delete
+rm -f -r obj
+find replacement/lru -name \*.o -delete
+find replacement/lru -name \*.d -delete
+find prefetcher/no -name \*.o -delete
+find prefetcher/no -name \*.d -delete
+find prefetcher/no_instr -name \*.o -delete
+find prefetcher/no_instr -name \*.d -delete
+find prefetcher/tyche -name \*.o -delete
+find prefetcher/tyche -name \*.d -delete
+find prefetcher/stride_l2c -name \*.o -delete
+find prefetcher/stride_l2c -name \*.d -delete
+find branch/tage-sc-l -name \*.o -delete
+find branch/tage-sc-l -name \*.d -delete
+find btb/basic_btb -name \*.o -delete
+find btb/basic_btb -name \*.d -delete
+/home/muneeb/repos/IndirectMemoryPrefetching/Tyche-Artifact/./config.sh:723: SyntaxWarning: invalid escape sequence '\*'
+  wfp.write('\t find . -name \*.o -delete\n\t find . -name \*.d -delete\n\t $(RM) -r obj\n\n')
+/home/muneeb/repos/IndirectMemoryPrefetching/Tyche-Artifact/./config.sh:725: SyntaxWarning: invalid escape sequence '\*'
+  wfp.write('\t find {0} -name \*.o -delete\n\t find {0} -name \*.d -delete\n'.format(*v))
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/cache.o src/cache.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/core_inst.o src/core_inst.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/dram_controller.o src/dram_controller.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/main.o src/main.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/memory_data.o src/memory_data.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/ooo_cpu.o src/ooo_cpu.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/pref_utils.o src/pref_utils.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/ptw.o src/ptw.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/regfile.o src/regfile.cc
+src/main.cc: In function ‘int main(int, char**)’:
+src/main.cc:908:17: warning: unused variable ‘successor_num’ [-Wunused-variable]
+  908 | extern uint64_t successor_num[25];
+      |                 ^~~~~~~~~~~~~
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/tracereader.o src/tracereader.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/vmem.o src/vmem.cc
+make: *** [<builtin>: src/main.o] Interrupt
+make: *** [<builtin>: src/dram_controller.o] Interrupt
+make: *** [<builtin>: src/ooo_cpu.o] Interrupt
+make: *** [<builtin>: src/cache.o] Interrupt
+make: *** [<builtin>: src/ptw.o] Interrupt
+make: *** [<builtin>: src/core_inst.o] Interrupt
+make: *** [<builtin>: src/tracereader.o] Interrupt
+make: *** [<builtin>: src/vmem.o] Interrupt
+
+==================================================
+   Building with L1D Prefetcher: tyche
+==================================================
+Running: make clean
+Running: ./config.sh champsim_config.json
+Running: make -j8
+Traceback (most recent call last):
+  File "/home/muneeb/repos/IndirectMemoryPrefetching/Tyche-Artifact/run_experiments.py", line 61, in <module>
+    run_command(["make", f"-j{os.cpu_count()}"])
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/muneeb/repos/IndirectMemoryPrefetching/Tyche-Artifact/run_experiments.py", line 30, in run_command
+    subprocess.check_call(cmd, shell=shell)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/muneeb/miniconda3/lib/python3.13/subprocess.py", line 416, in check_call
+    retcode = call(*popenargs, **kwargs)
+  File "/home/muneeb/miniconda3/lib/python3.13/subprocess.py", line 399, in call
+    return p.wait(timeout=timeout)
+           ~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/muneeb/miniconda3/lib/python3.13/subprocess.py", line 1276, in wait
+    return self._wait(timeout=timeout)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/muneeb/miniconda3/lib/python3.13/subprocess.py", line 2068, in _wait
+    (pid, sts) = self._try_wait(0)
+                 ~~~~~~~~~~~~~~^^^
+  File "/home/muneeb/miniconda3/lib/python3.13/subprocess.py", line 2026, in _try_wait
+    (pid, sts) = os.waitpid(self.pid, wait_flags)
+                 ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+rm -f inc/champsim_constants.h
+rm -f src/core_inst.cc
+rm -f inc/cache_modules.inc
+rm -f inc/ooo_cpu_modules.inc
+find . -name \*.o -delete
+find . -name \*.d -delete
+rm -f -r obj
+find replacement/lru -name \*.o -delete
+find replacement/lru -name \*.d -delete
+find prefetcher/no -name \*.o -delete
+find prefetcher/no -name \*.d -delete
+find prefetcher/no_instr -name \*.o -delete
+find prefetcher/no_instr -name \*.d -delete
+find prefetcher/tyche -name \*.o -delete
+find prefetcher/tyche -name \*.d -delete
+find prefetcher/stride_l2c -name \*.o -delete
+find prefetcher/stride_l2c -name \*.d -delete
+find branch/tage-sc-l -name \*.o -delete
+find branch/tage-sc-l -name \*.d -delete
+find btb/basic_btb -name \*.o -delete
+find btb/basic_btb -name \*.d -delete
+/home/muneeb/repos/IndirectMemoryPrefetching/Tyche-Artifact/./config.sh:723: SyntaxWarning: invalid escape sequence '\*'
+  wfp.write('\t find . -name \*.o -delete\n\t find . -name \*.d -delete\n\t $(RM) -r obj\n\n')
+/home/muneeb/repos/IndirectMemoryPrefetching/Tyche-Artifact/./config.sh:725: SyntaxWarning: invalid escape sequence '\*'
+  wfp.write('\t find {0} -name \*.o -delete\n\t find {0} -name \*.d -delete\n'.format(*v))
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/cache.o src/cache.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/core_inst.o src/core_inst.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/dram_controller.o src/dram_controller.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/main.o src/main.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/memory_data.o src/memory_data.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/ooo_cpu.o src/ooo_cpu.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/pref_utils.o src/pref_utils.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/ptw.o src/ptw.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/regfile.o src/regfile.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/tracereader.o src/tracereader.cc
+src/main.cc: In function ‘int main(int, char**)’:
+src/main.cc:908:17: warning: unused variable ‘successor_num’ [-Wunused-variable]
+  908 | extern uint64_t successor_num[25];
+      |                 ^~~~~~~~~~~~~
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/vmem.o src/vmem.cc
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/decode-new.o loongarch/decode-new.c
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/disasm.o loongarch/disasm.c
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/ins.o loongarch/ins.c
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/ir2.o loongarch/ir2.c
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/la_print.o loongarch/la_print.c
+g++ -Wall -O3 -std=c++17 -Ireplacement/lru -Dinitialize_replacement=repl_rreplacementDlru_initialize -Dfind_victim=repl_rreplacementDlru_victim -Dupdate_replacement_state=repl_rreplacementDlru_update -Dreplacement_final_stats=repl_rreplacementDlru_final_stats -Iinc -MMD -MP -Iloongarch  -c -o replacement/lru/lru.o replacement/lru/lru.cc
+g++ -Wall -O3 -std=c++17 -Iprefetcher/no -Dprefetcher_initialize=pref_pprefetcherDno_initialize -Dprefetcher_cache_operate=pref_pprefetcherDno_cache_operate -Dprefetcher_cache_fill=pref_pprefetcherDno_cache_fill -Dprefetcher_cycle_operate=pref_pprefetcherDno_cycle_operate -Dprefetcher_final_stats=pref_pprefetcherDno_final_stats -Dl1d_prefetcher_initialize=pref_pprefetcherDno_initialize -Dl2c_prefetcher_initialize=pref_pprefetcherDno_initialize -Dllc_prefetcher_initialize=pref_pprefetcherDno_initialize -Dl1d_prefetcher_operate=pref_pprefetcherDno_cache_operate -Dl2c_prefetcher_operate=pref_pprefetcherDno_cache_operate -Dllc_prefetcher_operate=pref_pprefetcherDno_cache_operate -Dl1d_prefetcher_cache_fill=pref_pprefetcherDno_cache_fill -Dl2c_prefetcher_cache_fill=pref_pprefetcherDno_cache_fill -Dllc_prefetcher_cache_fill=pref_pprefetcherDno_cache_fill -Dl1d_prefetcher_final_stats=pref_pprefetcherDno_final_stats -Dl2c_prefetcher_final_stats=pref_pprefetcherDno_final_stats -Dllc_prefetcher_final_stats=pref_pprefetcherDno_final_stats -Iinc -MMD -MP -Iloongarch  -c -o prefetcher/no/no.o prefetcher/no/no.cc
+g++ -Wall -O3 -std=c++17 -Iprefetcher/no_instr -Dprefetcher_initialize=pref_pprefetcherDno_instr_initialize -Dprefetcher_branch_operate=pref_pprefetcherDno_instr_branch_operate -Dprefetcher_cache_operate=pref_pprefetcherDno_instr_cache_operate -Dprefetcher_cycle_operate=pref_pprefetcherDno_instr_cycle_operate -Dprefetcher_cache_fill=pref_pprefetcherDno_instr_cache_fill -Dprefetcher_final_stats=pref_pprefetcherDno_instr_final_stats -Dl1i_prefetcher_initialize=pref_pprefetcherDno_instr_initialize -Dl1i_prefetcher_branch_operate=pref_pprefetcherDno_instr_branch_operate -Dl1i_prefetcher_cache_operate=pref_pprefetcherDno_instr_cache_operate -Dl1i_prefetcher_cycle_operate=pref_pprefetcherDno_instr_cycle_operate -Dl1i_prefetcher_cache_fill=pref_pprefetcherDno_instr_cache_fill -Dl1i_prefetcher_final_stats=pref_pprefetcherDno_instr_final_stats -Iinc -MMD -MP -Iloongarch  -c -o prefetcher/no_instr/no.o prefetcher/no_instr/no.cc
+g++ -Wall -O3 -std=c++17 -Iprefetcher/tyche -Dprefetcher_initialize=pref_pprefetcherDtyche_initialize -Dprefetcher_cache_operate=pref_pprefetcherDtyche_cache_operate -Dprefetcher_cache_fill=pref_pprefetcherDtyche_cache_fill -Dprefetcher_cycle_operate=pref_pprefetcherDtyche_cycle_operate -Dprefetcher_final_stats=pref_pprefetcherDtyche_final_stats -Dl1d_prefetcher_initialize=pref_pprefetcherDtyche_initialize -Dl2c_prefetcher_initialize=pref_pprefetcherDtyche_initialize -Dllc_prefetcher_initialize=pref_pprefetcherDtyche_initialize -Dl1d_prefetcher_operate=pref_pprefetcherDtyche_cache_operate -Dl2c_prefetcher_operate=pref_pprefetcherDtyche_cache_operate -Dllc_prefetcher_operate=pref_pprefetcherDtyche_cache_operate -Dl1d_prefetcher_cache_fill=pref_pprefetcherDtyche_cache_fill -Dl2c_prefetcher_cache_fill=pref_pprefetcherDtyche_cache_fill -Dllc_prefetcher_cache_fill=pref_pprefetcherDtyche_cache_fill -Dl1d_prefetcher_final_stats=pref_pprefetcherDtyche_final_stats -Dl2c_prefetcher_final_stats=pref_pprefetcherDtyche_final_stats -Dllc_prefetcher_final_stats=pref_pprefetcherDtyche_final_stats -Iinc -MMD -MP -Iloongarch  -c -o prefetcher/tyche/tyche.o prefetcher/tyche/tyche.cc
+g++ -Wall -O3 -std=c++17 -Iprefetcher/stride_l2c -Dprefetcher_initialize=pref_pprefetcherDstride_l2c_initialize -Dprefetcher_cache_operate=pref_pprefetcherDstride_l2c_cache_operate -Dprefetcher_cache_fill=pref_pprefetcherDstride_l2c_cache_fill -Dprefetcher_cycle_operate=pref_pprefetcherDstride_l2c_cycle_operate -Dprefetcher_final_stats=pref_pprefetcherDstride_l2c_final_stats -Dl1d_prefetcher_initialize=pref_pprefetcherDstride_l2c_initialize -Dl2c_prefetcher_initialize=pref_pprefetcherDstride_l2c_initialize -Dllc_prefetcher_initialize=pref_pprefetcherDstride_l2c_initialize -Dl1d_prefetcher_operate=pref_pprefetcherDstride_l2c_cache_operate -Dl2c_prefetcher_operate=pref_pprefetcherDstride_l2c_cache_operate -Dllc_prefetcher_operate=pref_pprefetcherDstride_l2c_cache_operate -Dl1d_prefetcher_cache_fill=pref_pprefetcherDstride_l2c_cache_fill -Dl2c_prefetcher_cache_fill=pref_pprefetcherDstride_l2c_cache_fill -Dllc_prefetcher_cache_fill=pref_pprefetcherDstride_l2c_cache_fill -Dl1d_prefetcher_final_stats=pref_pprefetcherDstride_l2c_final_stats -Dl2c_prefetcher_final_stats=pref_pprefetcherDstride_l2c_final_stats -Dllc_prefetcher_final_stats=pref_pprefetcherDstride_l2c_final_stats -Iinc -MMD -MP -Iloongarch  -c -o prefetcher/stride_l2c/stride_l2c.o prefetcher/stride_l2c/stride_l2c.cc
+g++ -Wall -O3 -std=c++17 -Ibranch/tage-sc-l -Dinitialize_branch_predictor=bpred_bbranchDtageHscHl_initialize -Dlast_branch_result=bpred_bbranchDtageHscHl_last_result -Dpredict_branch=bpred_bbranchDtageHscHl_predict -Iinc -MMD -MP -Iloongarch  -c -o branch/tage-sc-l/tage-sc-l.o branch/tage-sc-l/tage-sc-l.cc
+g++ -Wall -O3 -std=c++17 -Ibtb/basic_btb -Dinitialize_btb=btb_bbtbDbasic_btb_initialize -Dupdate_btb=btb_bbtbDbasic_btb_update -Dbtb_prediction=btb_bbtbDbasic_btb_predict -Iinc -MMD -MP -Iloongarch  -c -o btb/basic_btb/basic_btb.o btb/basic_btb/basic_btb.cc
+ar -rcs obj/pref_pprefetcherDno.a prefetcher/no/no.o
+ar -rcs obj/repl_rreplacementDlru.a replacement/lru/lru.o
+ar -rcs obj/pref_pprefetcherDno_instr.a prefetcher/no_instr/no.o
+ar -rcs obj/pref_pprefetcherDstride_l2c.a prefetcher/stride_l2c/stride_l2c.o
+ar -rcs obj/pref_pprefetcherDtyche.a prefetcher/tyche/tyche.o
+ar -rcs obj/btb_bbtbDbasic_btb.a btb/basic_btb/basic_btb.o
+ar -rcs obj/bpred_bbranchDtageHscHl.a branch/tage-sc-l/tage-sc-l.o
+g++  -o bin/champsim src/cache.o src/core_inst.o src/dram_controller.o src/main.o src/memory_data.o src/ooo_cpu.o src/pref_utils.o src/ptw.o src/regfile.o src/tracereader.o src/vmem.o loongarch/decode-new.o loongarch/disasm.o loongarch/ins.o loongarch/ir2.o loongarch/la_print.o obj/repl_rreplacementDlru.a obj/pref_pprefetcherDno.a obj/pref_pprefetcherDno_instr.a obj/pref_pprefetcherDtyche.a obj/pref_pprefetcherDstride_l2c.a obj/bpred_bbranchDtageHscHl.a obj/btb_bbtbDbasic_btb.a 
+rm -f inc/champsim_constants.h
+rm -f src/core_inst.cc
+rm -f inc/cache_modules.inc
+rm -f inc/ooo_cpu_modules.inc
+find . -name \*.o -delete
+find . -name \*.d -delete
+rm -f -r obj
+find replacement/lru -name \*.o -delete
+find replacement/lru -name \*.d -delete
+find prefetcher/no -name \*.o -delete
+find prefetcher/no -name \*.d -delete
+find prefetcher/no_instr -name \*.o -delete
+find prefetcher/no_instr -name \*.d -delete
+find prefetcher/tyche -name \*.o -delete
+find prefetcher/tyche -name \*.d -delete
+find prefetcher/stride_l2c -name \*.o -delete
+find prefetcher/stride_l2c -name \*.d -delete
+find branch/tage-sc-l -name \*.o -delete
+find branch/tage-sc-l -name \*.d -delete
+find btb/basic_btb -name \*.o -delete
+find btb/basic_btb -name \*.d -delete
+/home/muneeb/repos/IndirectMemoryPrefetching/Tyche-Artifact/./config.sh:723: SyntaxWarning: invalid escape sequence '\*'
+  wfp.write('\t find . -name \*.o -delete\n\t find . -name \*.d -delete\n\t $(RM) -r obj\n\n')
+/home/muneeb/repos/IndirectMemoryPrefetching/Tyche-Artifact/./config.sh:725: SyntaxWarning: invalid escape sequence '\*'
+  wfp.write('\t find {0} -name \*.o -delete\n\t find {0} -name \*.d -delete\n'.format(*v))
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/cache.o src/cache.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/core_inst.o src/core_inst.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/dram_controller.o src/dram_controller.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/main.o src/main.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/memory_data.o src/memory_data.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/ooo_cpu.o src/ooo_cpu.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/pref_utils.o src/pref_utils.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/ptw.o src/ptw.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/regfile.o src/regfile.cc
+src/main.cc: In function ‘int main(int, char**)’:
+src/main.cc:908:17: warning: unused variable ‘successor_num’ [-Wunused-variable]
+  908 | extern uint64_t successor_num[25];
+      |                 ^~~~~~~~~~~~~
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/tracereader.o src/tracereader.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/vmem.o src/vmem.cc
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/decode-new.o loongarch/decode-new.c
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/disasm.o loongarch/disasm.c
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/ins.o loongarch/ins.c
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/ir2.o loongarch/ir2.c
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/la_print.o loongarch/la_print.c
+g++ -Wall -O3 -std=c++17 -Ireplacement/lru -Dinitialize_replacement=repl_rreplacementDlru_initialize -Dfind_victim=repl_rreplacementDlru_victim -Dupdate_replacement_state=repl_rreplacementDlru_update -Dreplacement_final_stats=repl_rreplacementDlru_final_stats -Iinc -MMD -MP -Iloongarch  -c -o replacement/lru/lru.o replacement/lru/lru.cc
+g++ -Wall -O3 -std=c++17 -Iprefetcher/no -Dprefetcher_initialize=pref_pprefetcherDno_initialize -Dprefetcher_cache_operate=pref_pprefetcherDno_cache_operate -Dprefetcher_cache_fill=pref_pprefetcherDno_cache_fill -Dprefetcher_cycle_operate=pref_pprefetcherDno_cycle_operate -Dprefetcher_final_stats=pref_pprefetcherDno_final_stats -Dl1d_prefetcher_initialize=pref_pprefetcherDno_initialize -Dl2c_prefetcher_initialize=pref_pprefetcherDno_initialize -Dllc_prefetcher_initialize=pref_pprefetcherDno_initialize -Dl1d_prefetcher_operate=pref_pprefetcherDno_cache_operate -Dl2c_prefetcher_operate=pref_pprefetcherDno_cache_operate -Dllc_prefetcher_operate=pref_pprefetcherDno_cache_operate -Dl1d_prefetcher_cache_fill=pref_pprefetcherDno_cache_fill -Dl2c_prefetcher_cache_fill=pref_pprefetcherDno_cache_fill -Dllc_prefetcher_cache_fill=pref_pprefetcherDno_cache_fill -Dl1d_prefetcher_final_stats=pref_pprefetcherDno_final_stats -Dl2c_prefetcher_final_stats=pref_pprefetcherDno_final_stats -Dllc_prefetcher_final_stats=pref_pprefetcherDno_final_stats -Iinc -MMD -MP -Iloongarch  -c -o prefetcher/no/no.o prefetcher/no/no.cc
+g++ -Wall -O3 -std=c++17 -Iprefetcher/no_instr -Dprefetcher_initialize=pref_pprefetcherDno_instr_initialize -Dprefetcher_branch_operate=pref_pprefetcherDno_instr_branch_operate -Dprefetcher_cache_operate=pref_pprefetcherDno_instr_cache_operate -Dprefetcher_cycle_operate=pref_pprefetcherDno_instr_cycle_operate -Dprefetcher_cache_fill=pref_pprefetcherDno_instr_cache_fill -Dprefetcher_final_stats=pref_pprefetcherDno_instr_final_stats -Dl1i_prefetcher_initialize=pref_pprefetcherDno_instr_initialize -Dl1i_prefetcher_branch_operate=pref_pprefetcherDno_instr_branch_operate -Dl1i_prefetcher_cache_operate=pref_pprefetcherDno_instr_cache_operate -Dl1i_prefetcher_cycle_operate=pref_pprefetcherDno_instr_cycle_operate -Dl1i_prefetcher_cache_fill=pref_pprefetcherDno_instr_cache_fill -Dl1i_prefetcher_final_stats=pref_pprefetcherDno_instr_final_stats -Iinc -MMD -MP -Iloongarch  -c -o prefetcher/no_instr/no.o prefetcher/no_instr/no.cc
+g++ -Wall -O3 -std=c++17 -Iprefetcher/imp -Dprefetcher_initialize=pref_pprefetcherDimp_initialize -Dprefetcher_cache_operate=pref_pprefetcherDimp_cache_operate -Dprefetcher_cache_fill=pref_pprefetcherDimp_cache_fill -Dprefetcher_cycle_operate=pref_pprefetcherDimp_cycle_operate -Dprefetcher_final_stats=pref_pprefetcherDimp_final_stats -Dl1d_prefetcher_initialize=pref_pprefetcherDimp_initialize -Dl2c_prefetcher_initialize=pref_pprefetcherDimp_initialize -Dllc_prefetcher_initialize=pref_pprefetcherDimp_initialize -Dl1d_prefetcher_operate=pref_pprefetcherDimp_cache_operate -Dl2c_prefetcher_operate=pref_pprefetcherDimp_cache_operate -Dllc_prefetcher_operate=pref_pprefetcherDimp_cache_operate -Dl1d_prefetcher_cache_fill=pref_pprefetcherDimp_cache_fill -Dl2c_prefetcher_cache_fill=pref_pprefetcherDimp_cache_fill -Dllc_prefetcher_cache_fill=pref_pprefetcherDimp_cache_fill -Dl1d_prefetcher_final_stats=pref_pprefetcherDimp_final_stats -Dl2c_prefetcher_final_stats=pref_pprefetcherDimp_final_stats -Dllc_prefetcher_final_stats=pref_pprefetcherDimp_final_stats -Iinc -MMD -MP -Iloongarch  -c -o prefetcher/imp/imp.o prefetcher/imp/imp.cc
+g++ -Wall -O3 -std=c++17 -Iprefetcher/stride_l2c -Dprefetcher_initialize=pref_pprefetcherDstride_l2c_initialize -Dprefetcher_cache_operate=pref_pprefetcherDstride_l2c_cache_operate -Dprefetcher_cache_fill=pref_pprefetcherDstride_l2c_cache_fill -Dprefetcher_cycle_operate=pref_pprefetcherDstride_l2c_cycle_operate -Dprefetcher_final_stats=pref_pprefetcherDstride_l2c_final_stats -Dl1d_prefetcher_initialize=pref_pprefetcherDstride_l2c_initialize -Dl2c_prefetcher_initialize=pref_pprefetcherDstride_l2c_initialize -Dllc_prefetcher_initialize=pref_pprefetcherDstride_l2c_initialize -Dl1d_prefetcher_operate=pref_pprefetcherDstride_l2c_cache_operate -Dl2c_prefetcher_operate=pref_pprefetcherDstride_l2c_cache_operate -Dllc_prefetcher_operate=pref_pprefetcherDstride_l2c_cache_operate -Dl1d_prefetcher_cache_fill=pref_pprefetcherDstride_l2c_cache_fill -Dl2c_prefetcher_cache_fill=pref_pprefetcherDstride_l2c_cache_fill -Dllc_prefetcher_cache_fill=pref_pprefetcherDstride_l2c_cache_fill -Dl1d_prefetcher_final_stats=pref_pprefetcherDstride_l2c_final_stats -Dl2c_prefetcher_final_stats=pref_pprefetcherDstride_l2c_final_stats -Dllc_prefetcher_final_stats=pref_pprefetcherDstride_l2c_final_stats -Iinc -MMD -MP -Iloongarch  -c -o prefetcher/stride_l2c/stride_l2c.o prefetcher/stride_l2c/stride_l2c.cc
+g++ -Wall -O3 -std=c++17 -Ibranch/tage-sc-l -Dinitialize_branch_predictor=bpred_bbranchDtageHscHl_initialize -Dlast_branch_result=bpred_bbranchDtageHscHl_last_result -Dpredict_branch=bpred_bbranchDtageHscHl_predict -Iinc -MMD -MP -Iloongarch  -c -o branch/tage-sc-l/tage-sc-l.o branch/tage-sc-l/tage-sc-l.cc
+g++ -Wall -O3 -std=c++17 -Ibtb/basic_btb -Dinitialize_btb=btb_bbtbDbasic_btb_initialize -Dupdate_btb=btb_bbtbDbasic_btb_update -Dbtb_prediction=btb_bbtbDbasic_btb_predict -Iinc -MMD -MP -Iloongarch  -c -o btb/basic_btb/basic_btb.o btb/basic_btb/basic_btb.cc
+ar -rcs obj/pref_pprefetcherDno.a prefetcher/no/no.o
+ar -rcs obj/repl_rreplacementDlru.a replacement/lru/lru.o
+ar -rcs obj/pref_pprefetcherDno_instr.a prefetcher/no_instr/no.o
+ar -rcs obj/pref_pprefetcherDstride_l2c.a prefetcher/stride_l2c/stride_l2c.o
+ar -rcs obj/pref_pprefetcherDimp.a prefetcher/imp/imp.o
+ar -rcs obj/btb_bbtbDbasic_btb.a btb/basic_btb/basic_btb.o
+ar -rcs obj/bpred_bbranchDtageHscHl.a branch/tage-sc-l/tage-sc-l.o
+g++  -o bin/champsim src/cache.o src/core_inst.o src/dram_controller.o src/main.o src/memory_data.o src/ooo_cpu.o src/pref_utils.o src/ptw.o src/regfile.o src/tracereader.o src/vmem.o loongarch/decode-new.o loongarch/disasm.o loongarch/ins.o loongarch/ir2.o loongarch/la_print.o obj/repl_rreplacementDlru.a obj/pref_pprefetcherDno.a obj/pref_pprefetcherDno_instr.a obj/pref_pprefetcherDimp.a obj/pref_pprefetcherDstride_l2c.a obj/bpred_bbranchDtageHscHl.a obj/btb_bbtbDbasic_btb.a 
+rm -f inc/champsim_constants.h
+rm -f src/core_inst.cc
+rm -f inc/cache_modules.inc
+rm -f inc/ooo_cpu_modules.inc
+find . -name \*.o -delete
+find . -name \*.d -delete
+rm -f -r obj
+find replacement/lru -name \*.o -delete
+find replacement/lru -name \*.d -delete
+find prefetcher/no -name \*.o -delete
+find prefetcher/no -name \*.d -delete
+find prefetcher/no_instr -name \*.o -delete
+find prefetcher/no_instr -name \*.d -delete
+find prefetcher/imp -name \*.o -delete
+find prefetcher/imp -name \*.d -delete
+find prefetcher/stride_l2c -name \*.o -delete
+find prefetcher/stride_l2c -name \*.d -delete
+find branch/tage-sc-l -name \*.o -delete
+find branch/tage-sc-l -name \*.d -delete
+find btb/basic_btb -name \*.o -delete
+find btb/basic_btb -name \*.d -delete
+/home/muneeb/repos/IndirectMemoryPrefetching/Tyche-Artifact/./config.sh:723: SyntaxWarning: invalid escape sequence '\*'
+  wfp.write('\t find . -name \*.o -delete\n\t find . -name \*.d -delete\n\t $(RM) -r obj\n\n')
+/home/muneeb/repos/IndirectMemoryPrefetching/Tyche-Artifact/./config.sh:725: SyntaxWarning: invalid escape sequence '\*'
+  wfp.write('\t find {0} -name \*.o -delete\n\t find {0} -name \*.d -delete\n'.format(*v))
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/cache.o src/cache.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/core_inst.o src/core_inst.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/dram_controller.o src/dram_controller.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/main.o src/main.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/memory_data.o src/memory_data.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/ooo_cpu.o src/ooo_cpu.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/pref_utils.o src/pref_utils.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/ptw.o src/ptw.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/regfile.o src/regfile.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/tracereader.o src/tracereader.cc
+src/main.cc: In function ‘int main(int, char**)’:
+src/main.cc:908:17: warning: unused variable ‘successor_num’ [-Wunused-variable]
+  908 | extern uint64_t successor_num[25];
+      |                 ^~~~~~~~~~~~~
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/vmem.o src/vmem.cc
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/decode-new.o loongarch/decode-new.c
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/disasm.o loongarch/disasm.c
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/ins.o loongarch/ins.c
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/ir2.o loongarch/ir2.c
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/la_print.o loongarch/la_print.c
+g++ -Wall -O3 -std=c++17 -Ireplacement/lru -Dinitialize_replacement=repl_rreplacementDlru_initialize -Dfind_victim=repl_rreplacementDlru_victim -Dupdate_replacement_state=repl_rreplacementDlru_update -Dreplacement_final_stats=repl_rreplacementDlru_final_stats -Iinc -MMD -MP -Iloongarch  -c -o replacement/lru/lru.o replacement/lru/lru.cc
+g++ -Wall -O3 -std=c++17 -Iprefetcher/no -Dprefetcher_initialize=pref_pprefetcherDno_initialize -Dprefetcher_cache_operate=pref_pprefetcherDno_cache_operate -Dprefetcher_cache_fill=pref_pprefetcherDno_cache_fill -Dprefetcher_cycle_operate=pref_pprefetcherDno_cycle_operate -Dprefetcher_final_stats=pref_pprefetcherDno_final_stats -Dl1d_prefetcher_initialize=pref_pprefetcherDno_initialize -Dl2c_prefetcher_initialize=pref_pprefetcherDno_initialize -Dllc_prefetcher_initialize=pref_pprefetcherDno_initialize -Dl1d_prefetcher_operate=pref_pprefetcherDno_cache_operate -Dl2c_prefetcher_operate=pref_pprefetcherDno_cache_operate -Dllc_prefetcher_operate=pref_pprefetcherDno_cache_operate -Dl1d_prefetcher_cache_fill=pref_pprefetcherDno_cache_fill -Dl2c_prefetcher_cache_fill=pref_pprefetcherDno_cache_fill -Dllc_prefetcher_cache_fill=pref_pprefetcherDno_cache_fill -Dl1d_prefetcher_final_stats=pref_pprefetcherDno_final_stats -Dl2c_prefetcher_final_stats=pref_pprefetcherDno_final_stats -Dllc_prefetcher_final_stats=pref_pprefetcherDno_final_stats -Iinc -MMD -MP -Iloongarch  -c -o prefetcher/no/no.o prefetcher/no/no.cc
+g++ -Wall -O3 -std=c++17 -Iprefetcher/no_instr -Dprefetcher_initialize=pref_pprefetcherDno_instr_initialize -Dprefetcher_branch_operate=pref_pprefetcherDno_instr_branch_operate -Dprefetcher_cache_operate=pref_pprefetcherDno_instr_cache_operate -Dprefetcher_cycle_operate=pref_pprefetcherDno_instr_cycle_operate -Dprefetcher_cache_fill=pref_pprefetcherDno_instr_cache_fill -Dprefetcher_final_stats=pref_pprefetcherDno_instr_final_stats -Dl1i_prefetcher_initialize=pref_pprefetcherDno_instr_initialize -Dl1i_prefetcher_branch_operate=pref_pprefetcherDno_instr_branch_operate -Dl1i_prefetcher_cache_operate=pref_pprefetcherDno_instr_cache_operate -Dl1i_prefetcher_cycle_operate=pref_pprefetcherDno_instr_cycle_operate -Dl1i_prefetcher_cache_fill=pref_pprefetcherDno_instr_cache_fill -Dl1i_prefetcher_final_stats=pref_pprefetcherDno_instr_final_stats -Iinc -MMD -MP -Iloongarch  -c -o prefetcher/no_instr/no.o prefetcher/no_instr/no.cc
+g++ -Wall -O3 -std=c++17 -Iprefetcher/stride_l2c -Dprefetcher_initialize=pref_pprefetcherDstride_l2c_initialize -Dprefetcher_cache_operate=pref_pprefetcherDstride_l2c_cache_operate -Dprefetcher_cache_fill=pref_pprefetcherDstride_l2c_cache_fill -Dprefetcher_cycle_operate=pref_pprefetcherDstride_l2c_cycle_operate -Dprefetcher_final_stats=pref_pprefetcherDstride_l2c_final_stats -Dl1d_prefetcher_initialize=pref_pprefetcherDstride_l2c_initialize -Dl2c_prefetcher_initialize=pref_pprefetcherDstride_l2c_initialize -Dllc_prefetcher_initialize=pref_pprefetcherDstride_l2c_initialize -Dl1d_prefetcher_operate=pref_pprefetcherDstride_l2c_cache_operate -Dl2c_prefetcher_operate=pref_pprefetcherDstride_l2c_cache_operate -Dllc_prefetcher_operate=pref_pprefetcherDstride_l2c_cache_operate -Dl1d_prefetcher_cache_fill=pref_pprefetcherDstride_l2c_cache_fill -Dl2c_prefetcher_cache_fill=pref_pprefetcherDstride_l2c_cache_fill -Dllc_prefetcher_cache_fill=pref_pprefetcherDstride_l2c_cache_fill -Dl1d_prefetcher_final_stats=pref_pprefetcherDstride_l2c_final_stats -Dl2c_prefetcher_final_stats=pref_pprefetcherDstride_l2c_final_stats -Dllc_prefetcher_final_stats=pref_pprefetcherDstride_l2c_final_stats -Iinc -MMD -MP -Iloongarch  -c -o prefetcher/stride_l2c/stride_l2c.o prefetcher/stride_l2c/stride_l2c.cc
+g++ -Wall -O3 -std=c++17 -Ibranch/tage-sc-l -Dinitialize_branch_predictor=bpred_bbranchDtageHscHl_initialize -Dlast_branch_result=bpred_bbranchDtageHscHl_last_result -Dpredict_branch=bpred_bbranchDtageHscHl_predict -Iinc -MMD -MP -Iloongarch  -c -o branch/tage-sc-l/tage-sc-l.o branch/tage-sc-l/tage-sc-l.cc
+g++ -Wall -O3 -std=c++17 -Ibtb/basic_btb -Dinitialize_btb=btb_bbtbDbasic_btb_initialize -Dupdate_btb=btb_bbtbDbasic_btb_update -Dbtb_prediction=btb_bbtbDbasic_btb_predict -Iinc -MMD -MP -Iloongarch  -c -o btb/basic_btb/basic_btb.o btb/basic_btb/basic_btb.cc
+ar -rcs obj/pref_pprefetcherDno_instr.a prefetcher/no_instr/no.o
+ar -rcs obj/repl_rreplacementDlru.a replacement/lru/lru.o
+ar -rcs obj/pref_pprefetcherDno.a prefetcher/no/no.o
+ar -rcs obj/pref_pprefetcherDstride_l2c.a prefetcher/stride_l2c/stride_l2c.o
+ar -rcs obj/btb_bbtbDbasic_btb.a btb/basic_btb/basic_btb.o
+ar -rcs obj/bpred_bbranchDtageHscHl.a branch/tage-sc-l/tage-sc-l.o
+g++  -o bin/champsim src/cache.o src/core_inst.o src/dram_controller.o src/main.o src/memory_data.o src/ooo_cpu.o src/pref_utils.o src/ptw.o src/regfile.o src/tracereader.o src/vmem.o loongarch/decode-new.o loongarch/disasm.o loongarch/ins.o loongarch/ir2.o loongarch/la_print.o obj/repl_rreplacementDlru.a obj/pref_pprefetcherDno.a obj/pref_pprefetcherDno_instr.a obj/pref_pprefetcherDstride_l2c.a obj/bpred_bbranchDtageHscHl.a obj/btb_bbtbDbasic_btb.a 
+
+==================================================
+   Building with L1D Prefetcher: tyche
+==================================================
+Running: make clean
+Running: ./config.sh champsim_config.json
+Running: make -j8
+--> Running trace: champsim.trace_16500000000.champsim.trace.xz
+    Finished. Output saved to results_tyche_NAS_is_b_out_champsim.trace_16500000000.champsim.trace.xz.txt
+
+==================================================
+   Building with L1D Prefetcher: imp
+==================================================
+Running: make clean
+Running: ./config.sh champsim_config.json
+Running: make -j8
+--> Running trace: champsim.trace_16500000000.champsim.trace.xz
+    Finished. Output saved to results_imp_NAS_is_b_out_champsim.trace_16500000000.champsim.trace.xz.txt
+
+==================================================
+   Building with L1D Prefetcher: no
+==================================================
+Running: make clean
+Running: ./config.sh champsim_config.json
+Running: make -j8
+--> Running trace: champsim.trace_16500000000.champsim.trace.xz
+    Finished. Output saved to results_no_NAS_is_b_out_champsim.trace_16500000000.champsim.trace.xz.txt
+
+All experiments completed.
+rm -f inc/champsim_constants.h
+rm -f src/core_inst.cc
+rm -f inc/cache_modules.inc
+rm -f inc/ooo_cpu_modules.inc
+find . -name \*.o -delete
+find . -name \*.d -delete
+rm -f -r obj
+find replacement/lru -name \*.o -delete
+find replacement/lru -name \*.d -delete
+find prefetcher/no -name \*.o -delete
+find prefetcher/no -name \*.d -delete
+find prefetcher/no_instr -name \*.o -delete
+find prefetcher/no_instr -name \*.d -delete
+find prefetcher/stride_l2c -name \*.o -delete
+find prefetcher/stride_l2c -name \*.d -delete
+find branch/tage-sc-l -name \*.o -delete
+find branch/tage-sc-l -name \*.d -delete
+find btb/basic_btb -name \*.o -delete
+find btb/basic_btb -name \*.d -delete
+/home/muneeb/repos/IndirectMemoryPrefetching/Tyche-Artifact/./config.sh:723: SyntaxWarning: invalid escape sequence '\*'
+  wfp.write('\t find . -name \*.o -delete\n\t find . -name \*.d -delete\n\t $(RM) -r obj\n\n')
+/home/muneeb/repos/IndirectMemoryPrefetching/Tyche-Artifact/./config.sh:725: SyntaxWarning: invalid escape sequence '\*'
+  wfp.write('\t find {0} -name \*.o -delete\n\t find {0} -name \*.d -delete\n'.format(*v))
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/cache.o src/cache.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/core_inst.o src/core_inst.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/dram_controller.o src/dram_controller.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/main.o src/main.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/memory_data.o src/memory_data.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/ooo_cpu.o src/ooo_cpu.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/pref_utils.o src/pref_utils.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/ptw.o src/ptw.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/regfile.o src/regfile.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/tracereader.o src/tracereader.cc
+src/main.cc: In function ‘int main(int, char**)’:
+src/main.cc:908:17: warning: unused variable ‘successor_num’ [-Wunused-variable]
+  908 | extern uint64_t successor_num[25];
+      |                 ^~~~~~~~~~~~~
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/vmem.o src/vmem.cc
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/decode-new.o loongarch/decode-new.c
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/disasm.o loongarch/disasm.c
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/ins.o loongarch/ins.c
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/ir2.o loongarch/ir2.c
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/la_print.o loongarch/la_print.c
+g++ -Wall -O3 -std=c++17 -Ireplacement/lru -Dinitialize_replacement=repl_rreplacementDlru_initialize -Dfind_victim=repl_rreplacementDlru_victim -Dupdate_replacement_state=repl_rreplacementDlru_update -Dreplacement_final_stats=repl_rreplacementDlru_final_stats -Iinc -MMD -MP -Iloongarch  -c -o replacement/lru/lru.o replacement/lru/lru.cc
+g++ -Wall -O3 -std=c++17 -Iprefetcher/no -Dprefetcher_initialize=pref_pprefetcherDno_initialize -Dprefetcher_cache_operate=pref_pprefetcherDno_cache_operate -Dprefetcher_cache_fill=pref_pprefetcherDno_cache_fill -Dprefetcher_cycle_operate=pref_pprefetcherDno_cycle_operate -Dprefetcher_final_stats=pref_pprefetcherDno_final_stats -Dl1d_prefetcher_initialize=pref_pprefetcherDno_initialize -Dl2c_prefetcher_initialize=pref_pprefetcherDno_initialize -Dllc_prefetcher_initialize=pref_pprefetcherDno_initialize -Dl1d_prefetcher_operate=pref_pprefetcherDno_cache_operate -Dl2c_prefetcher_operate=pref_pprefetcherDno_cache_operate -Dllc_prefetcher_operate=pref_pprefetcherDno_cache_operate -Dl1d_prefetcher_cache_fill=pref_pprefetcherDno_cache_fill -Dl2c_prefetcher_cache_fill=pref_pprefetcherDno_cache_fill -Dllc_prefetcher_cache_fill=pref_pprefetcherDno_cache_fill -Dl1d_prefetcher_final_stats=pref_pprefetcherDno_final_stats -Dl2c_prefetcher_final_stats=pref_pprefetcherDno_final_stats -Dllc_prefetcher_final_stats=pref_pprefetcherDno_final_stats -Iinc -MMD -MP -Iloongarch  -c -o prefetcher/no/no.o prefetcher/no/no.cc
+g++ -Wall -O3 -std=c++17 -Iprefetcher/no_instr -Dprefetcher_initialize=pref_pprefetcherDno_instr_initialize -Dprefetcher_branch_operate=pref_pprefetcherDno_instr_branch_operate -Dprefetcher_cache_operate=pref_pprefetcherDno_instr_cache_operate -Dprefetcher_cycle_operate=pref_pprefetcherDno_instr_cycle_operate -Dprefetcher_cache_fill=pref_pprefetcherDno_instr_cache_fill -Dprefetcher_final_stats=pref_pprefetcherDno_instr_final_stats -Dl1i_prefetcher_initialize=pref_pprefetcherDno_instr_initialize -Dl1i_prefetcher_branch_operate=pref_pprefetcherDno_instr_branch_operate -Dl1i_prefetcher_cache_operate=pref_pprefetcherDno_instr_cache_operate -Dl1i_prefetcher_cycle_operate=pref_pprefetcherDno_instr_cycle_operate -Dl1i_prefetcher_cache_fill=pref_pprefetcherDno_instr_cache_fill -Dl1i_prefetcher_final_stats=pref_pprefetcherDno_instr_final_stats -Iinc -MMD -MP -Iloongarch  -c -o prefetcher/no_instr/no.o prefetcher/no_instr/no.cc
+g++ -Wall -O3 -std=c++17 -Iprefetcher/tyche -Dprefetcher_initialize=pref_pprefetcherDtyche_initialize -Dprefetcher_cache_operate=pref_pprefetcherDtyche_cache_operate -Dprefetcher_cache_fill=pref_pprefetcherDtyche_cache_fill -Dprefetcher_cycle_operate=pref_pprefetcherDtyche_cycle_operate -Dprefetcher_final_stats=pref_pprefetcherDtyche_final_stats -Dl1d_prefetcher_initialize=pref_pprefetcherDtyche_initialize -Dl2c_prefetcher_initialize=pref_pprefetcherDtyche_initialize -Dllc_prefetcher_initialize=pref_pprefetcherDtyche_initialize -Dl1d_prefetcher_operate=pref_pprefetcherDtyche_cache_operate -Dl2c_prefetcher_operate=pref_pprefetcherDtyche_cache_operate -Dllc_prefetcher_operate=pref_pprefetcherDtyche_cache_operate -Dl1d_prefetcher_cache_fill=pref_pprefetcherDtyche_cache_fill -Dl2c_prefetcher_cache_fill=pref_pprefetcherDtyche_cache_fill -Dllc_prefetcher_cache_fill=pref_pprefetcherDtyche_cache_fill -Dl1d_prefetcher_final_stats=pref_pprefetcherDtyche_final_stats -Dl2c_prefetcher_final_stats=pref_pprefetcherDtyche_final_stats -Dllc_prefetcher_final_stats=pref_pprefetcherDtyche_final_stats -Iinc -MMD -MP -Iloongarch  -c -o prefetcher/tyche/tyche.o prefetcher/tyche/tyche.cc
+g++ -Wall -O3 -std=c++17 -Iprefetcher/stride_l2c -Dprefetcher_initialize=pref_pprefetcherDstride_l2c_initialize -Dprefetcher_cache_operate=pref_pprefetcherDstride_l2c_cache_operate -Dprefetcher_cache_fill=pref_pprefetcherDstride_l2c_cache_fill -Dprefetcher_cycle_operate=pref_pprefetcherDstride_l2c_cycle_operate -Dprefetcher_final_stats=pref_pprefetcherDstride_l2c_final_stats -Dl1d_prefetcher_initialize=pref_pprefetcherDstride_l2c_initialize -Dl2c_prefetcher_initialize=pref_pprefetcherDstride_l2c_initialize -Dllc_prefetcher_initialize=pref_pprefetcherDstride_l2c_initialize -Dl1d_prefetcher_operate=pref_pprefetcherDstride_l2c_cache_operate -Dl2c_prefetcher_operate=pref_pprefetcherDstride_l2c_cache_operate -Dllc_prefetcher_operate=pref_pprefetcherDstride_l2c_cache_operate -Dl1d_prefetcher_cache_fill=pref_pprefetcherDstride_l2c_cache_fill -Dl2c_prefetcher_cache_fill=pref_pprefetcherDstride_l2c_cache_fill -Dllc_prefetcher_cache_fill=pref_pprefetcherDstride_l2c_cache_fill -Dl1d_prefetcher_final_stats=pref_pprefetcherDstride_l2c_final_stats -Dl2c_prefetcher_final_stats=pref_pprefetcherDstride_l2c_final_stats -Dllc_prefetcher_final_stats=pref_pprefetcherDstride_l2c_final_stats -Iinc -MMD -MP -Iloongarch  -c -o prefetcher/stride_l2c/stride_l2c.o prefetcher/stride_l2c/stride_l2c.cc
+g++ -Wall -O3 -std=c++17 -Ibranch/tage-sc-l -Dinitialize_branch_predictor=bpred_bbranchDtageHscHl_initialize -Dlast_branch_result=bpred_bbranchDtageHscHl_last_result -Dpredict_branch=bpred_bbranchDtageHscHl_predict -Iinc -MMD -MP -Iloongarch  -c -o branch/tage-sc-l/tage-sc-l.o branch/tage-sc-l/tage-sc-l.cc
+g++ -Wall -O3 -std=c++17 -Ibtb/basic_btb -Dinitialize_btb=btb_bbtbDbasic_btb_initialize -Dupdate_btb=btb_bbtbDbasic_btb_update -Dbtb_prediction=btb_bbtbDbasic_btb_predict -Iinc -MMD -MP -Iloongarch  -c -o btb/basic_btb/basic_btb.o btb/basic_btb/basic_btb.cc
+ar -rcs obj/pref_pprefetcherDno_instr.a prefetcher/no_instr/no.o
+ar -rcs obj/repl_rreplacementDlru.a replacement/lru/lru.o
+ar -rcs obj/pref_pprefetcherDno.a prefetcher/no/no.o
+ar -rcs obj/pref_pprefetcherDstride_l2c.a prefetcher/stride_l2c/stride_l2c.o
+ar -rcs obj/pref_pprefetcherDtyche.a prefetcher/tyche/tyche.o
+ar -rcs obj/btb_bbtbDbasic_btb.a btb/basic_btb/basic_btb.o
+ar -rcs obj/bpred_bbranchDtageHscHl.a branch/tage-sc-l/tage-sc-l.o
+g++  -o bin/champsim src/cache.o src/core_inst.o src/dram_controller.o src/main.o src/memory_data.o src/ooo_cpu.o src/pref_utils.o src/ptw.o src/regfile.o src/tracereader.o src/vmem.o loongarch/decode-new.o loongarch/disasm.o loongarch/ins.o loongarch/ir2.o loongarch/la_print.o obj/repl_rreplacementDlru.a obj/pref_pprefetcherDno.a obj/pref_pprefetcherDno_instr.a obj/pref_pprefetcherDtyche.a obj/pref_pprefetcherDstride_l2c.a obj/bpred_bbranchDtageHscHl.a obj/btb_bbtbDbasic_btb.a 
+rm -f inc/champsim_constants.h
+rm -f src/core_inst.cc
+rm -f inc/cache_modules.inc
+rm -f inc/ooo_cpu_modules.inc
+find . -name \*.o -delete
+find . -name \*.d -delete
+rm -f -r obj
+find replacement/lru -name \*.o -delete
+find replacement/lru -name \*.d -delete
+find prefetcher/no -name \*.o -delete
+find prefetcher/no -name \*.d -delete
+find prefetcher/no_instr -name \*.o -delete
+find prefetcher/no_instr -name \*.d -delete
+find prefetcher/tyche -name \*.o -delete
+find prefetcher/tyche -name \*.d -delete
+find prefetcher/stride_l2c -name \*.o -delete
+find prefetcher/stride_l2c -name \*.d -delete
+find branch/tage-sc-l -name \*.o -delete
+find branch/tage-sc-l -name \*.d -delete
+find btb/basic_btb -name \*.o -delete
+find btb/basic_btb -name \*.d -delete
+/home/muneeb/repos/IndirectMemoryPrefetching/Tyche-Artifact/./config.sh:723: SyntaxWarning: invalid escape sequence '\*'
+  wfp.write('\t find . -name \*.o -delete\n\t find . -name \*.d -delete\n\t $(RM) -r obj\n\n')
+/home/muneeb/repos/IndirectMemoryPrefetching/Tyche-Artifact/./config.sh:725: SyntaxWarning: invalid escape sequence '\*'
+  wfp.write('\t find {0} -name \*.o -delete\n\t find {0} -name \*.d -delete\n'.format(*v))
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/cache.o src/cache.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/core_inst.o src/core_inst.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/dram_controller.o src/dram_controller.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/main.o src/main.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/memory_data.o src/memory_data.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/ooo_cpu.o src/ooo_cpu.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/pref_utils.o src/pref_utils.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/ptw.o src/ptw.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/regfile.o src/regfile.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/tracereader.o src/tracereader.cc
+src/main.cc: In function ‘int main(int, char**)’:
+src/main.cc:908:17: warning: unused variable ‘successor_num’ [-Wunused-variable]
+  908 | extern uint64_t successor_num[25];
+      |                 ^~~~~~~~~~~~~
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/vmem.o src/vmem.cc
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/decode-new.o loongarch/decode-new.c
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/disasm.o loongarch/disasm.c
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/ins.o loongarch/ins.c
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/ir2.o loongarch/ir2.c
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/la_print.o loongarch/la_print.c
+g++ -Wall -O3 -std=c++17 -Ireplacement/lru -Dinitialize_replacement=repl_rreplacementDlru_initialize -Dfind_victim=repl_rreplacementDlru_victim -Dupdate_replacement_state=repl_rreplacementDlru_update -Dreplacement_final_stats=repl_rreplacementDlru_final_stats -Iinc -MMD -MP -Iloongarch  -c -o replacement/lru/lru.o replacement/lru/lru.cc
+g++ -Wall -O3 -std=c++17 -Iprefetcher/no -Dprefetcher_initialize=pref_pprefetcherDno_initialize -Dprefetcher_cache_operate=pref_pprefetcherDno_cache_operate -Dprefetcher_cache_fill=pref_pprefetcherDno_cache_fill -Dprefetcher_cycle_operate=pref_pprefetcherDno_cycle_operate -Dprefetcher_final_stats=pref_pprefetcherDno_final_stats -Dl1d_prefetcher_initialize=pref_pprefetcherDno_initialize -Dl2c_prefetcher_initialize=pref_pprefetcherDno_initialize -Dllc_prefetcher_initialize=pref_pprefetcherDno_initialize -Dl1d_prefetcher_operate=pref_pprefetcherDno_cache_operate -Dl2c_prefetcher_operate=pref_pprefetcherDno_cache_operate -Dllc_prefetcher_operate=pref_pprefetcherDno_cache_operate -Dl1d_prefetcher_cache_fill=pref_pprefetcherDno_cache_fill -Dl2c_prefetcher_cache_fill=pref_pprefetcherDno_cache_fill -Dllc_prefetcher_cache_fill=pref_pprefetcherDno_cache_fill -Dl1d_prefetcher_final_stats=pref_pprefetcherDno_final_stats -Dl2c_prefetcher_final_stats=pref_pprefetcherDno_final_stats -Dllc_prefetcher_final_stats=pref_pprefetcherDno_final_stats -Iinc -MMD -MP -Iloongarch  -c -o prefetcher/no/no.o prefetcher/no/no.cc
+g++ -Wall -O3 -std=c++17 -Iprefetcher/no_instr -Dprefetcher_initialize=pref_pprefetcherDno_instr_initialize -Dprefetcher_branch_operate=pref_pprefetcherDno_instr_branch_operate -Dprefetcher_cache_operate=pref_pprefetcherDno_instr_cache_operate -Dprefetcher_cycle_operate=pref_pprefetcherDno_instr_cycle_operate -Dprefetcher_cache_fill=pref_pprefetcherDno_instr_cache_fill -Dprefetcher_final_stats=pref_pprefetcherDno_instr_final_stats -Dl1i_prefetcher_initialize=pref_pprefetcherDno_instr_initialize -Dl1i_prefetcher_branch_operate=pref_pprefetcherDno_instr_branch_operate -Dl1i_prefetcher_cache_operate=pref_pprefetcherDno_instr_cache_operate -Dl1i_prefetcher_cycle_operate=pref_pprefetcherDno_instr_cycle_operate -Dl1i_prefetcher_cache_fill=pref_pprefetcherDno_instr_cache_fill -Dl1i_prefetcher_final_stats=pref_pprefetcherDno_instr_final_stats -Iinc -MMD -MP -Iloongarch  -c -o prefetcher/no_instr/no.o prefetcher/no_instr/no.cc
+g++ -Wall -O3 -std=c++17 -Iprefetcher/imp -Dprefetcher_initialize=pref_pprefetcherDimp_initialize -Dprefetcher_cache_operate=pref_pprefetcherDimp_cache_operate -Dprefetcher_cache_fill=pref_pprefetcherDimp_cache_fill -Dprefetcher_cycle_operate=pref_pprefetcherDimp_cycle_operate -Dprefetcher_final_stats=pref_pprefetcherDimp_final_stats -Dl1d_prefetcher_initialize=pref_pprefetcherDimp_initialize -Dl2c_prefetcher_initialize=pref_pprefetcherDimp_initialize -Dllc_prefetcher_initialize=pref_pprefetcherDimp_initialize -Dl1d_prefetcher_operate=pref_pprefetcherDimp_cache_operate -Dl2c_prefetcher_operate=pref_pprefetcherDimp_cache_operate -Dllc_prefetcher_operate=pref_pprefetcherDimp_cache_operate -Dl1d_prefetcher_cache_fill=pref_pprefetcherDimp_cache_fill -Dl2c_prefetcher_cache_fill=pref_pprefetcherDimp_cache_fill -Dllc_prefetcher_cache_fill=pref_pprefetcherDimp_cache_fill -Dl1d_prefetcher_final_stats=pref_pprefetcherDimp_final_stats -Dl2c_prefetcher_final_stats=pref_pprefetcherDimp_final_stats -Dllc_prefetcher_final_stats=pref_pprefetcherDimp_final_stats -Iinc -MMD -MP -Iloongarch  -c -o prefetcher/imp/imp.o prefetcher/imp/imp.cc
+g++ -Wall -O3 -std=c++17 -Iprefetcher/stride_l2c -Dprefetcher_initialize=pref_pprefetcherDstride_l2c_initialize -Dprefetcher_cache_operate=pref_pprefetcherDstride_l2c_cache_operate -Dprefetcher_cache_fill=pref_pprefetcherDstride_l2c_cache_fill -Dprefetcher_cycle_operate=pref_pprefetcherDstride_l2c_cycle_operate -Dprefetcher_final_stats=pref_pprefetcherDstride_l2c_final_stats -Dl1d_prefetcher_initialize=pref_pprefetcherDstride_l2c_initialize -Dl2c_prefetcher_initialize=pref_pprefetcherDstride_l2c_initialize -Dllc_prefetcher_initialize=pref_pprefetcherDstride_l2c_initialize -Dl1d_prefetcher_operate=pref_pprefetcherDstride_l2c_cache_operate -Dl2c_prefetcher_operate=pref_pprefetcherDstride_l2c_cache_operate -Dllc_prefetcher_operate=pref_pprefetcherDstride_l2c_cache_operate -Dl1d_prefetcher_cache_fill=pref_pprefetcherDstride_l2c_cache_fill -Dl2c_prefetcher_cache_fill=pref_pprefetcherDstride_l2c_cache_fill -Dllc_prefetcher_cache_fill=pref_pprefetcherDstride_l2c_cache_fill -Dl1d_prefetcher_final_stats=pref_pprefetcherDstride_l2c_final_stats -Dl2c_prefetcher_final_stats=pref_pprefetcherDstride_l2c_final_stats -Dllc_prefetcher_final_stats=pref_pprefetcherDstride_l2c_final_stats -Iinc -MMD -MP -Iloongarch  -c -o prefetcher/stride_l2c/stride_l2c.o prefetcher/stride_l2c/stride_l2c.cc
+g++ -Wall -O3 -std=c++17 -Ibranch/tage-sc-l -Dinitialize_branch_predictor=bpred_bbranchDtageHscHl_initialize -Dlast_branch_result=bpred_bbranchDtageHscHl_last_result -Dpredict_branch=bpred_bbranchDtageHscHl_predict -Iinc -MMD -MP -Iloongarch  -c -o branch/tage-sc-l/tage-sc-l.o branch/tage-sc-l/tage-sc-l.cc
+g++ -Wall -O3 -std=c++17 -Ibtb/basic_btb -Dinitialize_btb=btb_bbtbDbasic_btb_initialize -Dupdate_btb=btb_bbtbDbasic_btb_update -Dbtb_prediction=btb_bbtbDbasic_btb_predict -Iinc -MMD -MP -Iloongarch  -c -o btb/basic_btb/basic_btb.o btb/basic_btb/basic_btb.cc
+ar -rcs obj/pref_pprefetcherDno.a prefetcher/no/no.o
+ar -rcs obj/pref_pprefetcherDno_instr.a prefetcher/no_instr/no.o
+ar -rcs obj/repl_rreplacementDlru.a replacement/lru/lru.o
+ar -rcs obj/pref_pprefetcherDstride_l2c.a prefetcher/stride_l2c/stride_l2c.o
+ar -rcs obj/pref_pprefetcherDimp.a prefetcher/imp/imp.o
+ar -rcs obj/btb_bbtbDbasic_btb.a btb/basic_btb/basic_btb.o
+ar -rcs obj/bpred_bbranchDtageHscHl.a branch/tage-sc-l/tage-sc-l.o
+g++  -o bin/champsim src/cache.o src/core_inst.o src/dram_controller.o src/main.o src/memory_data.o src/ooo_cpu.o src/pref_utils.o src/ptw.o src/regfile.o src/tracereader.o src/vmem.o loongarch/decode-new.o loongarch/disasm.o loongarch/ins.o loongarch/ir2.o loongarch/la_print.o obj/repl_rreplacementDlru.a obj/pref_pprefetcherDno.a obj/pref_pprefetcherDno_instr.a obj/pref_pprefetcherDimp.a obj/pref_pprefetcherDstride_l2c.a obj/bpred_bbranchDtageHscHl.a obj/btb_bbtbDbasic_btb.a 
+rm -f inc/champsim_constants.h
+rm -f src/core_inst.cc
+rm -f inc/cache_modules.inc
+rm -f inc/ooo_cpu_modules.inc
+find . -name \*.o -delete
+find . -name \*.d -delete
+rm -f -r obj
+find replacement/lru -name \*.o -delete
+find replacement/lru -name \*.d -delete
+find prefetcher/no -name \*.o -delete
+find prefetcher/no -name \*.d -delete
+find prefetcher/no_instr -name \*.o -delete
+find prefetcher/no_instr -name \*.d -delete
+find prefetcher/imp -name \*.o -delete
+find prefetcher/imp -name \*.d -delete
+find prefetcher/stride_l2c -name \*.o -delete
+find prefetcher/stride_l2c -name \*.d -delete
+find branch/tage-sc-l -name \*.o -delete
+find branch/tage-sc-l -name \*.d -delete
+find btb/basic_btb -name \*.o -delete
+find btb/basic_btb -name \*.d -delete
+/home/muneeb/repos/IndirectMemoryPrefetching/Tyche-Artifact/./config.sh:723: SyntaxWarning: invalid escape sequence '\*'
+  wfp.write('\t find . -name \*.o -delete\n\t find . -name \*.d -delete\n\t $(RM) -r obj\n\n')
+/home/muneeb/repos/IndirectMemoryPrefetching/Tyche-Artifact/./config.sh:725: SyntaxWarning: invalid escape sequence '\*'
+  wfp.write('\t find {0} -name \*.o -delete\n\t find {0} -name \*.d -delete\n'.format(*v))
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/cache.o src/cache.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/core_inst.o src/core_inst.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/dram_controller.o src/dram_controller.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/main.o src/main.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/memory_data.o src/memory_data.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/ooo_cpu.o src/ooo_cpu.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/pref_utils.o src/pref_utils.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/ptw.o src/ptw.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/regfile.o src/regfile.cc
+src/main.cc: In function ‘int main(int, char**)’:
+src/main.cc:908:17: warning: unused variable ‘successor_num’ [-Wunused-variable]
+  908 | extern uint64_t successor_num[25];
+      |                 ^~~~~~~~~~~~~
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/tracereader.o src/tracereader.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/vmem.o src/vmem.cc
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/decode-new.o loongarch/decode-new.c
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/disasm.o loongarch/disasm.c
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/ins.o loongarch/ins.c
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/ir2.o loongarch/ir2.c
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/la_print.o loongarch/la_print.c
+g++ -Wall -O3 -std=c++17 -Ireplacement/lru -Dinitialize_replacement=repl_rreplacementDlru_initialize -Dfind_victim=repl_rreplacementDlru_victim -Dupdate_replacement_state=repl_rreplacementDlru_update -Dreplacement_final_stats=repl_rreplacementDlru_final_stats -Iinc -MMD -MP -Iloongarch  -c -o replacement/lru/lru.o replacement/lru/lru.cc
+g++ -Wall -O3 -std=c++17 -Iprefetcher/no -Dprefetcher_initialize=pref_pprefetcherDno_initialize -Dprefetcher_cache_operate=pref_pprefetcherDno_cache_operate -Dprefetcher_cache_fill=pref_pprefetcherDno_cache_fill -Dprefetcher_cycle_operate=pref_pprefetcherDno_cycle_operate -Dprefetcher_final_stats=pref_pprefetcherDno_final_stats -Dl1d_prefetcher_initialize=pref_pprefetcherDno_initialize -Dl2c_prefetcher_initialize=pref_pprefetcherDno_initialize -Dllc_prefetcher_initialize=pref_pprefetcherDno_initialize -Dl1d_prefetcher_operate=pref_pprefetcherDno_cache_operate -Dl2c_prefetcher_operate=pref_pprefetcherDno_cache_operate -Dllc_prefetcher_operate=pref_pprefetcherDno_cache_operate -Dl1d_prefetcher_cache_fill=pref_pprefetcherDno_cache_fill -Dl2c_prefetcher_cache_fill=pref_pprefetcherDno_cache_fill -Dllc_prefetcher_cache_fill=pref_pprefetcherDno_cache_fill -Dl1d_prefetcher_final_stats=pref_pprefetcherDno_final_stats -Dl2c_prefetcher_final_stats=pref_pprefetcherDno_final_stats -Dllc_prefetcher_final_stats=pref_pprefetcherDno_final_stats -Iinc -MMD -MP -Iloongarch  -c -o prefetcher/no/no.o prefetcher/no/no.cc
+g++ -Wall -O3 -std=c++17 -Iprefetcher/no_instr -Dprefetcher_initialize=pref_pprefetcherDno_instr_initialize -Dprefetcher_branch_operate=pref_pprefetcherDno_instr_branch_operate -Dprefetcher_cache_operate=pref_pprefetcherDno_instr_cache_operate -Dprefetcher_cycle_operate=pref_pprefetcherDno_instr_cycle_operate -Dprefetcher_cache_fill=pref_pprefetcherDno_instr_cache_fill -Dprefetcher_final_stats=pref_pprefetcherDno_instr_final_stats -Dl1i_prefetcher_initialize=pref_pprefetcherDno_instr_initialize -Dl1i_prefetcher_branch_operate=pref_pprefetcherDno_instr_branch_operate -Dl1i_prefetcher_cache_operate=pref_pprefetcherDno_instr_cache_operate -Dl1i_prefetcher_cycle_operate=pref_pprefetcherDno_instr_cycle_operate -Dl1i_prefetcher_cache_fill=pref_pprefetcherDno_instr_cache_fill -Dl1i_prefetcher_final_stats=pref_pprefetcherDno_instr_final_stats -Iinc -MMD -MP -Iloongarch  -c -o prefetcher/no_instr/no.o prefetcher/no_instr/no.cc
+g++ -Wall -O3 -std=c++17 -Iprefetcher/stride_l2c -Dprefetcher_initialize=pref_pprefetcherDstride_l2c_initialize -Dprefetcher_cache_operate=pref_pprefetcherDstride_l2c_cache_operate -Dprefetcher_cache_fill=pref_pprefetcherDstride_l2c_cache_fill -Dprefetcher_cycle_operate=pref_pprefetcherDstride_l2c_cycle_operate -Dprefetcher_final_stats=pref_pprefetcherDstride_l2c_final_stats -Dl1d_prefetcher_initialize=pref_pprefetcherDstride_l2c_initialize -Dl2c_prefetcher_initialize=pref_pprefetcherDstride_l2c_initialize -Dllc_prefetcher_initialize=pref_pprefetcherDstride_l2c_initialize -Dl1d_prefetcher_operate=pref_pprefetcherDstride_l2c_cache_operate -Dl2c_prefetcher_operate=pref_pprefetcherDstride_l2c_cache_operate -Dllc_prefetcher_operate=pref_pprefetcherDstride_l2c_cache_operate -Dl1d_prefetcher_cache_fill=pref_pprefetcherDstride_l2c_cache_fill -Dl2c_prefetcher_cache_fill=pref_pprefetcherDstride_l2c_cache_fill -Dllc_prefetcher_cache_fill=pref_pprefetcherDstride_l2c_cache_fill -Dl1d_prefetcher_final_stats=pref_pprefetcherDstride_l2c_final_stats -Dl2c_prefetcher_final_stats=pref_pprefetcherDstride_l2c_final_stats -Dllc_prefetcher_final_stats=pref_pprefetcherDstride_l2c_final_stats -Iinc -MMD -MP -Iloongarch  -c -o prefetcher/stride_l2c/stride_l2c.o prefetcher/stride_l2c/stride_l2c.cc
+g++ -Wall -O3 -std=c++17 -Ibranch/tage-sc-l -Dinitialize_branch_predictor=bpred_bbranchDtageHscHl_initialize -Dlast_branch_result=bpred_bbranchDtageHscHl_last_result -Dpredict_branch=bpred_bbranchDtageHscHl_predict -Iinc -MMD -MP -Iloongarch  -c -o branch/tage-sc-l/tage-sc-l.o branch/tage-sc-l/tage-sc-l.cc
+g++ -Wall -O3 -std=c++17 -Ibtb/basic_btb -Dinitialize_btb=btb_bbtbDbasic_btb_initialize -Dupdate_btb=btb_bbtbDbasic_btb_update -Dbtb_prediction=btb_bbtbDbasic_btb_predict -Iinc -MMD -MP -Iloongarch  -c -o btb/basic_btb/basic_btb.o btb/basic_btb/basic_btb.cc
+ar -rcs obj/pref_pprefetcherDno.a prefetcher/no/no.o
+ar -rcs obj/repl_rreplacementDlru.a replacement/lru/lru.o
+ar -rcs obj/pref_pprefetcherDno_instr.a prefetcher/no_instr/no.o
+ar -rcs obj/pref_pprefetcherDstride_l2c.a prefetcher/stride_l2c/stride_l2c.o
+ar -rcs obj/btb_bbtbDbasic_btb.a btb/basic_btb/basic_btb.o
+ar -rcs obj/bpred_bbranchDtageHscHl.a branch/tage-sc-l/tage-sc-l.o
+g++  -o bin/champsim src/cache.o src/core_inst.o src/dram_controller.o src/main.o src/memory_data.o src/ooo_cpu.o src/pref_utils.o src/ptw.o src/regfile.o src/tracereader.o src/vmem.o loongarch/decode-new.o loongarch/disasm.o loongarch/ins.o loongarch/ir2.o loongarch/la_print.o obj/repl_rreplacementDlru.a obj/pref_pprefetcherDno.a obj/pref_pprefetcherDno_instr.a obj/pref_pprefetcherDstride_l2c.a obj/bpred_bbranchDtageHscHl.a obj/btb_bbtbDbasic_btb.a 
+
+==================================================
+   Building with L1D Prefetcher: tyche
+==================================================
+Running: make clean
+Running: ./config.sh champsim_config.json
+Running: make -j8
+--> Running trace: champsim.trace_16500000000.champsim.trace.xz
+    Finished. Output saved to results_tyche_NAS_is_b_out_champsim.trace_16500000000.champsim.trace.xz.txt
+
+==================================================
+   Building with L1D Prefetcher: imp
+==================================================
+Running: make clean
+Running: ./config.sh champsim_config.json
+Running: make -j8
+--> Running trace: champsim.trace_16500000000.champsim.trace.xz
+    Finished. Output saved to results_imp_NAS_is_b_out_champsim.trace_16500000000.champsim.trace.xz.txt
+
+==================================================
+   Building with L1D Prefetcher: no
+==================================================
+Running: make clean
+Running: ./config.sh champsim_config.json
+Running: make -j8
+--> Running trace: champsim.trace_16500000000.champsim.trace.xz
+    Finished. Output saved to results_no_NAS_is_b_out_champsim.trace_16500000000.champsim.trace.xz.txt
+
+All experiments completed.
+rm -f inc/champsim_constants.h
+rm -f src/core_inst.cc
+rm -f inc/cache_modules.inc
+rm -f inc/ooo_cpu_modules.inc
+find . -name \*.o -delete
+find . -name \*.d -delete
+rm -f -r obj
+find replacement/lru -name \*.o -delete
+find replacement/lru -name \*.d -delete
+find prefetcher/no -name \*.o -delete
+find prefetcher/no -name \*.d -delete
+find prefetcher/no_instr -name \*.o -delete
+find prefetcher/no_instr -name \*.d -delete
+find prefetcher/stride_l2c -name \*.o -delete
+find prefetcher/stride_l2c -name \*.d -delete
+find branch/tage-sc-l -name \*.o -delete
+find branch/tage-sc-l -name \*.d -delete
+find btb/basic_btb -name \*.o -delete
+find btb/basic_btb -name \*.d -delete
+/home/muneeb/repos/IndirectMemoryPrefetching/Tyche-Artifact/./config.sh:723: SyntaxWarning: invalid escape sequence '\*'
+  wfp.write('\t find . -name \*.o -delete\n\t find . -name \*.d -delete\n\t $(RM) -r obj\n\n')
+/home/muneeb/repos/IndirectMemoryPrefetching/Tyche-Artifact/./config.sh:725: SyntaxWarning: invalid escape sequence '\*'
+  wfp.write('\t find {0} -name \*.o -delete\n\t find {0} -name \*.d -delete\n'.format(*v))
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/cache.o src/cache.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/core_inst.o src/core_inst.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/dram_controller.o src/dram_controller.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/main.o src/main.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/memory_data.o src/memory_data.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/ooo_cpu.o src/ooo_cpu.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/pref_utils.o src/pref_utils.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/ptw.o src/ptw.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/regfile.o src/regfile.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/tracereader.o src/tracereader.cc
+src/main.cc: In function ‘int main(int, char**)’:
+src/main.cc:908:17: warning: unused variable ‘successor_num’ [-Wunused-variable]
+  908 | extern uint64_t successor_num[25];
+      |                 ^~~~~~~~~~~~~
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/vmem.o src/vmem.cc
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/decode-new.o loongarch/decode-new.c
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/disasm.o loongarch/disasm.c
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/ins.o loongarch/ins.c
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/ir2.o loongarch/ir2.c
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/la_print.o loongarch/la_print.c
+g++ -Wall -O3 -std=c++17 -Ireplacement/lru -Dinitialize_replacement=repl_rreplacementDlru_initialize -Dfind_victim=repl_rreplacementDlru_victim -Dupdate_replacement_state=repl_rreplacementDlru_update -Dreplacement_final_stats=repl_rreplacementDlru_final_stats -Iinc -MMD -MP -Iloongarch  -c -o replacement/lru/lru.o replacement/lru/lru.cc
+g++ -Wall -O3 -std=c++17 -Iprefetcher/no -Dprefetcher_initialize=pref_pprefetcherDno_initialize -Dprefetcher_cache_operate=pref_pprefetcherDno_cache_operate -Dprefetcher_cache_fill=pref_pprefetcherDno_cache_fill -Dprefetcher_cycle_operate=pref_pprefetcherDno_cycle_operate -Dprefetcher_final_stats=pref_pprefetcherDno_final_stats -Dl1d_prefetcher_initialize=pref_pprefetcherDno_initialize -Dl2c_prefetcher_initialize=pref_pprefetcherDno_initialize -Dllc_prefetcher_initialize=pref_pprefetcherDno_initialize -Dl1d_prefetcher_operate=pref_pprefetcherDno_cache_operate -Dl2c_prefetcher_operate=pref_pprefetcherDno_cache_operate -Dllc_prefetcher_operate=pref_pprefetcherDno_cache_operate -Dl1d_prefetcher_cache_fill=pref_pprefetcherDno_cache_fill -Dl2c_prefetcher_cache_fill=pref_pprefetcherDno_cache_fill -Dllc_prefetcher_cache_fill=pref_pprefetcherDno_cache_fill -Dl1d_prefetcher_final_stats=pref_pprefetcherDno_final_stats -Dl2c_prefetcher_final_stats=pref_pprefetcherDno_final_stats -Dllc_prefetcher_final_stats=pref_pprefetcherDno_final_stats -Iinc -MMD -MP -Iloongarch  -c -o prefetcher/no/no.o prefetcher/no/no.cc
+g++ -Wall -O3 -std=c++17 -Iprefetcher/no_instr -Dprefetcher_initialize=pref_pprefetcherDno_instr_initialize -Dprefetcher_branch_operate=pref_pprefetcherDno_instr_branch_operate -Dprefetcher_cache_operate=pref_pprefetcherDno_instr_cache_operate -Dprefetcher_cycle_operate=pref_pprefetcherDno_instr_cycle_operate -Dprefetcher_cache_fill=pref_pprefetcherDno_instr_cache_fill -Dprefetcher_final_stats=pref_pprefetcherDno_instr_final_stats -Dl1i_prefetcher_initialize=pref_pprefetcherDno_instr_initialize -Dl1i_prefetcher_branch_operate=pref_pprefetcherDno_instr_branch_operate -Dl1i_prefetcher_cache_operate=pref_pprefetcherDno_instr_cache_operate -Dl1i_prefetcher_cycle_operate=pref_pprefetcherDno_instr_cycle_operate -Dl1i_prefetcher_cache_fill=pref_pprefetcherDno_instr_cache_fill -Dl1i_prefetcher_final_stats=pref_pprefetcherDno_instr_final_stats -Iinc -MMD -MP -Iloongarch  -c -o prefetcher/no_instr/no.o prefetcher/no_instr/no.cc
+g++ -Wall -O3 -std=c++17 -Iprefetcher/tyche -Dprefetcher_initialize=pref_pprefetcherDtyche_initialize -Dprefetcher_cache_operate=pref_pprefetcherDtyche_cache_operate -Dprefetcher_cache_fill=pref_pprefetcherDtyche_cache_fill -Dprefetcher_cycle_operate=pref_pprefetcherDtyche_cycle_operate -Dprefetcher_final_stats=pref_pprefetcherDtyche_final_stats -Dl1d_prefetcher_initialize=pref_pprefetcherDtyche_initialize -Dl2c_prefetcher_initialize=pref_pprefetcherDtyche_initialize -Dllc_prefetcher_initialize=pref_pprefetcherDtyche_initialize -Dl1d_prefetcher_operate=pref_pprefetcherDtyche_cache_operate -Dl2c_prefetcher_operate=pref_pprefetcherDtyche_cache_operate -Dllc_prefetcher_operate=pref_pprefetcherDtyche_cache_operate -Dl1d_prefetcher_cache_fill=pref_pprefetcherDtyche_cache_fill -Dl2c_prefetcher_cache_fill=pref_pprefetcherDtyche_cache_fill -Dllc_prefetcher_cache_fill=pref_pprefetcherDtyche_cache_fill -Dl1d_prefetcher_final_stats=pref_pprefetcherDtyche_final_stats -Dl2c_prefetcher_final_stats=pref_pprefetcherDtyche_final_stats -Dllc_prefetcher_final_stats=pref_pprefetcherDtyche_final_stats -Iinc -MMD -MP -Iloongarch  -c -o prefetcher/tyche/tyche.o prefetcher/tyche/tyche.cc
+g++ -Wall -O3 -std=c++17 -Iprefetcher/stride_l2c -Dprefetcher_initialize=pref_pprefetcherDstride_l2c_initialize -Dprefetcher_cache_operate=pref_pprefetcherDstride_l2c_cache_operate -Dprefetcher_cache_fill=pref_pprefetcherDstride_l2c_cache_fill -Dprefetcher_cycle_operate=pref_pprefetcherDstride_l2c_cycle_operate -Dprefetcher_final_stats=pref_pprefetcherDstride_l2c_final_stats -Dl1d_prefetcher_initialize=pref_pprefetcherDstride_l2c_initialize -Dl2c_prefetcher_initialize=pref_pprefetcherDstride_l2c_initialize -Dllc_prefetcher_initialize=pref_pprefetcherDstride_l2c_initialize -Dl1d_prefetcher_operate=pref_pprefetcherDstride_l2c_cache_operate -Dl2c_prefetcher_operate=pref_pprefetcherDstride_l2c_cache_operate -Dllc_prefetcher_operate=pref_pprefetcherDstride_l2c_cache_operate -Dl1d_prefetcher_cache_fill=pref_pprefetcherDstride_l2c_cache_fill -Dl2c_prefetcher_cache_fill=pref_pprefetcherDstride_l2c_cache_fill -Dllc_prefetcher_cache_fill=pref_pprefetcherDstride_l2c_cache_fill -Dl1d_prefetcher_final_stats=pref_pprefetcherDstride_l2c_final_stats -Dl2c_prefetcher_final_stats=pref_pprefetcherDstride_l2c_final_stats -Dllc_prefetcher_final_stats=pref_pprefetcherDstride_l2c_final_stats -Iinc -MMD -MP -Iloongarch  -c -o prefetcher/stride_l2c/stride_l2c.o prefetcher/stride_l2c/stride_l2c.cc
+g++ -Wall -O3 -std=c++17 -Ibranch/tage-sc-l -Dinitialize_branch_predictor=bpred_bbranchDtageHscHl_initialize -Dlast_branch_result=bpred_bbranchDtageHscHl_last_result -Dpredict_branch=bpred_bbranchDtageHscHl_predict -Iinc -MMD -MP -Iloongarch  -c -o branch/tage-sc-l/tage-sc-l.o branch/tage-sc-l/tage-sc-l.cc
+g++ -Wall -O3 -std=c++17 -Ibtb/basic_btb -Dinitialize_btb=btb_bbtbDbasic_btb_initialize -Dupdate_btb=btb_bbtbDbasic_btb_update -Dbtb_prediction=btb_bbtbDbasic_btb_predict -Iinc -MMD -MP -Iloongarch  -c -o btb/basic_btb/basic_btb.o btb/basic_btb/basic_btb.cc
+ar -rcs obj/repl_rreplacementDlru.a replacement/lru/lru.o
+ar -rcs obj/pref_pprefetcherDno.a prefetcher/no/no.o
+ar -rcs obj/pref_pprefetcherDno_instr.a prefetcher/no_instr/no.o
+ar -rcs obj/pref_pprefetcherDstride_l2c.a prefetcher/stride_l2c/stride_l2c.o
+ar -rcs obj/pref_pprefetcherDtyche.a prefetcher/tyche/tyche.o
+ar -rcs obj/btb_bbtbDbasic_btb.a btb/basic_btb/basic_btb.o
+ar -rcs obj/bpred_bbranchDtageHscHl.a branch/tage-sc-l/tage-sc-l.o
+g++  -o bin/champsim src/cache.o src/core_inst.o src/dram_controller.o src/main.o src/memory_data.o src/ooo_cpu.o src/pref_utils.o src/ptw.o src/regfile.o src/tracereader.o src/vmem.o loongarch/decode-new.o loongarch/disasm.o loongarch/ins.o loongarch/ir2.o loongarch/la_print.o obj/repl_rreplacementDlru.a obj/pref_pprefetcherDno.a obj/pref_pprefetcherDno_instr.a obj/pref_pprefetcherDtyche.a obj/pref_pprefetcherDstride_l2c.a obj/bpred_bbranchDtageHscHl.a obj/btb_bbtbDbasic_btb.a 
+rm -f inc/champsim_constants.h
+rm -f src/core_inst.cc
+rm -f inc/cache_modules.inc
+rm -f inc/ooo_cpu_modules.inc
+find . -name \*.o -delete
+find . -name \*.d -delete
+rm -f -r obj
+find replacement/lru -name \*.o -delete
+find replacement/lru -name \*.d -delete
+find prefetcher/no -name \*.o -delete
+find prefetcher/no -name \*.d -delete
+find prefetcher/no_instr -name \*.o -delete
+find prefetcher/no_instr -name \*.d -delete
+find prefetcher/tyche -name \*.o -delete
+find prefetcher/tyche -name \*.d -delete
+find prefetcher/stride_l2c -name \*.o -delete
+find prefetcher/stride_l2c -name \*.d -delete
+find branch/tage-sc-l -name \*.o -delete
+find branch/tage-sc-l -name \*.d -delete
+find btb/basic_btb -name \*.o -delete
+find btb/basic_btb -name \*.d -delete
+/home/muneeb/repos/IndirectMemoryPrefetching/Tyche-Artifact/./config.sh:723: SyntaxWarning: invalid escape sequence '\*'
+  wfp.write('\t find . -name \*.o -delete\n\t find . -name \*.d -delete\n\t $(RM) -r obj\n\n')
+/home/muneeb/repos/IndirectMemoryPrefetching/Tyche-Artifact/./config.sh:725: SyntaxWarning: invalid escape sequence '\*'
+  wfp.write('\t find {0} -name \*.o -delete\n\t find {0} -name \*.d -delete\n'.format(*v))
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/cache.o src/cache.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/core_inst.o src/core_inst.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/dram_controller.o src/dram_controller.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/main.o src/main.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/memory_data.o src/memory_data.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/ooo_cpu.o src/ooo_cpu.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/pref_utils.o src/pref_utils.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/ptw.o src/ptw.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/regfile.o src/regfile.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/tracereader.o src/tracereader.cc
+src/main.cc: In function ‘int main(int, char**)’:
+src/main.cc:908:17: warning: unused variable ‘successor_num’ [-Wunused-variable]
+  908 | extern uint64_t successor_num[25];
+      |                 ^~~~~~~~~~~~~
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/vmem.o src/vmem.cc
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/decode-new.o loongarch/decode-new.c
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/disasm.o loongarch/disasm.c
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/ins.o loongarch/ins.c
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/ir2.o loongarch/ir2.c
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/la_print.o loongarch/la_print.c
+g++ -Wall -O3 -std=c++17 -Ireplacement/lru -Dinitialize_replacement=repl_rreplacementDlru_initialize -Dfind_victim=repl_rreplacementDlru_victim -Dupdate_replacement_state=repl_rreplacementDlru_update -Dreplacement_final_stats=repl_rreplacementDlru_final_stats -Iinc -MMD -MP -Iloongarch  -c -o replacement/lru/lru.o replacement/lru/lru.cc
+g++ -Wall -O3 -std=c++17 -Iprefetcher/no -Dprefetcher_initialize=pref_pprefetcherDno_initialize -Dprefetcher_cache_operate=pref_pprefetcherDno_cache_operate -Dprefetcher_cache_fill=pref_pprefetcherDno_cache_fill -Dprefetcher_cycle_operate=pref_pprefetcherDno_cycle_operate -Dprefetcher_final_stats=pref_pprefetcherDno_final_stats -Dl1d_prefetcher_initialize=pref_pprefetcherDno_initialize -Dl2c_prefetcher_initialize=pref_pprefetcherDno_initialize -Dllc_prefetcher_initialize=pref_pprefetcherDno_initialize -Dl1d_prefetcher_operate=pref_pprefetcherDno_cache_operate -Dl2c_prefetcher_operate=pref_pprefetcherDno_cache_operate -Dllc_prefetcher_operate=pref_pprefetcherDno_cache_operate -Dl1d_prefetcher_cache_fill=pref_pprefetcherDno_cache_fill -Dl2c_prefetcher_cache_fill=pref_pprefetcherDno_cache_fill -Dllc_prefetcher_cache_fill=pref_pprefetcherDno_cache_fill -Dl1d_prefetcher_final_stats=pref_pprefetcherDno_final_stats -Dl2c_prefetcher_final_stats=pref_pprefetcherDno_final_stats -Dllc_prefetcher_final_stats=pref_pprefetcherDno_final_stats -Iinc -MMD -MP -Iloongarch  -c -o prefetcher/no/no.o prefetcher/no/no.cc
+g++ -Wall -O3 -std=c++17 -Iprefetcher/no_instr -Dprefetcher_initialize=pref_pprefetcherDno_instr_initialize -Dprefetcher_branch_operate=pref_pprefetcherDno_instr_branch_operate -Dprefetcher_cache_operate=pref_pprefetcherDno_instr_cache_operate -Dprefetcher_cycle_operate=pref_pprefetcherDno_instr_cycle_operate -Dprefetcher_cache_fill=pref_pprefetcherDno_instr_cache_fill -Dprefetcher_final_stats=pref_pprefetcherDno_instr_final_stats -Dl1i_prefetcher_initialize=pref_pprefetcherDno_instr_initialize -Dl1i_prefetcher_branch_operate=pref_pprefetcherDno_instr_branch_operate -Dl1i_prefetcher_cache_operate=pref_pprefetcherDno_instr_cache_operate -Dl1i_prefetcher_cycle_operate=pref_pprefetcherDno_instr_cycle_operate -Dl1i_prefetcher_cache_fill=pref_pprefetcherDno_instr_cache_fill -Dl1i_prefetcher_final_stats=pref_pprefetcherDno_instr_final_stats -Iinc -MMD -MP -Iloongarch  -c -o prefetcher/no_instr/no.o prefetcher/no_instr/no.cc
+g++ -Wall -O3 -std=c++17 -Iprefetcher/imp -Dprefetcher_initialize=pref_pprefetcherDimp_initialize -Dprefetcher_cache_operate=pref_pprefetcherDimp_cache_operate -Dprefetcher_cache_fill=pref_pprefetcherDimp_cache_fill -Dprefetcher_cycle_operate=pref_pprefetcherDimp_cycle_operate -Dprefetcher_final_stats=pref_pprefetcherDimp_final_stats -Dl1d_prefetcher_initialize=pref_pprefetcherDimp_initialize -Dl2c_prefetcher_initialize=pref_pprefetcherDimp_initialize -Dllc_prefetcher_initialize=pref_pprefetcherDimp_initialize -Dl1d_prefetcher_operate=pref_pprefetcherDimp_cache_operate -Dl2c_prefetcher_operate=pref_pprefetcherDimp_cache_operate -Dllc_prefetcher_operate=pref_pprefetcherDimp_cache_operate -Dl1d_prefetcher_cache_fill=pref_pprefetcherDimp_cache_fill -Dl2c_prefetcher_cache_fill=pref_pprefetcherDimp_cache_fill -Dllc_prefetcher_cache_fill=pref_pprefetcherDimp_cache_fill -Dl1d_prefetcher_final_stats=pref_pprefetcherDimp_final_stats -Dl2c_prefetcher_final_stats=pref_pprefetcherDimp_final_stats -Dllc_prefetcher_final_stats=pref_pprefetcherDimp_final_stats -Iinc -MMD -MP -Iloongarch  -c -o prefetcher/imp/imp.o prefetcher/imp/imp.cc
+g++ -Wall -O3 -std=c++17 -Iprefetcher/stride_l2c -Dprefetcher_initialize=pref_pprefetcherDstride_l2c_initialize -Dprefetcher_cache_operate=pref_pprefetcherDstride_l2c_cache_operate -Dprefetcher_cache_fill=pref_pprefetcherDstride_l2c_cache_fill -Dprefetcher_cycle_operate=pref_pprefetcherDstride_l2c_cycle_operate -Dprefetcher_final_stats=pref_pprefetcherDstride_l2c_final_stats -Dl1d_prefetcher_initialize=pref_pprefetcherDstride_l2c_initialize -Dl2c_prefetcher_initialize=pref_pprefetcherDstride_l2c_initialize -Dllc_prefetcher_initialize=pref_pprefetcherDstride_l2c_initialize -Dl1d_prefetcher_operate=pref_pprefetcherDstride_l2c_cache_operate -Dl2c_prefetcher_operate=pref_pprefetcherDstride_l2c_cache_operate -Dllc_prefetcher_operate=pref_pprefetcherDstride_l2c_cache_operate -Dl1d_prefetcher_cache_fill=pref_pprefetcherDstride_l2c_cache_fill -Dl2c_prefetcher_cache_fill=pref_pprefetcherDstride_l2c_cache_fill -Dllc_prefetcher_cache_fill=pref_pprefetcherDstride_l2c_cache_fill -Dl1d_prefetcher_final_stats=pref_pprefetcherDstride_l2c_final_stats -Dl2c_prefetcher_final_stats=pref_pprefetcherDstride_l2c_final_stats -Dllc_prefetcher_final_stats=pref_pprefetcherDstride_l2c_final_stats -Iinc -MMD -MP -Iloongarch  -c -o prefetcher/stride_l2c/stride_l2c.o prefetcher/stride_l2c/stride_l2c.cc
+g++ -Wall -O3 -std=c++17 -Ibranch/tage-sc-l -Dinitialize_branch_predictor=bpred_bbranchDtageHscHl_initialize -Dlast_branch_result=bpred_bbranchDtageHscHl_last_result -Dpredict_branch=bpred_bbranchDtageHscHl_predict -Iinc -MMD -MP -Iloongarch  -c -o branch/tage-sc-l/tage-sc-l.o branch/tage-sc-l/tage-sc-l.cc
+g++ -Wall -O3 -std=c++17 -Ibtb/basic_btb -Dinitialize_btb=btb_bbtbDbasic_btb_initialize -Dupdate_btb=btb_bbtbDbasic_btb_update -Dbtb_prediction=btb_bbtbDbasic_btb_predict -Iinc -MMD -MP -Iloongarch  -c -o btb/basic_btb/basic_btb.o btb/basic_btb/basic_btb.cc
+ar -rcs obj/pref_pprefetcherDno.a prefetcher/no/no.o
+ar -rcs obj/pref_pprefetcherDno_instr.a prefetcher/no_instr/no.o
+ar -rcs obj/repl_rreplacementDlru.a replacement/lru/lru.o
+ar -rcs obj/pref_pprefetcherDstride_l2c.a prefetcher/stride_l2c/stride_l2c.o
+ar -rcs obj/pref_pprefetcherDimp.a prefetcher/imp/imp.o
+ar -rcs obj/btb_bbtbDbasic_btb.a btb/basic_btb/basic_btb.o
+ar -rcs obj/bpred_bbranchDtageHscHl.a branch/tage-sc-l/tage-sc-l.o
+g++  -o bin/champsim src/cache.o src/core_inst.o src/dram_controller.o src/main.o src/memory_data.o src/ooo_cpu.o src/pref_utils.o src/ptw.o src/regfile.o src/tracereader.o src/vmem.o loongarch/decode-new.o loongarch/disasm.o loongarch/ins.o loongarch/ir2.o loongarch/la_print.o obj/repl_rreplacementDlru.a obj/pref_pprefetcherDno.a obj/pref_pprefetcherDno_instr.a obj/pref_pprefetcherDimp.a obj/pref_pprefetcherDstride_l2c.a obj/bpred_bbranchDtageHscHl.a obj/btb_bbtbDbasic_btb.a 
+rm -f inc/champsim_constants.h
+rm -f src/core_inst.cc
+rm -f inc/cache_modules.inc
+rm -f inc/ooo_cpu_modules.inc
+find . -name \*.o -delete
+find . -name \*.d -delete
+rm -f -r obj
+find replacement/lru -name \*.o -delete
+find replacement/lru -name \*.d -delete
+find prefetcher/no -name \*.o -delete
+find prefetcher/no -name \*.d -delete
+find prefetcher/no_instr -name \*.o -delete
+find prefetcher/no_instr -name \*.d -delete
+find prefetcher/imp -name \*.o -delete
+find prefetcher/imp -name \*.d -delete
+find prefetcher/stride_l2c -name \*.o -delete
+find prefetcher/stride_l2c -name \*.d -delete
+find branch/tage-sc-l -name \*.o -delete
+find branch/tage-sc-l -name \*.d -delete
+find btb/basic_btb -name \*.o -delete
+find btb/basic_btb -name \*.d -delete
+/home/muneeb/repos/IndirectMemoryPrefetching/Tyche-Artifact/./config.sh:723: SyntaxWarning: invalid escape sequence '\*'
+  wfp.write('\t find . -name \*.o -delete\n\t find . -name \*.d -delete\n\t $(RM) -r obj\n\n')
+/home/muneeb/repos/IndirectMemoryPrefetching/Tyche-Artifact/./config.sh:725: SyntaxWarning: invalid escape sequence '\*'
+  wfp.write('\t find {0} -name \*.o -delete\n\t find {0} -name \*.d -delete\n'.format(*v))
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/cache.o src/cache.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/core_inst.o src/core_inst.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/dram_controller.o src/dram_controller.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/main.o src/main.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/memory_data.o src/memory_data.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/ooo_cpu.o src/ooo_cpu.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/pref_utils.o src/pref_utils.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/ptw.o src/ptw.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/regfile.o src/regfile.cc
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/tracereader.o src/tracereader.cc
+src/main.cc: In function ‘int main(int, char**)’:
+src/main.cc:908:17: warning: unused variable ‘successor_num’ [-Wunused-variable]
+  908 | extern uint64_t successor_num[25];
+      |                 ^~~~~~~~~~~~~
+g++ -Wall -O3 -std=c++17 -Iinc -MMD -MP -Iloongarch  -c -o src/vmem.o src/vmem.cc
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/decode-new.o loongarch/decode-new.c
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/disasm.o loongarch/disasm.c
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/ins.o loongarch/ins.c
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/ir2.o loongarch/ir2.c
+gcc -Wall -O3 -std=gnu99 -Iinc -MMD -MP -Iloongarch  -c -o loongarch/la_print.o loongarch/la_print.c
+g++ -Wall -O3 -std=c++17 -Ireplacement/lru -Dinitialize_replacement=repl_rreplacementDlru_initialize -Dfind_victim=repl_rreplacementDlru_victim -Dupdate_replacement_state=repl_rreplacementDlru_update -Dreplacement_final_stats=repl_rreplacementDlru_final_stats -Iinc -MMD -MP -Iloongarch  -c -o replacement/lru/lru.o replacement/lru/lru.cc
+g++ -Wall -O3 -std=c++17 -Iprefetcher/no -Dprefetcher_initialize=pref_pprefetcherDno_initialize -Dprefetcher_cache_operate=pref_pprefetcherDno_cache_operate -Dprefetcher_cache_fill=pref_pprefetcherDno_cache_fill -Dprefetcher_cycle_operate=pref_pprefetcherDno_cycle_operate -Dprefetcher_final_stats=pref_pprefetcherDno_final_stats -Dl1d_prefetcher_initialize=pref_pprefetcherDno_initialize -Dl2c_prefetcher_initialize=pref_pprefetcherDno_initialize -Dllc_prefetcher_initialize=pref_pprefetcherDno_initialize -Dl1d_prefetcher_operate=pref_pprefetcherDno_cache_operate -Dl2c_prefetcher_operate=pref_pprefetcherDno_cache_operate -Dllc_prefetcher_operate=pref_pprefetcherDno_cache_operate -Dl1d_prefetcher_cache_fill=pref_pprefetcherDno_cache_fill -Dl2c_prefetcher_cache_fill=pref_pprefetcherDno_cache_fill -Dllc_prefetcher_cache_fill=pref_pprefetcherDno_cache_fill -Dl1d_prefetcher_final_stats=pref_pprefetcherDno_final_stats -Dl2c_prefetcher_final_stats=pref_pprefetcherDno_final_stats -Dllc_prefetcher_final_stats=pref_pprefetcherDno_final_stats -Iinc -MMD -MP -Iloongarch  -c -o prefetcher/no/no.o prefetcher/no/no.cc
+g++ -Wall -O3 -std=c++17 -Iprefetcher/no_instr -Dprefetcher_initialize=pref_pprefetcherDno_instr_initialize -Dprefetcher_branch_operate=pref_pprefetcherDno_instr_branch_operate -Dprefetcher_cache_operate=pref_pprefetcherDno_instr_cache_operate -Dprefetcher_cycle_operate=pref_pprefetcherDno_instr_cycle_operate -Dprefetcher_cache_fill=pref_pprefetcherDno_instr_cache_fill -Dprefetcher_final_stats=pref_pprefetcherDno_instr_final_stats -Dl1i_prefetcher_initialize=pref_pprefetcherDno_instr_initialize -Dl1i_prefetcher_branch_operate=pref_pprefetcherDno_instr_branch_operate -Dl1i_prefetcher_cache_operate=pref_pprefetcherDno_instr_cache_operate -Dl1i_prefetcher_cycle_operate=pref_pprefetcherDno_instr_cycle_operate -Dl1i_prefetcher_cache_fill=pref_pprefetcherDno_instr_cache_fill -Dl1i_prefetcher_final_stats=pref_pprefetcherDno_instr_final_stats -Iinc -MMD -MP -Iloongarch  -c -o prefetcher/no_instr/no.o prefetcher/no_instr/no.cc
+g++ -Wall -O3 -std=c++17 -Iprefetcher/stride_l2c -Dprefetcher_initialize=pref_pprefetcherDstride_l2c_initialize -Dprefetcher_cache_operate=pref_pprefetcherDstride_l2c_cache_operate -Dprefetcher_cache_fill=pref_pprefetcherDstride_l2c_cache_fill -Dprefetcher_cycle_operate=pref_pprefetcherDstride_l2c_cycle_operate -Dprefetcher_final_stats=pref_pprefetcherDstride_l2c_final_stats -Dl1d_prefetcher_initialize=pref_pprefetcherDstride_l2c_initialize -Dl2c_prefetcher_initialize=pref_pprefetcherDstride_l2c_initialize -Dllc_prefetcher_initialize=pref_pprefetcherDstride_l2c_initialize -Dl1d_prefetcher_operate=pref_pprefetcherDstride_l2c_cache_operate -Dl2c_prefetcher_operate=pref_pprefetcherDstride_l2c_cache_operate -Dllc_prefetcher_operate=pref_pprefetcherDstride_l2c_cache_operate -Dl1d_prefetcher_cache_fill=pref_pprefetcherDstride_l2c_cache_fill -Dl2c_prefetcher_cache_fill=pref_pprefetcherDstride_l2c_cache_fill -Dllc_prefetcher_cache_fill=pref_pprefetcherDstride_l2c_cache_fill -Dl1d_prefetcher_final_stats=pref_pprefetcherDstride_l2c_final_stats -Dl2c_prefetcher_final_stats=pref_pprefetcherDstride_l2c_final_stats -Dllc_prefetcher_final_stats=pref_pprefetcherDstride_l2c_final_stats -Iinc -MMD -MP -Iloongarch  -c -o prefetcher/stride_l2c/stride_l2c.o prefetcher/stride_l2c/stride_l2c.cc
+g++ -Wall -O3 -std=c++17 -Ibranch/tage-sc-l -Dinitialize_branch_predictor=bpred_bbranchDtageHscHl_initialize -Dlast_branch_result=bpred_bbranchDtageHscHl_last_result -Dpredict_branch=bpred_bbranchDtageHscHl_predict -Iinc -MMD -MP -Iloongarch  -c -o branch/tage-sc-l/tage-sc-l.o branch/tage-sc-l/tage-sc-l.cc
+g++ -Wall -O3 -std=c++17 -Ibtb/basic_btb -Dinitialize_btb=btb_bbtbDbasic_btb_initialize -Dupdate_btb=btb_bbtbDbasic_btb_update -Dbtb_prediction=btb_bbtbDbasic_btb_predict -Iinc -MMD -MP -Iloongarch  -c -o btb/basic_btb/basic_btb.o btb/basic_btb/basic_btb.cc
+ar -rcs obj/pref_pprefetcherDno.a prefetcher/no/no.o
+ar -rcs obj/pref_pprefetcherDno_instr.a prefetcher/no_instr/no.o
+ar -rcs obj/repl_rreplacementDlru.a replacement/lru/lru.o
+ar -rcs obj/pref_pprefetcherDstride_l2c.a prefetcher/stride_l2c/stride_l2c.o
+ar -rcs obj/btb_bbtbDbasic_btb.a btb/basic_btb/basic_btb.o
+ar -rcs obj/bpred_bbranchDtageHscHl.a branch/tage-sc-l/tage-sc-l.o
+g++  -o bin/champsim src/cache.o src/core_inst.o src/dram_controller.o src/main.o src/memory_data.o src/ooo_cpu.o src/pref_utils.o src/ptw.o src/regfile.o src/tracereader.o src/vmem.o loongarch/decode-new.o loongarch/disasm.o loongarch/ins.o loongarch/ir2.o loongarch/la_print.o obj/repl_rreplacementDlru.a obj/pref_pprefetcherDno.a obj/pref_pprefetcherDno_instr.a obj/pref_pprefetcherDstride_l2c.a obj/bpred_bbranchDtageHscHl.a obj/btb_bbtbDbasic_btb.a 
+
+==================================================
+   Building with L1D Prefetcher: tyche
+==================================================
+Running: make clean
+Running: ./config.sh champsim_config.json
+Running: make -j8
+--> Running trace: champsim.trace_193000000000.champsim.trace.xz
+    Finished. Output saved to results_tyche_NAS_cg_b_out_champsim.trace_193000000000.champsim.trace.xz.txt
+
+==================================================
+   Building with L1D Prefetcher: imp
+==================================================
+Running: make clean
+Running: ./config.sh champsim_config.json
+Running: make -j8
+--> Running trace: champsim.trace_193000000000.champsim.trace.xz
+    Finished. Output saved to results_imp_NAS_cg_b_out_champsim.trace_193000000000.champsim.trace.xz.txt
+
+==================================================
+   Building with L1D Prefetcher: no
+==================================================
+Running: make clean
+Running: ./config.sh champsim_config.json
+Running: make -j8
+--> Running trace: champsim.trace_193000000000.champsim.trace.xz
+    Finished. Output saved to results_no_NAS_cg_b_out_champsim.trace_193000000000.champsim.trace.xz.txt
+
+All experiments completed.

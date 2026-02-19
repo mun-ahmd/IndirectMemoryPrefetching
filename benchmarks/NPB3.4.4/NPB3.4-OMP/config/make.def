@@ -1,41 +1,53 @@
 #---------------------------------------------------------------------------
 # ARCHITECTURE SELECTOR
-# Set ARCH to 'LOONGARCH' for cross-compilation
-# Set ARCH to 'NATIVE' for local gcc/gfortran
+# Set ARCH to 'LOONGARCH_GCC' for old cross-compilation
+# Set ARCH to 'LOONGARCH_LLVM' for the Prodigy Pass pipeline
 #---------------------------------------------------------------------------
-ARCH = LOONGARCH
+ARCH = LOONGARCH_LLVM
+
+# --- SET THESE PATHS FOR YOUR SYSTEM ---
+PRODIGY_PASS = /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/prefetcher/LLVMPrefetcher.so
+PRODIGY_RT_DIR = /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/runtime/qemu
+# Clang needs to know where your cross-GCC is to find standard libraries
+GCC_TOOLCHAIN = /home/muneeb/repos/IndirectMemoryPrefetching/loongarch-tools/
 
 #---------------------------------------------------------------------------
 # CONDITIONALS BASED ON ARCH
 #---------------------------------------------------------------------------
-ifeq ($(ARCH), LOONGARCH)
-    # LoongArch64 Cross-Compiler Setup
+ifeq ($(ARCH), LOONGARCH_LLVM)
+    # LLVM 18 Cross-Compiler Setup
+    CC         = clang-18
+    FC         = flang-new-18
+    OPT        = opt-18
+    TARGET_FLG = --target=loongarch64-unknown-linux-gnu
+    OPT_FLAGS  = -load $(PRODIGY_PASS) -prefetcher -prefetcher-codegen
+    # STATIC_FLG = -static
+else ifeq ($(ARCH), LOONGARCH_GCC)
+    # Old GCC Setup
     CC         = loongarch64-unknown-linux-gnu-gcc
     FC         = loongarch64-unknown-linux-gnu-gfortran
-    STATIC_FLG = -static-libgcc -static-libgfortran
-else
-    # Regular Local GCC Setup
-    CC         = gcc
-    FC         = gfortran
-    STATIC_FLG =
+    TARGET_FLG =
+    PASS_FLG   =
+    # STATIC_FLG = -static-libgcc -static-libgfortran
 endif
 
 #---------------------------------------------------------------------------
 # Parallel Fortran
 #---------------------------------------------------------------------------
 FLINK      = $(FC)
-F_LIB      =
+F_LIB      = -L$(PRODIGY_RT_DIR) -lprodigy_rt
 F_INC      =
-FFLAGS     = -O3 -fopenmp
+FFLAGS     = -O3 -fopenmp $(TARGET_FLG)
 FLINKFLAGS = $(FFLAGS) $(STATIC_FLG)
 
 #---------------------------------------------------------------------------
 # Parallel C
 #---------------------------------------------------------------------------
 CLINK      = $(CC)
-C_LIB      = -lm
+# Add your runtime library to C as well, just in case C files have hints
+C_LIB      = -lm -L$(PRODIGY_RT_DIR) -lprefetcher_qemu_rt
 C_INC      =
-CFLAGS     = -O3 -fopenmp -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE
+CFLAGS     = -O3 -fopenmp -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE $(TARGET_FLG) -fno-discard-value-names
 CLINKFLAGS = $(CFLAGS) $(STATIC_FLG)
 
 #---------------------------------------------------------------------------

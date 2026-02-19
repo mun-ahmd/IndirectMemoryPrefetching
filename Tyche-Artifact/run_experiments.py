@@ -5,10 +5,10 @@ import os
 
 # --- Configuration ---
 PREFETCHER_OPTIONS = [
-    #    "tyche",
-    #   "imp",
+    "tyche",
+    "imp",
     #    "va_ampm_lite",
-    "ipcp_l1d",
+    # "ipcp_l1d",
     "no",
 ]
 
@@ -73,9 +73,9 @@ for prefetcher in PREFETCHER_OPTIONS:
         sim_cmd = [
             BINARY_PATH,
             "--warmup_instructions",
-            "2000000",
+            "20000000",
             "--simulation_instructions",
-            "10000000",
+            "100000000",
             "-loongarch",
             trace,
         ]

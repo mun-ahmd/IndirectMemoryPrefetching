@@ -79,6 +79,11 @@ struct loongarch_instr {
 
     unsigned char destination_registers[NUM_INSTR_DESTINATIONS_LOONGARCH]; // output registers
     unsigned char source_registers[NUM_INSTR_SOURCES_LOONGARCH];           // input registers
+    
+    // Prodigy hint fields (added)
+    unsigned char has_prodigy_hint;  // 0 = no hint, non-zero = hint present
+    unsigned char prodigy_cmd;       // PRODIGY_CMD_* constant
+    unsigned long long int prodigy_args[6];  // Up to 6 uint64 args
 };
 
 

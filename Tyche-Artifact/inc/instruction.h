@@ -142,6 +142,11 @@ struct ooo_model_instr {
   uint64_t destination_memory[NUM_INSTR_DESTINATIONS_SPARC] = {}; // output memory
   uint64_t source_memory[NUM_INSTR_SOURCES] = {};                 // input memory
 
+  // Prodigy hint fields (added)
+  unsigned char has_prodigy_hint = 0;  // 0 = no hint, non-zero = hint present
+  unsigned char prodigy_cmd = 0;      // PRODIGY_CMD_* constant
+  uint64_t prodigy_args[6] = {};      // Up to 6 uint64 args
+
   std::array<std::vector<LSQ_ENTRY>::iterator, NUM_INSTR_SOURCES> lq_index = {};
   std::array<std::vector<LSQ_ENTRY>::iterator, NUM_INSTR_DESTINATIONS_SPARC> sq_index = {};
 
@@ -224,6 +229,11 @@ struct ooo_model_instr {
     this->branch_taken = instr.branch_taken;
     this->ret_val = instr.ret_val;
     this->inst = instr.inst;
+    
+    // Copy prodigy hint fields
+    this->has_prodigy_hint = instr.has_prodigy_hint;
+    this->prodigy_cmd = instr.prodigy_cmd;
+    std::copy(std::begin(instr.prodigy_args), std::end(instr.prodigy_args), std::begin(this->prodigy_args));
     LA_OPCODE op = get_ins_op(instr.inst);
     this->op = op;
     this->ls_size = get_load_size(op) | get_store_size(op);

@@ -14,3 +14,12 @@ uint32_t O3_CPU::prefetcher_cache_fill(uint64_t v_addr, uint32_t set, uint32_t w
 }
 
 void O3_CPU::prefetcher_final_stats() {}
+
+// Default implementation - prefetchers that want to use prodigy hints can override this
+// Note: The macro expands prefetcher_prodigy_hint to pref_pprefetcherDno_instr_prodigy_hint
+void O3_CPU::prefetcher_prodigy_hint(uint8_t cmd, uint64_t args[6]) {
+    // Default: do nothing
+    // Prefetchers that want to use prodigy hints should provide their own implementation
+    (void)cmd;
+    (void)args;
+}

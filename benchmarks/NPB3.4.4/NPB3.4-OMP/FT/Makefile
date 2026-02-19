@@ -35,6 +35,6 @@ ft.o:		ft.f90  ft_data.o
 ft_data.o:	ft_data.f90  npbparams.h blk_par.h
 
 clean:
-	- rm -f *.o *~ mputil* *.mod
+	- rm -f *.o *~ mputil* *.mod *.ll
 	- rm -f ft npbparams.h core blk_par.h
 	- if [ -d rii_files ]; then rm -r rii_files; fi

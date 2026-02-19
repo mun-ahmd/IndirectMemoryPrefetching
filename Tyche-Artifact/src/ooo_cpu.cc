@@ -104,6 +104,18 @@ void O3_CPU::init_instruction(ooo_model_instr arch_instr)
   instrs_to_read_this_cycle--;
 
   arch_instr.instr_id = instr_unique_id;
+  
+  // Handle prodigy hints if present
+  if (arch_instr.has_prodigy_hint) {
+    // Notify instruction prefetcher
+    impl_prefetcher_prodigy_hint(arch_instr.prodigy_cmd, arch_instr.prodigy_args);
+    
+    // Notify data prefetcher (L1D cache)
+    CACHE* l1d_cache = static_cast<CACHE*>(L1D_bus.lower_level);
+    if (l1d_cache) {
+      l1d_cache->notify_prodigy_hint(arch_instr.prodigy_cmd, arch_instr.prodigy_args);
+    }
+  }
 
   bool reads_sp = false;
   bool writes_sp = false;

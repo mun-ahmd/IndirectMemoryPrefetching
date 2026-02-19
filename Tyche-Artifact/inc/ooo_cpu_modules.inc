@@ -74,3 +74,9 @@ void impl_prefetcher_cycle_operate()
 
 uint32_t pref_pprefetcherDno_instr_cache_fill(uint64_t, uint32_t, uint32_t, uint8_t, uint64_t, uint32_t, uint64_t);
 void pref_pprefetcherDno_instr_final_stats();
+void pref_pprefetcherDno_instr_prodigy_hint(uint8_t, uint64_t[6]);
+void impl_prefetcher_prodigy_hint(uint8_t cmd, uint64_t args[6])
+{
+    if (ipref_type == ipref_t::pprefetcherDno_instr) return pref_pprefetcherDno_instr_prodigy_hint(cmd, args);
+    // Default: ignore hints if prefetcher doesn't implement the method
+}

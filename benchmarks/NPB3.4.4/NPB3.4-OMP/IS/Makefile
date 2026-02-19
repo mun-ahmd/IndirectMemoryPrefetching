@@ -22,6 +22,6 @@ is.o:             is.c  npbparams.h
 
 
 clean:
-	- rm -f *.o *~ mputil*
+	- rm -f *.o *~ mputil* *.ll
 	- rm -f npbparams.h core
 	- if [ -d rii_files ]; then rm -r rii_files; fi

@@ -45,6 +45,11 @@ typedef struct trace_instr_format {
 
     unsigned char destination_registers[NUM_INSTR_DESTINATIONS]; // output registers
     unsigned char source_registers[NUM_INSTR_SOURCES];           // input registers
+    
+    // Prodigy hint fields (added)
+    unsigned char has_prodigy_hint;  // 0 = no hint, non-zero = hint present
+    unsigned char prodigy_cmd;       // PRODIGY_CMD_* constant
+    unsigned long long int prodigy_args[6];  // Up to 6 uint64 args
 } trace_instr_format_t;
 
 // branch types
@@ -293,6 +298,11 @@ void fill_insn_template(trace_instr_format* insn, uint64_t pc,
     // fprintf(stderr, "%s\n", buf);
     insn->is_branch = la_inst_branch_type(la_decode);
     insn->ret_val = 0;
+    insn->has_prodigy_hint = 0;  // Initialize prodigy hint fields
+    insn->prodigy_cmd = 0;
+    for (int i = 0; i < 6; i++) {
+        insn->prodigy_args[i] = 0;
+    }
     if (la_decode.id == LA_INST_BL) {
 #ifdef QEMU_PLUGIN_HAS_ENV_PTR
         insn->ret_val = 1;
@@ -467,6 +477,40 @@ static void vcpu_mem_access(unsigned int vcpu_index, qemu_plugin_meminfo_t info,
         }
 }
 
+#define PRODIGY_SYSCALL_NR 0xDEAD
+
+static void vcpu_syscall(qemu_plugin_id_t id, unsigned int vcpu_index,
+                         int64_t num, uint64_t a1, uint64_t a2,
+                         uint64_t a3, uint64_t a4, uint64_t a5,
+                         uint64_t a6, uint64_t a7, uint64_t a8) {
+    // Only intercept prodigy syscalls
+    if (num != PRODIGY_SYSCALL_NR) {
+        return;
+    }
+    
+    // Only process if we're currently recording a trace
+    if (!has_ibar_begin || !save || saved_inst_num == 0) {
+        return;
+    }
+    
+    // Mark the current instruction record (the syscall instruction itself)
+    // with the prodigy hint data
+    trace_instr_format_t* p = trace_buffer + saved_inst_num - 1;
+    p->has_prodigy_hint = 1;
+    p->prodigy_cmd = (unsigned char)a1;  // Command ID is in a1
+    p->prodigy_args[0] = a2;
+    p->prodigy_args[1] = a3;
+    p->prodigy_args[2] = a4;
+    p->prodigy_args[3] = a5;
+    p->prodigy_args[4] = a6;
+    p->prodigy_args[5] = a7;
+    
+    if (verbose) {
+        fprintf(stderr, "prodigy syscall: cmd=%u args=[%" PRIx64 " %" PRIx64 " %" PRIx64 " %" PRIx64 " %" PRIx64 " %" PRIx64 "]\n",
+                p->prodigy_cmd, a2, a3, a4, a5, a6, a7);
+    }
+}
+
 static void tb_record(qemu_plugin_id_t id, struct qemu_plugin_tb* tb) {
     size_t insns = qemu_plugin_tb_n_insns(tb);
 
@@ -512,6 +556,7 @@ int qemu_plugin_install(qemu_plugin_id_t id, const qemu_info_t *info,
 
     has_ibar_begin = !plugin_args_get_bool_or_else(argc, argv, "check_ibar", false);
     qemu_plugin_register_vcpu_tb_trans_cb(id, tb_record);
+    qemu_plugin_register_vcpu_syscall_cb(id, vcpu_syscall);
     qemu_plugin_register_atexit_cb(id, plugin_exit, NULL);
     return 0;
 }

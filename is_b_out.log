@@ -1,0 +1,217 @@
+nohup: ignoring input
+./qemu/build/qemu-loongarch64 -R 4G -L ./loongarch-tools/target/usr/ -E LD_LIBRARY_PATH=/usr/lib64:/lib64 -E OMP_NUM_THREADS=1 -D log.txt -d plugin -plugin ./qemu_plugins/build/libbbv_ibar.so,name=traces/NAS_is_b_out,size=100000000 -- benchmarks/NPB3.4.4/NPB3.4-OMP/bin/is.B.x
+cpu 0 created
+
+
+ NAS Parallel Benchmarks (NPB3.4-OMP) - IS Benchmark
+
+ Size:  33554432  (class B)
+ Iterations:  10
+ Number of available threads:  1
+
+
+   iteration
+        1
+        2
+        3
+        4
+        5
+        6
+        7
+        8
+        9
+        10
+
+
+ IS Benchmark Completed
+ Class           =                        B
+ Size            =                 33554432
+ Iterations      =                       10
+ Time in seconds =                     5.60
+ Total threads   =                        1
+ Avail threads   =                        1
+ Mop/s total     =                    59.91
+ Mop/s/thread    =                    59.91
+ Operation type  =              keys ranked
+ Verification    =               SUCCESSFUL
+ Version         =                    3.4.4
+ Compile date    =              13 Feb 2026
+
+ Compile options:
+    CC           = (none)
+    CLINK        = $(CC)
+    C_LIB        = -lm
+    C_INC        = (none)
+    CFLAGS       = -O3 -fopenmp -D_FILE_OFFSET_BITS=64 -D_LARG...
+    CLINKFLAGS   = $(CFLAGS) $(STATIC_FLG)
+
+
+ Please send all errors/feedbacks to:
+
+ NPB Development Team
+ npb@nas.nasa.gov
+
+
+./SimPoint.3.2/bin/simpoint -maxK 5 -loadFVFile traces/NAS_is_b_out/bbv -saveSimpoints traces/NAS_is_b_out/simpoints -saveSimpointWeights traces/NAS_is_b_out/weights >/dev/null
+env TRACE_FILENAME=traces/NAS_is_b_out/champsim.trace SIMPOINT_FILE=traces/NAS_is_b_out/simpoints BB_INTERVAL=100000000 ./qemu/build/qemu-loongarch64 -R 4G -L ./loongarch-tools/target/usr/ -E LD_LIBRARY_PATH=/usr/lib64:/lib64 -E OMP_NUM_THREADS=1 -D log.txt -d plugin -plugin ./qemu_plugins/build/libchampsim_la_with_reg_simpoint.so -- benchmarks/NPB3.4.4/NPB3.4-OMP/bin/is.B.x
+sizeof(trace_instr_format):64
+188 165 164 132 0 
+save begin 0
+vma start:0000000055558000 end:000000005555c000
+unable to dump 0000000055558000
+vma start:000000005555c000 end:0000000055d5c000
+vma start:0000000055d5c000 end:0000000055d88000
+vma start:0000000055d88000 end:0000000055d8c000
+vma start:0000000055d8c000 end:0000000055d90000
+vma start:0000000055d90000 end:0000000055d94000
+vma start:00000000aaab0000 end:00000000aaab4000
+vma start:00000000aaab4000 end:00000000aaab8000
+vma start:00000000aaab8000 end:00000000aaabc000
+vma start:00000000aaabc000 end:00000000bb2bc000
+trace fini
+save begin 132
+vma start:0000000055558000 end:000000005555c000
+unable to dump 0000000055558000
+vma start:000000005555c000 end:0000000055d5c000
+vma start:0000000055d5c000 end:0000000055d88000
+vma start:0000000055d88000 end:0000000055d8c000
+vma start:0000000055d8c000 end:0000000055d90000
+vma start:0000000055d90000 end:0000000055d94000
+vma start:0000000055d94000 end:0000000055e2c000
+vma start:0000000055e2c000 end:0000000055e30000
+vma start:0000000055e30000 end:0000000055e34000
+vma start:0000000055e34000 end:0000000055e7c000
+vma start:0000000055e7c000 end:0000000055e80000
+vma start:0000000055e80000 end:0000000055e84000
+vma start:0000000055e84000 end:000000005601c000
+vma start:000000005601c000 end:0000000056020000
+vma start:0000000056020000 end:0000000056024000
+vma start:0000000056024000 end:0000000056038000
+vma start:00000000aaab0000 end:00000000aaab4000
+vma start:00000000aaab4000 end:00000000aaab8000
+vma start:00000000aaab8000 end:00000000aaabc000
+vma start:00000000aaabc000 end:00000000bb2e0000
+trace fini
+save begin 164
+vma start:0000000055558000 end:000000005555c000
+unable to dump 0000000055558000
+vma start:000000005555c000 end:0000000055d5c000
+vma start:0000000055d5c000 end:0000000055d88000
+vma start:0000000055d88000 end:0000000055d8c000
+vma start:0000000055d8c000 end:0000000055d90000
+vma start:0000000055d90000 end:0000000055d94000
+vma start:0000000055d94000 end:0000000055e2c000
+vma start:0000000055e2c000 end:0000000055e30000
+vma start:0000000055e30000 end:0000000055e34000
+vma start:0000000055e34000 end:0000000055e7c000
+vma start:0000000055e7c000 end:0000000055e80000
+vma start:0000000055e80000 end:0000000055e84000
+vma start:0000000055e84000 end:000000005601c000
+vma start:000000005601c000 end:0000000056020000
+vma start:0000000056020000 end:0000000056024000
+vma start:0000000056024000 end:0000000056038000
+vma start:00000000aaab0000 end:00000000aaab4000
+vma start:00000000aaab4000 end:00000000aaab8000
+vma start:00000000aaab8000 end:00000000aaabc000
+vma start:00000000aaabc000 end:00000000bb2e0000
+trace fini
+save begin 165
+vma start:0000000055558000 end:000000005555c000
+unable to dump 0000000055558000
+vma start:000000005555c000 end:0000000055d5c000
+vma start:0000000055d5c000 end:0000000055d88000
+vma start:0000000055d88000 end:0000000055d8c000
+vma start:0000000055d8c000 end:0000000055d90000
+vma start:0000000055d90000 end:0000000055d94000
+vma start:0000000055d94000 end:0000000055e2c000
+vma start:0000000055e2c000 end:0000000055e30000
+vma start:0000000055e30000 end:0000000055e34000
+vma start:0000000055e34000 end:0000000055e7c000
+vma start:0000000055e7c000 end:0000000055e80000
+vma start:0000000055e80000 end:0000000055e84000
+vma start:0000000055e84000 end:000000005601c000
+vma start:000000005601c000 end:0000000056020000
+vma start:0000000056020000 end:0000000056024000
+vma start:0000000056024000 end:0000000056038000
+vma start:00000000aaab0000 end:00000000aaab4000
+vma start:00000000aaab4000 end:00000000aaab8000
+vma start:00000000aaab8000 end:00000000aaabc000
+vma start:00000000aaabc000 end:00000000bb2e0000
+trace fini
+save begin 188
+vma start:0000000055558000 end:000000005555c000
+unable to dump 0000000055558000
+vma start:000000005555c000 end:0000000055d5c000
+vma start:0000000055d5c000 end:0000000055d88000
+vma start:0000000055d88000 end:0000000055d8c000
+vma start:0000000055d8c000 end:0000000055d90000
+vma start:0000000055d90000 end:0000000055d94000
+vma start:0000000055d94000 end:0000000055e2c000
+vma start:0000000055e2c000 end:0000000055e30000
+vma start:0000000055e30000 end:0000000055e34000
+vma start:0000000055e34000 end:0000000055e7c000
+vma start:0000000055e7c000 end:0000000055e80000
+vma start:0000000055e80000 end:0000000055e84000
+vma start:0000000055e84000 end:000000005601c000
+vma start:000000005601c000 end:0000000056020000
+vma start:0000000056020000 end:0000000056024000
+vma start:0000000056024000 end:0000000056038000
+vma start:00000000aaab0000 end:00000000aaab4000
+vma start:00000000aaab4000 end:00000000aaab8000
+vma start:00000000aaab8000 end:00000000aaabc000
+vma start:00000000aaabc000 end:00000000bb2e0000
+trace fini
+
+
+ NAS Parallel Benchmarks (NPB3.4-OMP) - IS Benchmark
+
+ Size:  33554432  (class B)
+ Iterations:  10
+ Number of available threads:  1
+
+
+   iteration
+        1
+        2
+        3
+        4
+        5
+        6
+        7
+        8
+        9
+        10
+
+
+ IS Benchmark Completed
+ Class           =                        B
+ Size            =                 33554432
+ Iterations      =                       10
+ Time in seconds =                    81.17
+ Total threads   =                        1
+ Avail threads   =                        1
+ Mop/s total     =                     4.13
+ Mop/s/thread    =                     4.13
+ Operation type  =              keys ranked
+ Verification    =               SUCCESSFUL
+ Version         =                    3.4.4
+ Compile date    =              13 Feb 2026
+
+ Compile options:
+    CC           = (none)
+    CLINK        = $(CC)
+    C_LIB        = -lm
+    C_INC        = (none)
+    CFLAGS       = -O3 -fopenmp -D_FILE_OFFSET_BITS=64 -D_LARG...
+    CLINKFLAGS   = $(CFLAGS) $(STATIC_FLG)
+
+
+ Please send all errors/feedbacks to:
+
+ NPB Development Team
+ npb@nas.nasa.gov
+
+
+plugin fini, trace fini
+xz -v -T0 traces/NAS_is_b_out/champsim.trace_16500000000.champsim.trace
+traces/NAS_is_b_out/champsim.trace_16500000000.champsim.trace: 138.8 MiB / 6,103.5 MiB = 0.023, 12 MiB/s, 8:27

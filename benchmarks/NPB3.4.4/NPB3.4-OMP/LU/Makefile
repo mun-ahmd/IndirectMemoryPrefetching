@@ -56,5 +56,5 @@ syncs.o:	syncs.f90 lu_data.o
 lu_data.o:	lu_data.f90 npbparams.h
 
 clean:
-	- rm -f *.o *~ *.mod npbparams.h
+	- rm -f *.o *~ *.mod *.ll npbparams.h
 	- if [ -d rii_files ]; then rm -r rii_files; fi

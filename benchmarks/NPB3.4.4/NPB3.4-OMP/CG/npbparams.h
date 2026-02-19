@@ -16,20 +16,20 @@
         logical  convertdouble
         parameter (convertdouble = .false.)
         character compiletime*11
-        parameter (compiletime='10 Feb 2026')
+        parameter (compiletime='19 Feb 2026')
         character npbversion*5
         parameter (npbversion='3.4.4')
         character cs1*6
         parameter (cs1='(none)')
-        character cs2*5
-        parameter (cs2='$(FC)')
-        character cs3*6
-        parameter (cs3='(none)')
+        character cs2*38
+        parameter (cs2='PATH=$(GCC_TOOLCHAIN)/bin:$$PATH $(FC)')
+        character cs3*40
+        parameter (cs3='-L$(PRODIGY_RT_DIR) -lprefetcher_qemu_rt')
         character cs4*6
         parameter (cs4='(none)')
-        character cs5*12
-        parameter (cs5='-O3 -fopenmp')
-        character cs6*23
-        parameter (cs6='$(FFLAGS) $(STATIC_FLG)')
+        character cs5*26
+        parameter (cs5='-O3 -fopenmp $(TARGET_FLG)')
+        character cs6*46
+        parameter (cs6='$(FFLAGS) -Wl,--sysroot=$(GCC_TOOLCHAIN)/ta...')
         character cs7*6
         parameter (cs7='randi8')

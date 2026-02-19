@@ -27,7 +27,7 @@ rbt.o:      rbt.c adcc.h adc.h rbt.h macrodef.h npbparams.h
 jobcntl.o:  jobcntl.c adcc.h adc.h macrodef.h npbparams.h
 
 clean:
-	- rm -f *.o 
+	- rm -f *.o *.ll
 	- rm -f npbparams.h core
 	- rm -f {../,}ADC.{logf,view,dat,viewsz,groupby,chunks}.* 
 

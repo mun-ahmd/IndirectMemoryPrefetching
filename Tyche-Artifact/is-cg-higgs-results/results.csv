@@ -1,0 +1,11 @@
+Task,Prefetcher,IPC,L1D_Prefetch_Requests,L1D_Prefetch_Hits,L1D_Prefetch_Misses
+NAS_cg,imp,1.3888,264728780,6914415,8224397
+NAS_is,imp,2.01237,51694960,906595,400
+NAS_cg,no_prefetcher,1.27642,0,0,0
+NAS_is,no_prefetcher,1.83209,0,0,0
+dfs_higgs,no_prefetcher,2.17352,0,0,0
+sssp_higgs,no_prefetcher,2.17819,0,0,0
+NAS_cg,tyche,2.50919,29584389,5228490,6713849
+NAS_is,tyche,3.54356,20280201,8754006,724092
+dfs_higgs,tyche,3.30713,353311,106000,108558
+sssp_higgs,tyche,3.30499,350878,106071,107278

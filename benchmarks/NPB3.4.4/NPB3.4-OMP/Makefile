@@ -56,7 +56,7 @@ suite:
 # because those makefiles need config/make.def
 clean:
 	- rm -f core *~ */core */*~
-	- rm -f */*.o */*.obj */*.exe */*.mod */npbparams.h */blk_par.h
+	- rm -f */*.o */*.obj */*.exe */*.mod */*.ll */npbparams.h */blk_par.h
 	- rm -f sys/setparams sys/makesuite sys/setparams.h
 	- rm -rf */rii_files
 

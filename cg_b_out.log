@@ -1,0 +1,228 @@
+nohup: ignoring input
+./qemu/build/qemu-loongarch64 -R 4G -L ./loongarch-tools/target/usr/ -E LD_LIBRARY_PATH=/usr/lib64:/lib64 -E OMP_NUM_THREADS=1 -D log.txt -d plugin -plugin ./qemu_plugins/build/libbbv_ibar.so,name=traces/NAS_cg_b_out,size=100000000 -- benchmarks/NPB3.4.4/NPB3.4-OMP/bin/cg.B.x
+cpu 0 created
+
+
+ NAS Parallel Benchmarks (NPB3.4-OMP) - CG Benchmark
+
+ Size:       75000
+ Iterations:                     75
+ Number of available threads:     1
+
+ Initialization time =          48.810 seconds
+
+   iteration           ||r||                 zeta
+        1       0.22632361327879E-12    59.9994751578754
+        5       0.86132716398578E-15    22.6275390653892
+       10       0.87223692986637E-15    22.7108351397176
+       15       0.86157815400888E-15    22.7126844161819
+       20       0.87081533498737E-15    22.7127429721364
+       25       0.86466041084066E-15    22.7127453628451
+       30       0.87109099884872E-15    22.7127454763703
+       35       0.86430055969344E-15    22.7127454822840
+       40       0.86339876570513E-15    22.7127454826116
+       45       0.86252168756867E-15    22.7127454826310
+       50       0.86121457047752E-15    22.7127454826322
+       55       0.85498667929671E-15    22.7127454826315
+       60       0.84816512635480E-15    22.7127454826318
+       65       0.85528201709064E-15    22.7127454826309
+       70       0.85410192621962E-15    22.7127454826326
+       75       0.85116696294514E-15    22.7127454826310
+ Benchmark completed 
+ VERIFICATION SUCCESSFUL 
+ Zeta is     0.2271274548263E+02
+ Error is    0.9385163096687E-15
+
+
+ CG Benchmark Completed.
+ Class           =                        B
+ Size            =                    75000
+ Iterations      =                       75
+ Time in seconds =                  1556.50
+ Total threads   =                        1
+ Avail threads   =                        1
+ Mop/s total     =                    35.15
+ Mop/s/thread    =                    35.15
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                    3.4.4
+ Compile date    =              13 Feb 2026
+
+ Compile options:
+    FC           = (none)
+    FLINK        = $(FC)
+    F_LIB        = (none)
+    F_INC        = (none)
+    FFLAGS       = -O3 -fopenmp
+    FLINKFLAGS   = $(FFLAGS) $(STATIC_FLG)
+    RAND         = randi8
+
+
+ Please send all errors/feedbacks to:
+
+ NPB Development Team
+ npb@nas.nasa.gov
+
+
+./SimPoint.3.2/bin/simpoint -maxK 5 -loadFVFile traces/NAS_cg_b_out/bbv -saveSimpoints traces/NAS_cg_b_out/simpoints -saveSimpointWeights traces/NAS_cg_b_out/weights >/dev/null
+env TRACE_FILENAME=traces/NAS_cg_b_out/champsim.trace SIMPOINT_FILE=traces/NAS_cg_b_out/simpoints BB_INTERVAL=100000000 ./qemu/build/qemu-loongarch64 -R 4G -L ./loongarch-tools/target/usr/ -E LD_LIBRARY_PATH=/usr/lib64:/lib64 -E OMP_NUM_THREADS=1 -D log.txt -d plugin -plugin ./qemu_plugins/build/libchampsim_la_with_reg_simpoint.so -- benchmarks/NPB3.4.4/NPB3.4-OMP/bin/cg.B.x
+sizeof(trace_instr_format):64
+1930 1760 251 101 
+save begin 101
+vma start:0000000055558000 end:000000005555c000
+unable to dump 0000000055558000
+vma start:000000005555c000 end:0000000055d5c000
+vma start:0000000055d5c000 end:0000000055d88000
+vma start:0000000055d88000 end:0000000055d8c000
+vma start:0000000055d8c000 end:0000000055d90000
+vma start:0000000055d90000 end:0000000055d94000
+vma start:0000000055d94000 end:0000000055e2c000
+vma start:0000000055e2c000 end:0000000055e30000
+vma start:0000000055e30000 end:0000000055e34000
+vma start:0000000055e34000 end:0000000055e7c000
+vma start:0000000055e7c000 end:0000000055e80000
+vma start:0000000055e80000 end:0000000055e84000
+vma start:0000000055e84000 end:000000005601c000
+vma start:000000005601c000 end:0000000056020000
+vma start:0000000056020000 end:0000000056024000
+vma start:0000000056024000 end:000000006c080000
+vma start:00000000aaab0000 end:00000000aab04000
+vma start:00000000aab04000 end:00000000aab08000
+vma start:00000000aab08000 end:00000000aab0c000
+vma start:00000000aab0c000 end:00000000aab30000
+trace fini
+save begin 251
+vma start:0000000055558000 end:000000005555c000
+unable to dump 0000000055558000
+vma start:000000005555c000 end:0000000055d5c000
+vma start:0000000055d5c000 end:0000000055d88000
+vma start:0000000055d88000 end:0000000055d8c000
+vma start:0000000055d8c000 end:0000000055d90000
+vma start:0000000055d90000 end:0000000055d94000
+vma start:0000000055d94000 end:0000000055e2c000
+vma start:0000000055e2c000 end:0000000055e30000
+vma start:0000000055e30000 end:0000000055e34000
+vma start:0000000055e34000 end:0000000055e7c000
+vma start:0000000055e7c000 end:0000000055e80000
+vma start:0000000055e80000 end:0000000055e84000
+vma start:0000000055e84000 end:000000005601c000
+vma start:000000005601c000 end:0000000056020000
+vma start:0000000056020000 end:0000000056024000
+vma start:0000000056024000 end:000000006c080000
+vma start:00000000aaab0000 end:00000000aab04000
+vma start:00000000aab04000 end:00000000aab08000
+vma start:00000000aab08000 end:00000000aab0c000
+vma start:00000000aab0c000 end:00000000aab30000
+trace fini
+save begin 1760
+vma start:0000000055558000 end:000000005555c000
+unable to dump 0000000055558000
+vma start:000000005555c000 end:0000000055d5c000
+vma start:0000000055d5c000 end:0000000055d88000
+vma start:0000000055d88000 end:0000000055d8c000
+vma start:0000000055d8c000 end:0000000055d90000
+vma start:0000000055d90000 end:0000000055d94000
+vma start:0000000055d94000 end:0000000055e2c000
+vma start:0000000055e2c000 end:0000000055e30000
+vma start:0000000055e30000 end:0000000055e34000
+vma start:0000000055e34000 end:0000000055e7c000
+vma start:0000000055e7c000 end:0000000055e80000
+vma start:0000000055e80000 end:0000000055e84000
+vma start:0000000055e84000 end:000000005601c000
+vma start:000000005601c000 end:0000000056020000
+vma start:0000000056020000 end:0000000056024000
+vma start:0000000056024000 end:000000006c080000
+vma start:00000000aaab0000 end:00000000aab04000
+vma start:00000000aab04000 end:00000000aab08000
+vma start:00000000aab08000 end:00000000aab0c000
+vma start:00000000aab0c000 end:00000000aab30000
+trace fini
+save begin 1930
+vma start:0000000055558000 end:000000005555c000
+unable to dump 0000000055558000
+vma start:000000005555c000 end:0000000055d5c000
+vma start:0000000055d5c000 end:0000000055d88000
+vma start:0000000055d88000 end:0000000055d8c000
+vma start:0000000055d8c000 end:0000000055d90000
+vma start:0000000055d90000 end:0000000055d94000
+vma start:0000000055d94000 end:0000000055e2c000
+vma start:0000000055e2c000 end:0000000055e30000
+vma start:0000000055e30000 end:0000000055e34000
+vma start:0000000055e34000 end:0000000055e7c000
+vma start:0000000055e7c000 end:0000000055e80000
+vma start:0000000055e80000 end:0000000055e84000
+vma start:0000000055e84000 end:000000005601c000
+vma start:000000005601c000 end:0000000056020000
+vma start:0000000056020000 end:0000000056024000
+vma start:0000000056024000 end:000000006c080000
+vma start:00000000aaab0000 end:00000000aab04000
+vma start:00000000aab04000 end:00000000aab08000
+vma start:00000000aab08000 end:00000000aab0c000
+vma start:00000000aab0c000 end:00000000aab30000
+trace fini
+
+
+ NAS Parallel Benchmarks (NPB3.4-OMP) - CG Benchmark
+
+ Size:       75000
+ Iterations:                     75
+ Number of available threads:     1
+
+ Initialization time =         168.816 seconds
+
+   iteration           ||r||                 zeta
+        1       0.22632361327879E-12    59.9994751578754
+        5       0.86132716398578E-15    22.6275390653892
+       10       0.87223692986637E-15    22.7108351397176
+       15       0.86157815400888E-15    22.7126844161819
+       20       0.87081533498737E-15    22.7127429721364
+       25       0.86466041084066E-15    22.7127453628451
+       30       0.87109099884872E-15    22.7127454763703
+       35       0.86430055969344E-15    22.7127454822840
+       40       0.86339876570513E-15    22.7127454826116
+       45       0.86252168756867E-15    22.7127454826310
+       50       0.86121457047752E-15    22.7127454826322
+       55       0.85498667929671E-15    22.7127454826315
+       60       0.84816512635480E-15    22.7127454826318
+       65       0.85528201709064E-15    22.7127454826309
+       70       0.85410192621962E-15    22.7127454826326
+       75       0.85116696294514E-15    22.7127454826310
+ Benchmark completed 
+ VERIFICATION SUCCESSFUL 
+ Zeta is     0.2271274548263E+02
+ Error is    0.9385163096687E-15
+
+
+ CG Benchmark Completed.
+ Class           =                        B
+ Size            =                    75000
+ Iterations      =                       75
+ Time in seconds =                  2204.21
+ Total threads   =                        1
+ Avail threads   =                        1
+ Mop/s total     =                    24.82
+ Mop/s/thread    =                    24.82
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                    3.4.4
+ Compile date    =              13 Feb 2026
+
+ Compile options:
+    FC           = (none)
+    FLINK        = $(FC)
+    F_LIB        = (none)
+    F_INC        = (none)
+    FFLAGS       = -O3 -fopenmp
+    FLINKFLAGS   = $(FFLAGS) $(STATIC_FLG)
+    RAND         = randi8
+
+
+ Please send all errors/feedbacks to:
+
+ NPB Development Team
+ npb@nas.nasa.gov
+
+
+plugin fini, trace fini
+xz -v -T0 traces/NAS_cg_b_out/champsim.trace_193000000000.champsim.trace
+traces/NAS_cg_b_out/champsim.trace_193000000000.champsim.trace: 147.1 MiB / 6,103.5 MiB = 0.024, 12 MiB/s, 8:21

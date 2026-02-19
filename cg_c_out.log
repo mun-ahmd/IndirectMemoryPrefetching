@@ -1,0 +1,65 @@
+./qemu/build/qemu-loongarch64 -R 4G -L ./loongarch-tools/target/usr/ -E LD_LIBRARY_PATH=/usr/lib64:/lib64 -E OMP_NUM_THREADS=1 -D log.txt -d plugin -plugin ./qemu_plugins/build/libbbv_ibar.so,name=traces/cg_c_out,size=100000000 -- benchmarks/NPB3.4.4/NPB3.4-OMP/bin/cg.C.x
+cpu 0 created
+
+
+ NAS Parallel Benchmarks (NPB3.4-OMP) - CG Benchmark
+
+ Size:      150000
+ Iterations:                     75
+ Number of available threads:     1
+
+ Initialization time =         130.678 seconds
+
+   iteration           ||r||                 zeta
+        1       0.35180921613452E-12   109.9994423237398
+        5       0.88354858712293E-15    28.6471670038885
+       10       0.90752990492141E-15    28.9496695448994
+       15       0.90253718014994E-15    28.9716336228364
+       20       0.90905684260170E-15    28.9734210663746
+       25       0.90423010475348E-15    28.9735863059395
+       30       0.91087575737610E-15    28.9736033967622
+       35       0.90324842686810E-15    28.9736053266234
+       40       0.90094603458442E-15    28.9736055590682
+       45       0.90028996985626E-15    28.9736055884116
+       50       0.90357498575730E-15    28.9736055922496
+       55       0.89735108203009E-15    28.9736055927632
+       60       0.90251633731563E-15    28.9736055928341
+       65       0.90454739769903E-15    28.9736055928427
+       70       0.89748614597243E-15    28.9736055928445
+       75       0.89510530075771E-15    28.9736055928454
+ Benchmark completed 
+ VERIFICATION SUCCESSFUL 
+ Zeta is     0.2897360559285E+02
+ Error is    0.1287499186384E-13
+
+
+ CG Benchmark Completed.
+ Class           =                        C
+ Size            =                   150000
+ Iterations      =                       75
+ Time in seconds =                  3615.52
+ Total threads   =                        1
+ Avail threads   =                        1
+ Mop/s total     =                    39.65
+ Mop/s/thread    =                    39.65
+ Operation type  =           floating point
+ Verification    =               SUCCESSFUL
+ Version         =                    3.4.4
+ Compile date    =              13 Feb 2026
+
+ Compile options:
+    FC           = (none)
+    FLINK        = $(FC)
+    F_LIB        = (none)
+    F_INC        = (none)
+    FFLAGS       = -O3 -fopenmp
+    FLINKFLAGS   = $(FFLAGS) $(STATIC_FLG)
+    RAND         = randi8
+
+
+ Please send all errors/feedbacks to:
+
+ NPB Development Team
+ npb@nas.nasa.gov
+
+

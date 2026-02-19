@@ -1,6 +1,45 @@
 PROGRAM  = $(BINDIR)/$(BENCHMARK)$(VEXT).$(CLASS).x
-FCOMPILE = $(FC) -c $(F_INC) $(FFLAGS)
-CCOMPILE = $(CC) -c $(C_INC) $(CFLAGS)
+
+# For LOONGARCH_LLVM, use 3-step compilation: .f90/.c -> .ll -> opt -> .ll -> .o
+ifeq ($(ARCH), LOONGARCH_LLVM)
+    # Define helper functions for 3-step compilation
+    # These are used by both suffix rules and explicit rules
+    define compile_fortran_3step
+        @SRC="$(1)"; \
+        BASE=$${SRC%.f90}; BASE=$${BASE%.f}; \
+        TGT="$(2)"; \
+        if [ -z "$$TGT" ]; then TGT="$$BASE.o"; fi; \
+        echo "  [FLANG] $$SRC -> $$BASE.ll"; \
+        $(FC) -c -emit-llvm -S $(F_INC) $(FFLAGS) $$SRC -o $$BASE.ll && \
+        echo "  [OPT]   $$BASE.ll -> $$BASE_opt.ll"; \
+        $(OPT) $(OPT_FLAGS) $$BASE.ll -o $$BASE_opt.ll && \
+        echo "  [FLANG] $$BASE_opt.ll -> $$TGT"; \
+        $(FC) -c $$BASE_opt.ll -o $$TGT && \
+        rm -f $$BASE.ll $$BASE_opt.ll
+    endef
+    
+    define compile_c_3step
+        @SRC="$(1)"; \
+        BASE=$${SRC%.c}; \
+        TGT="$(2)"; \
+        if [ -z "$$TGT" ]; then TGT="$$BASE.o"; fi; \
+        echo "  [CLANG] $$SRC -> $$BASE.ll"; \
+        $(CC) -c -emit-llvm -S $(C_INC) $(CFLAGS) $$SRC -o $$BASE.ll && \
+        echo "  [OPT]   $$BASE.ll -> $$BASE_opt.ll"; \
+        $(OPT) $(OPT_FLAGS) $$BASE.ll -o $$BASE_opt.ll && \
+        echo "  [CLANG] $$BASE_opt.ll -> $$TGT"; \
+        $(CC) -c $$BASE_opt.ll -o $$TGT && \
+        rm -f $$BASE.ll $$BASE_opt.ll
+    endef
+    
+    # For suffix rules (.f90.o), $< is source, $@ is target
+    FCOMPILE = $(call compile_fortran_3step,$<,$@)
+    CCOMPILE = $(call compile_c_3step,$<,$@)
+else
+    # Standard compilation for other architectures
+    FCOMPILE = $(FC) -c $(F_INC) $(FFLAGS)
+    CCOMPILE = $(CC) -c $(C_INC) $(CFLAGS)
+endif
 
 # Class "U" is used internally by the setparams program to mean
 # "unknown". This means that if you don't specify CLASS=
@@ -21,6 +60,25 @@ config:
 	../sys/setparams ${BENCHMARK} ${CLASS}
 
 COMMON=../common
+ifeq ($(ARCH), LOONGARCH_LLVM)
+${COMMON}/${RAND}.o: ${COMMON}/${RAND}.f90 ../config/make.def
+	$(call compile_fortran_3step,${COMMON}/${RAND}.f90,${COMMON}/${RAND}.o)
+
+${COMMON}/print_results.o: ${COMMON}/print_results.f90 ../config/make.def
+	$(call compile_fortran_3step,${COMMON}/print_results.f90,${COMMON}/print_results.o)
+
+${COMMON}/c_print_results.o: ${COMMON}/c_print_results.c ../config/make.def
+	$(call compile_c_3step,${COMMON}/c_print_results.c,${COMMON}/c_print_results.o)
+
+${COMMON}/timers.o: ${COMMON}/timers.f90 ../config/make.def
+	$(call compile_fortran_3step,${COMMON}/timers.f90,${COMMON}/timers.o)
+
+${COMMON}/c_timers.o: ${COMMON}/c_timers.c ../config/make.def
+	$(call compile_c_3step,${COMMON}/c_timers.c,${COMMON}/c_timers.o)
+
+${COMMON}/wtime.o: ${COMMON}/${WTIME} ../config/make.def
+	$(call compile_c_3step,${COMMON}/${WTIME},${COMMON}/wtime.o)
+else
 ${COMMON}/${RAND}.o: ${COMMON}/${RAND}.f90 ../config/make.def
 	cd ${COMMON}; ${FCOMPILE} ${RAND}.f90
 
@@ -38,13 +96,19 @@ ${COMMON}/c_timers.o: ${COMMON}/c_timers.c ../config/make.def
 
 ${COMMON}/wtime.o: ${COMMON}/${WTIME} ../config/make.def
 	cd ${COMMON}; ${CCOMPILE} ${MACHINE} -o wtime.o ${COMMON}/${WTIME}
+endif
 # For most machines or CRAY or IBM
 #	cd ${COMMON}; ${CCOMPILE} ${MACHINE} ${COMMON}/wtime.c
 # For a precise timer on an SGI Power Challenge, try:
 #	cd ${COMMON}; ${CCOMPILE} -o wtime.o ${COMMON}/wtime_sgi64.c
 
+ifeq ($(ARCH), LOONGARCH_LLVM)
+${COMMON}/c_wtime.o: ${COMMON}/${WTIME} ../config/make.def
+	$(call compile_c_3step,${COMMON}/${WTIME},${COMMON}/c_wtime.o)
+else
 ${COMMON}/c_wtime.o: ${COMMON}/${WTIME} ../config/make.def
 	cd ${COMMON}; ${CCOMPILE} -o c_wtime.o ${COMMON}/${WTIME}
+endif
 
 
 # Normally setparams updates npbparams.h only if the settings (CLASS)
@@ -60,5 +124,5 @@ ${BENCHMARK}:  default
 ${BENCHMARKU}: default
 
 .SUFFIXES:
-.SUFFIXES: .c .h .f90 .f .o
+.SUFFIXES: .c .h .f90 .f .o .ll
 

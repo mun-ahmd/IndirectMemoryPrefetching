@@ -1064,6 +1064,27 @@ uint32_t CACHE::get_size(uint8_t queue_type, uint64_t address)
 
 bool CACHE::should_activate_prefetcher(int type) { return (1 << static_cast<int>(type)) & pref_activate_mask; }
 
+void CACHE::notify_prodigy_hint(uint8_t cmd, uint64_t args[6])
+{
+  impl_prefetcher_prodigy_hint(cmd, args);
+}
+
+// Default implementations for prefetchers that don't use prodigy hints
+// Prefetchers that want to use hints can override these by providing their own implementations
+__attribute__((weak)) void pref_pprefetcherDno_prodigy_hint(uint8_t cmd, uint64_t args[6]) {
+    // Default: do nothing
+    // Prefetchers that want to use prodigy hints should provide their own implementation
+    (void)cmd;
+    (void)args;
+}
+
+__attribute__((weak)) void pref_pprefetcherDstride_l2c_prodigy_hint(uint8_t cmd, uint64_t args[6]) {
+    // Default: do nothing
+    // Prefetchers that want to use prodigy hints should provide their own implementation
+    (void)cmd;
+    (void)args;
+}
+
 void CACHE::print_deadlock()
 {
   if (!std::empty(MSHR)) {

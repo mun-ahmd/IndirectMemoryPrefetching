@@ -58,6 +58,6 @@ work_lhs$(BLK).o: work_lhs$(BLK).f90 sp_data.o blk_par.h
 sp_data.o:        sp_data.f90 npbparams.h
 
 clean:
-	- rm -f *.o *~ *.mod mputil*
+	- rm -f *.o *~ *.mod mputil* *.ll
 	- rm -f npbparams.h core blk_par.h
 	- if [ -d rii_files ]; then rm -r rii_files; fi

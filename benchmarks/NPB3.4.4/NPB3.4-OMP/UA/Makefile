@@ -50,5 +50,5 @@ ua_data.o:   ua_data.f90  npbparams.h
 tmorwork.o:  tmorwork.f90
 
 clean:
-	- rm -f *.o *~ *.mod mputil*
+	- rm -f *.o *~ *.mod mputil* *.ll
 	- rm -f npbparams.h core

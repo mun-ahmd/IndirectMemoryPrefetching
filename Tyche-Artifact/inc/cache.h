@@ -109,6 +109,8 @@ public:
   bool filllike_miss(std::size_t set, std::size_t way, PACKET& handle_pkt);
 
   bool should_activate_prefetcher(int type);
+  
+  void notify_prodigy_hint(uint8_t cmd, uint64_t args[6]);
 
   void print_deadlock() override;
 

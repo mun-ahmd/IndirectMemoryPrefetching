@@ -20,6 +20,6 @@ cg.o:		cg.f90  cg_data.o
 cg_data.o:	cg_data.f90 npbparams.h
 
 clean:
-	- rm -f *.o *~ *.mod
+	- rm -f *.o *~ *.mod *.ll
 	- rm -f npbparams.h core
 	- if [ -d rii_files ]; then rm -r rii_files; fi

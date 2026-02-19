@@ -19,6 +19,6 @@ mg.o:		mg.f90 mg_data.o
 mg_data.o:      mg_data.f90 npbparams.h
 
 clean:
-	- rm -f *.o *~ *.mod
+	- rm -f *.o *~ *.mod *.ll
 	- rm -f npbparams.h core
 	- if [ -d rii_files ]; then rm -r rii_files; fi

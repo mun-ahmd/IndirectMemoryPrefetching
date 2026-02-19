@@ -1,0 +1,55 @@
+# Makefile for compiling hello_world.c with Prodigy compiler pass
+# and linking with QEMU runtime for LoongArch
+
+# Paths
+PRODIGY_PASS = /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/prefetcher/LLVMPrefetcher.so
+PRODIGY_RT_DIR = /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/runtime/qemu
+GCC_TOOLCHAIN = /home/muneeb/repos/IndirectMemoryPrefetching/loongarch-tools
+
+# Compilers
+CC = clang-18
+OPT = opt-18
+TARGET_FLG = --target=loongarch64-unknown-linux-gnu --gcc-toolchain=$(GCC_TOOLCHAIN)
+SYSROOT_FLG = --sysroot=$(GCC_TOOLCHAIN)/target
+OPT_FLAGS = -load $(PRODIGY_PASS) --bugpoint-enable-legacy-pm -prefetcher -prefetcher-codegen
+
+# Source files
+SRC = hello_world.c
+LLVM_IR = hello_world.ll
+OPT_IR = hello_world_opt.ll
+OBJ = hello_world.o
+BIN = hello_world
+
+# Default target
+all: $(BIN)
+
+# Step 1: Compile C to LLVM IR
+$(LLVM_IR): $(SRC)
+	$(CC) $(TARGET_FLG) $(SYSROOT_FLG) -S -emit-llvm -O3 -fno-discard-value-names $(SRC) -o $(LLVM_IR)
+
+# Step 2: Run Prodigy passes
+$(OPT_IR): $(LLVM_IR)
+	$(OPT) $(OPT_FLAGS) $(LLVM_IR) -o $(OPT_IR)
+
+# Step 3: Compile optimized IR directly to object file
+$(OBJ): $(OPT_IR)
+	$(CC) $(TARGET_FLG) $(SYSROOT_FLG) -c $(OPT_IR) -o $(OBJ)
+
+# Step 4: Link with QEMU runtime
+# Note: Relocation warnings may appear but the binary is still created successfully
+$(BIN): $(OBJ)
+	@echo "Linking with QEMU runtime..."
+	@$(CC) $(TARGET_FLG) $(SYSROOT_FLG) $(OBJ) -L$(PRODIGY_RT_DIR) -lprefetcher_qemu_rt -o $(BIN) 2>&1 | grep -v "unsupported relocation" || true
+	@if [ -f $(BIN) ]; then \
+		echo "Success! Binary created: $(BIN)"; \
+		file $(BIN); \
+	else \
+		echo "Error: Binary was not created"; \
+		exit 1; \
+	fi
+
+# Clean up intermediate files
+clean:
+	rm -f $(LLVM_IR) $(OPT_IR) $(OBJ) $(BIN)
+
+.PHONY: all clean

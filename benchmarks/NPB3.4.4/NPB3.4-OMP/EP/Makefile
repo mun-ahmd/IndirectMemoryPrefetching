@@ -21,6 +21,6 @@ ep_data.o:	ep_data.f90 npbparams.h
 verify.o:	verify.f90
 
 clean:
-	- rm -f *.o *~ *.mod
+	- rm -f *.o *~ *.mod *.ll
 	- rm -f npbparams.h core
 	- if [ -d rii_files ]; then rm -r rii_files; fi

@@ -1,0 +1,1854 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake:233 (message)"
+      - "CMakeLists.txt:12 (project)"
+    message: |
+      The system is: Linux - 6.8.0-60-generic - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:12 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /usr/bin/cc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is GNU, found in:
+        /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/3.28.3/CompilerIdC/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:12 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /usr/bin/c++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is GNU, found in:
+        /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/3.28.3/CompilerIdCXX/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:12 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-hCpj7C"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-hCpj7C"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-hCpj7C'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_7ca37/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_7ca37.dir/build.make CMakeFiles/cmTC_7ca37.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-hCpj7C'
+        Building C object CMakeFiles/cmTC_7ca37.dir/CMakeCCompilerABI.c.o
+        /usr/bin/cc   -v -o CMakeFiles/cmTC_7ca37.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/cc
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_7ca37.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_7ca37.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_7ca37.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cc41196J.s
+        GNU C17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)
+        	compiled by GNU C version 13.3.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.26-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-linux-gnu/13/include
+         /usr/local/include
+         /usr/include/x86_64-linux-gnu
+         /usr/include
+        End of search list.
+        Compiler executable checksum: 38987c28e967c64056a6454abdef726e
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_7ca37.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_7ca37.dir/'
+         as -v --64 -o CMakeFiles/cmTC_7ca37.dir/CMakeCCompilerABI.c.o /tmp/cc41196J.s
+        GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_7ca37.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_7ca37.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_7ca37
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7ca37.dir/link.txt --verbose=1
+        /usr/bin/cc  -v CMakeFiles/cmTC_7ca37.dir/CMakeCCompilerABI.c.o -o cmTC_7ca37 
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/cc
+        COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_7ca37' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_7ca37.'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccFw0UAu.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_7ca37 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_7ca37.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_7ca37' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_7ca37.'
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-hCpj7C'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:12 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/x86_64-linux-gnu/13/include]
+          add: [/usr/local/include]
+          add: [/usr/include/x86_64-linux-gnu]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/13/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/13/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/lib/gcc/x86_64-linux-gnu/13/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:159 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:12 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-hCpj7C']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_7ca37/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_7ca37.dir/build.make CMakeFiles/cmTC_7ca37.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-hCpj7C']
+        ignore line: [Building C object CMakeFiles/cmTC_7ca37.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_7ca37.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_7ca37.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_7ca37.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_7ca37.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cc41196J.s]
+        ignore line: [GNU C17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)]
+        ignore line: [	compiled by GNU C version 13.3.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.26-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/13/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/x86_64-linux-gnu]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: 38987c28e967c64056a6454abdef726e]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_7ca37.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_7ca37.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_7ca37.dir/CMakeCCompilerABI.c.o /tmp/cc41196J.s]
+        ignore line: [GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_7ca37.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_7ca37.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_7ca37]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7ca37.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/cc  -v CMakeFiles/cmTC_7ca37.dir/CMakeCCompilerABI.c.o -o cmTC_7ca37 ]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_7ca37' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_7ca37.']
+        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccFw0UAu.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_7ca37 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_7ca37.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+          arg [/usr/libexec/gcc/x86_64-linux-gnu/13/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccFw0UAu.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-znow] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_7ca37] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib]
+          arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+          arg [-L/lib/../lib] ==> dir [/lib/../lib]
+          arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+          arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..]
+          arg [CMakeFiles/cmTC_7ca37.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o] ==> [/usr/lib/x86_64-linux-gnu/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13] ==> [/usr/lib/gcc/x86_64-linux-gnu/13]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib] ==> [/usr/lib]
+        collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+        collapse library dir [/lib/../lib] ==> [/lib]
+        collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> [/usr/lib]
+        implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/usr/lib/x86_64-linux-gnu/Scrt1.o;/usr/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o;/usr/lib/x86_64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/13;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:12 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-suY6fN"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-suY6fN"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-suY6fN'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b903f/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_b903f.dir/build.make CMakeFiles/cmTC_b903f.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-suY6fN'
+        Building CXX object CMakeFiles/cmTC_b903f.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -v -o CMakeFiles/cmTC_b903f.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/c++
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b903f.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_b903f.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_b903f.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccnXofGH.s
+        GNU C++17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)
+        	compiled by GNU C version 13.3.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.26-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring duplicate directory "/usr/include/x86_64-linux-gnu/c++/13"
+        ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/include/c++/13
+         /usr/include/x86_64-linux-gnu/c++/13
+         /usr/include/c++/13/backward
+         /usr/lib/gcc/x86_64-linux-gnu/13/include
+         /usr/local/include
+         /usr/include/x86_64-linux-gnu
+         /usr/include
+        End of search list.
+        Compiler executable checksum: c81c05345ce537099dafd5580045814a
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b903f.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_b903f.dir/'
+         as -v --64 -o CMakeFiles/cmTC_b903f.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccnXofGH.s
+        GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b903f.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_b903f.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_b903f
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b903f.dir/link.txt --verbose=1
+        /usr/bin/c++  -v CMakeFiles/cmTC_b903f.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_b903f 
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/c++
+        COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b903f' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_b903f.'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccphlsg7.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_b903f /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_b903f.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b903f' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_b903f.'
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-suY6fN'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:12 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/include/c++/13]
+          add: [/usr/include/x86_64-linux-gnu/c++/13]
+          add: [/usr/include/c++/13/backward]
+          add: [/usr/lib/gcc/x86_64-linux-gnu/13/include]
+          add: [/usr/local/include]
+          add: [/usr/include/x86_64-linux-gnu]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/include/c++/13] ==> [/usr/include/c++/13]
+        collapse include dir [/usr/include/x86_64-linux-gnu/c++/13] ==> [/usr/include/x86_64-linux-gnu/c++/13]
+        collapse include dir [/usr/include/c++/13/backward] ==> [/usr/include/c++/13/backward]
+        collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/13/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/13/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/include/c++/13;/usr/include/x86_64-linux-gnu/c++/13;/usr/include/c++/13/backward;/usr/lib/gcc/x86_64-linux-gnu/13/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:159 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:12 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-suY6fN']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b903f/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_b903f.dir/build.make CMakeFiles/cmTC_b903f.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-suY6fN']
+        ignore line: [Building CXX object CMakeFiles/cmTC_b903f.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_b903f.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b903f.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_b903f.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_b903f.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccnXofGH.s]
+        ignore line: [GNU C++17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)]
+        ignore line: [	compiled by GNU C version 13.3.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.26-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring duplicate directory "/usr/include/x86_64-linux-gnu/c++/13"]
+        ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/include/c++/13]
+        ignore line: [ /usr/include/x86_64-linux-gnu/c++/13]
+        ignore line: [ /usr/include/c++/13/backward]
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/13/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/x86_64-linux-gnu]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: c81c05345ce537099dafd5580045814a]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b903f.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_b903f.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_b903f.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccnXofGH.s]
+        ignore line: [GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b903f.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_b903f.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_b903f]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b903f.dir/link.txt --verbose=1]
+        ignore line: [/usr/bin/c++  -v CMakeFiles/cmTC_b903f.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_b903f ]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b903f' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_b903f.']
+        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccphlsg7.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_b903f /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_b903f.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+          arg [/usr/libexec/gcc/x86_64-linux-gnu/13/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccphlsg7.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-znow] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_b903f] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib]
+          arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+          arg [-L/lib/../lib] ==> dir [/lib/../lib]
+          arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+          arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..]
+          arg [CMakeFiles/cmTC_b903f.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o] ==> [/usr/lib/x86_64-linux-gnu/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13] ==> [/usr/lib/gcc/x86_64-linux-gnu/13]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib] ==> [/usr/lib]
+        collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+        collapse library dir [/lib/../lib] ==> [/lib]
+        collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> [/usr/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/usr/lib/x86_64-linux-gnu/Scrt1.o;/usr/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o;/usr/lib/x86_64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/13;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/FindFFI.cmake:59 (check_c_source_compiles)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/LLVMConfig.cmake:279 (find_package)"
+      - "CMakeLists.txt:28 (find_package)"
+    checks:
+      - "Performing Test HAVE_FFI_CALL"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-SiAyn2"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-SiAyn2"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/llvm-18/lib/cmake/llvm"
+    buildResult:
+      variable: "HAVE_FFI_CALL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-SiAyn2'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_01904/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_01904.dir/build.make CMakeFiles/cmTC_01904.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-SiAyn2'
+        Building C object CMakeFiles/cmTC_01904.dir/src.c.o
+        /usr/bin/cc -DHAVE_FFI_CALL   -o CMakeFiles/cmTC_01904.dir/src.c.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-SiAyn2/src.c
+        Linking C executable cmTC_01904
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_01904.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_01904.dir/src.c.o -o cmTC_01904  /usr/lib/x86_64-linux-gnu/libffi.so 
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-SiAyn2'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/FindTerminfo.cmake:32 (check_c_source_compiles)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/LLVMConfig.cmake:291 (find_package)"
+      - "CMakeLists.txt:28 (find_package)"
+    checks:
+      - "Performing Test Terminfo_LINKABLE"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-HQYhIz"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-HQYhIz"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/llvm-18/lib/cmake/llvm"
+    buildResult:
+      variable: "Terminfo_LINKABLE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-HQYhIz'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_63eaa/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_63eaa.dir/build.make CMakeFiles/cmTC_63eaa.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-HQYhIz'
+        Building C object CMakeFiles/cmTC_63eaa.dir/src.c.o
+        /usr/bin/cc -DTerminfo_LINKABLE   -o CMakeFiles/cmTC_63eaa.dir/src.c.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-HQYhIz/src.c
+        Linking C executable cmTC_63eaa
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_63eaa.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_63eaa.dir/src.c.o -o cmTC_63eaa  /usr/lib/x86_64-linux-gnu/libtinfo.so 
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-HQYhIz'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:312 (check_c_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:380 (add_flag_or_print_warning)"
+      - "CMakeLists.txt:32 (include)"
+    checks:
+      - "Performing Test C_SUPPORTS_FPIC"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-USxGGm"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-USxGGm"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/llvm-18/lib/cmake/llvm;/usr/lib/llvm-18/lib/cmake/llvm"
+    buildResult:
+      variable: "C_SUPPORTS_FPIC"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-USxGGm'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_37789/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_37789.dir/build.make CMakeFiles/cmTC_37789.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-USxGGm'
+        Building C object CMakeFiles/cmTC_37789.dir/src.c.o
+        /usr/bin/cc -DC_SUPPORTS_FPIC  -Werror -fPIC -o CMakeFiles/cmTC_37789.dir/src.c.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-USxGGm/src.c
+        Linking C executable cmTC_37789
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_37789.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_37789.dir/src.c.o -o cmTC_37789 
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-USxGGm'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:313 (check_cxx_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:380 (add_flag_or_print_warning)"
+      - "CMakeLists.txt:32 (include)"
+    checks:
+      - "Performing Test CXX_SUPPORTS_FPIC"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-K8CUkB"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-K8CUkB"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/llvm-18/lib/cmake/llvm;/usr/lib/llvm-18/lib/cmake/llvm"
+    buildResult:
+      variable: "CXX_SUPPORTS_FPIC"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-K8CUkB'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_becdc/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_becdc.dir/build.make CMakeFiles/cmTC_becdc.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-K8CUkB'
+        Building CXX object CMakeFiles/cmTC_becdc.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_SUPPORTS_FPIC  -Werror -fPIC -o CMakeFiles/cmTC_becdc.dir/src.cxx.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-K8CUkB/src.cxx
+        Linking CXX executable cmTC_becdc
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_becdc.dir/link.txt --verbose=1
+        /usr/bin/c++ CMakeFiles/cmTC_becdc.dir/src.cxx.o -o cmTC_becdc 
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-K8CUkB'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:305 (check_c_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:391 (add_flag_if_supported)"
+      - "CMakeLists.txt:32 (include)"
+    checks:
+      - "Performing Test C_SUPPORTS_FNO_SEMANTIC_INTERPOSITION"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-9S0axM"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-9S0axM"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -fPIC"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/llvm-18/lib/cmake/llvm;/usr/lib/llvm-18/lib/cmake/llvm"
+    buildResult:
+      variable: "C_SUPPORTS_FNO_SEMANTIC_INTERPOSITION"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-9S0axM'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_0ccaf/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_0ccaf.dir/build.make CMakeFiles/cmTC_0ccaf.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-9S0axM'
+        Building C object CMakeFiles/cmTC_0ccaf.dir/src.c.o
+        /usr/bin/cc -DC_SUPPORTS_FNO_SEMANTIC_INTERPOSITION  -fPIC    -Werror -fno-semantic-interposition -o CMakeFiles/cmTC_0ccaf.dir/src.c.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-9S0axM/src.c
+        Linking C executable cmTC_0ccaf
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0ccaf.dir/link.txt --verbose=1
+        /usr/bin/cc  -fPIC  CMakeFiles/cmTC_0ccaf.dir/src.c.o -o cmTC_0ccaf 
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-9S0axM'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:307 (check_cxx_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:391 (add_flag_if_supported)"
+      - "CMakeLists.txt:32 (include)"
+    checks:
+      - "Performing Test CXX_SUPPORTS_FNO_SEMANTIC_INTERPOSITION"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-gcmSEA"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-gcmSEA"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fPIC"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/llvm-18/lib/cmake/llvm;/usr/lib/llvm-18/lib/cmake/llvm"
+    buildResult:
+      variable: "CXX_SUPPORTS_FNO_SEMANTIC_INTERPOSITION"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-gcmSEA'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_fe640/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_fe640.dir/build.make CMakeFiles/cmTC_fe640.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-gcmSEA'
+        Building CXX object CMakeFiles/cmTC_fe640.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_SUPPORTS_FNO_SEMANTIC_INTERPOSITION  -fPIC    -Werror -fno-semantic-interposition -o CMakeFiles/cmTC_fe640.dir/src.cxx.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-gcmSEA/src.cxx
+        Linking CXX executable cmTC_fe640
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fe640.dir/link.txt --verbose=1
+        /usr/bin/c++  -fPIC  CMakeFiles/cmTC_fe640.dir/src.cxx.o -o cmTC_fe640 
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-gcmSEA'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:416 (check_cxx_compiler_flag)"
+      - "CMakeLists.txt:32 (include)"
+    checks:
+      - "Performing Test SUPPORTS_FVISIBILITY_INLINES_HIDDEN_FLAG"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-neUdtf"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-neUdtf"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/llvm-18/lib/cmake/llvm;/usr/lib/llvm-18/lib/cmake/llvm"
+    buildResult:
+      variable: "SUPPORTS_FVISIBILITY_INLINES_HIDDEN_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-neUdtf'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_d8659/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_d8659.dir/build.make CMakeFiles/cmTC_d8659.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-neUdtf'
+        Building CXX object CMakeFiles/cmTC_d8659.dir/src.cxx.o
+        /usr/bin/c++ -DSUPPORTS_FVISIBILITY_INLINES_HIDDEN_FLAG  -fPIC -fno-semantic-interposition    -fvisibility-inlines-hidden -o CMakeFiles/cmTC_d8659.dir/src.cxx.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-neUdtf/src.cxx
+        Linking CXX executable cmTC_d8659
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d8659.dir/link.txt --verbose=1
+        /usr/bin/c++  -fPIC -fno-semantic-interposition  CMakeFiles/cmTC_d8659.dir/src.cxx.o -o cmTC_d8659 
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-neUdtf'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:305 (check_c_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:639 (add_flag_if_supported)"
+      - "CMakeLists.txt:32 (include)"
+    checks:
+      - "Performing Test C_SUPPORTS_WERROR_DATE_TIME"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-fnXc6d"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-fnXc6d"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -fPIC -fno-semantic-interposition"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/llvm-18/lib/cmake/llvm;/usr/lib/llvm-18/lib/cmake/llvm"
+    buildResult:
+      variable: "C_SUPPORTS_WERROR_DATE_TIME"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-fnXc6d'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f84d8/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_f84d8.dir/build.make CMakeFiles/cmTC_f84d8.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-fnXc6d'
+        Building C object CMakeFiles/cmTC_f84d8.dir/src.c.o
+        /usr/bin/cc -DC_SUPPORTS_WERROR_DATE_TIME  -fPIC -fno-semantic-interposition    -Werror -Werror=date-time -o CMakeFiles/cmTC_f84d8.dir/src.c.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-fnXc6d/src.c
+        Linking C executable cmTC_f84d8
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f84d8.dir/link.txt --verbose=1
+        /usr/bin/cc  -fPIC -fno-semantic-interposition  CMakeFiles/cmTC_f84d8.dir/src.c.o -o cmTC_f84d8 
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-fnXc6d'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:307 (check_cxx_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:639 (add_flag_if_supported)"
+      - "CMakeLists.txt:32 (include)"
+    checks:
+      - "Performing Test CXX_SUPPORTS_WERROR_DATE_TIME"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-gVvZB7"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-gVvZB7"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/llvm-18/lib/cmake/llvm;/usr/lib/llvm-18/lib/cmake/llvm"
+    buildResult:
+      variable: "CXX_SUPPORTS_WERROR_DATE_TIME"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-gVvZB7'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_8e5f9/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_8e5f9.dir/build.make CMakeFiles/cmTC_8e5f9.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-gVvZB7'
+        Building CXX object CMakeFiles/cmTC_8e5f9.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_SUPPORTS_WERROR_DATE_TIME  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden    -Werror -Werror=date-time -o CMakeFiles/cmTC_8e5f9.dir/src.cxx.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-gVvZB7/src.cxx
+        Linking CXX executable cmTC_8e5f9
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8e5f9.dir/link.txt --verbose=1
+        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden  CMakeFiles/cmTC_8e5f9.dir/src.cxx.o -o cmTC_8e5f9 
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-gVvZB7'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:305 (check_c_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:640 (add_flag_if_supported)"
+      - "CMakeLists.txt:32 (include)"
+    checks:
+      - "Performing Test C_SUPPORTS_WERROR_UNGUARDED_AVAILABILITY_NEW"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-sCuy1s"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-sCuy1s"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -fPIC -fno-semantic-interposition -Werror=date-time"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/llvm-18/lib/cmake/llvm;/usr/lib/llvm-18/lib/cmake/llvm"
+    buildResult:
+      variable: "C_SUPPORTS_WERROR_UNGUARDED_AVAILABILITY_NEW"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-sCuy1s'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_410c4/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_410c4.dir/build.make CMakeFiles/cmTC_410c4.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-sCuy1s'
+        Building C object CMakeFiles/cmTC_410c4.dir/src.c.o
+        /usr/bin/cc -DC_SUPPORTS_WERROR_UNGUARDED_AVAILABILITY_NEW  -fPIC -fno-semantic-interposition -Werror=date-time    -Werror -Werror=unguarded-availability-new -o CMakeFiles/cmTC_410c4.dir/src.c.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-sCuy1s/src.c
+        cc1: error: '-Werror=unguarded-availability-new': no option '-Wunguarded-availability-new'
+        gmake[1]: *** [CMakeFiles/cmTC_410c4.dir/build.make:78: CMakeFiles/cmTC_410c4.dir/src.c.o] Error 1
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-sCuy1s'
+        gmake: *** [Makefile:127: cmTC_410c4/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:307 (check_cxx_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:640 (add_flag_if_supported)"
+      - "CMakeLists.txt:32 (include)"
+    checks:
+      - "Performing Test CXX_SUPPORTS_WERROR_UNGUARDED_AVAILABILITY_NEW"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-nhI0Ks"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-nhI0Ks"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/llvm-18/lib/cmake/llvm;/usr/lib/llvm-18/lib/cmake/llvm"
+    buildResult:
+      variable: "CXX_SUPPORTS_WERROR_UNGUARDED_AVAILABILITY_NEW"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-nhI0Ks'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_bf725/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_bf725.dir/build.make CMakeFiles/cmTC_bf725.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-nhI0Ks'
+        Building CXX object CMakeFiles/cmTC_bf725.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_SUPPORTS_WERROR_UNGUARDED_AVAILABILITY_NEW  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time    -Werror -Werror=unguarded-availability-new -o CMakeFiles/cmTC_bf725.dir/src.cxx.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-nhI0Ks/src.cxx
+        cc1plus: error: '-Werror=unguarded-availability-new': no option '-Wunguarded-availability-new'
+        gmake[1]: *** [CMakeFiles/cmTC_bf725.dir/build.make:78: CMakeFiles/cmTC_bf725.dir/src.cxx.o] Error 1
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-nhI0Ks'
+        gmake: *** [Makefile:127: cmTC_bf725/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:305 (check_c_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:650 (add_flag_if_supported)"
+      - "CMakeLists.txt:32 (include)"
+    checks:
+      - "Performing Test C_SUPPORTS_CMAKE_CXX_FLAGS"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-kbaFcC"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-kbaFcC"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -fPIC -fno-semantic-interposition -Werror=date-time"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/llvm-18/lib/cmake/llvm;/usr/lib/llvm-18/lib/cmake/llvm"
+    buildResult:
+      variable: "C_SUPPORTS_CMAKE_CXX_FLAGS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-kbaFcC'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_2b4e3/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_2b4e3.dir/build.make CMakeFiles/cmTC_2b4e3.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-kbaFcC'
+        Building C object CMakeFiles/cmTC_2b4e3.dir/src.c.o
+        /usr/bin/cc -DC_SUPPORTS_CMAKE_CXX_FLAGS  -fPIC -fno-semantic-interposition -Werror=date-time    -Werror -fno-lifetime-dse -o CMakeFiles/cmTC_2b4e3.dir/src.c.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-kbaFcC/src.c
+        Linking C executable cmTC_2b4e3
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2b4e3.dir/link.txt --verbose=1
+        /usr/bin/cc  -fPIC -fno-semantic-interposition -Werror=date-time  CMakeFiles/cmTC_2b4e3.dir/src.c.o -o cmTC_2b4e3 
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-kbaFcC'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:307 (check_cxx_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:650 (add_flag_if_supported)"
+      - "CMakeLists.txt:32 (include)"
+    checks:
+      - "Performing Test CXX_SUPPORTS_CMAKE_CXX_FLAGS"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-meQQl7"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-meQQl7"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/llvm-18/lib/cmake/llvm;/usr/lib/llvm-18/lib/cmake/llvm"
+    buildResult:
+      variable: "CXX_SUPPORTS_CMAKE_CXX_FLAGS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-meQQl7'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_86bf9/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_86bf9.dir/build.make CMakeFiles/cmTC_86bf9.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-meQQl7'
+        Building CXX object CMakeFiles/cmTC_86bf9.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_SUPPORTS_CMAKE_CXX_FLAGS  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time    -Werror -fno-lifetime-dse -o CMakeFiles/cmTC_86bf9.dir/src.cxx.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-meQQl7/src.cxx
+        Linking CXX executable cmTC_86bf9
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_86bf9.dir/link.txt --verbose=1
+        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time  CMakeFiles/cmTC_86bf9.dir/src.cxx.o -o cmTC_86bf9 
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-meQQl7'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:786 (check_cxx_compiler_flag)"
+      - "CMakeLists.txt:32 (include)"
+    checks:
+      - "Performing Test CXX_SUPPORTS_MISSING_FIELD_INITIALIZERS_FLAG"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-FK751e"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-FK751e"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/llvm-18/lib/cmake/llvm;/usr/lib/llvm-18/lib/cmake/llvm"
+    buildResult:
+      variable: "CXX_SUPPORTS_MISSING_FIELD_INITIALIZERS_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-FK751e'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b2598/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_b2598.dir/build.make CMakeFiles/cmTC_b2598.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-FK751e'
+        Building CXX object CMakeFiles/cmTC_b2598.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_SUPPORTS_MISSING_FIELD_INITIALIZERS_FLAG  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual    -Wmissing-field-initializers -o CMakeFiles/cmTC_b2598.dir/src.cxx.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-FK751e/src.cxx
+        Linking CXX executable cmTC_b2598
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b2598.dir/link.txt --verbose=1
+        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual  CMakeFiles/cmTC_b2598.dir/src.cxx.o -o cmTC_b2598 
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-FK751e'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:305 (check_c_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:805 (add_flag_if_supported)"
+      - "CMakeLists.txt:32 (include)"
+    checks:
+      - "Performing Test C_SUPPORTS_IMPLICIT_FALLTHROUGH_FLAG"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-qxrqDH"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-qxrqDH"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/llvm-18/lib/cmake/llvm;/usr/lib/llvm-18/lib/cmake/llvm"
+    buildResult:
+      variable: "C_SUPPORTS_IMPLICIT_FALLTHROUGH_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-qxrqDH'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_3d7b0/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_3d7b0.dir/build.make CMakeFiles/cmTC_3d7b0.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-qxrqDH'
+        Building C object CMakeFiles/cmTC_3d7b0.dir/src.c.o
+        /usr/bin/cc -DC_SUPPORTS_IMPLICIT_FALLTHROUGH_FLAG  -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers    -Werror -Wimplicit-fallthrough -o CMakeFiles/cmTC_3d7b0.dir/src.c.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-qxrqDH/src.c
+        Linking C executable cmTC_3d7b0
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3d7b0.dir/link.txt --verbose=1
+        /usr/bin/cc  -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers  CMakeFiles/cmTC_3d7b0.dir/src.c.o -o cmTC_3d7b0 
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-qxrqDH'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:307 (check_cxx_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:805 (add_flag_if_supported)"
+      - "CMakeLists.txt:32 (include)"
+    checks:
+      - "Performing Test CXX_SUPPORTS_IMPLICIT_FALLTHROUGH_FLAG"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-5YsmdO"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-5YsmdO"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/llvm-18/lib/cmake/llvm;/usr/lib/llvm-18/lib/cmake/llvm"
+    buildResult:
+      variable: "CXX_SUPPORTS_IMPLICIT_FALLTHROUGH_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-5YsmdO'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9b808/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_9b808.dir/build.make CMakeFiles/cmTC_9b808.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-5YsmdO'
+        Building CXX object CMakeFiles/cmTC_9b808.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_SUPPORTS_IMPLICIT_FALLTHROUGH_FLAG  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers    -Werror -Wimplicit-fallthrough -o CMakeFiles/cmTC_9b808.dir/src.cxx.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-5YsmdO/src.cxx
+        Linking CXX executable cmTC_9b808
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9b808.dir/link.txt --verbose=1
+        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers  CMakeFiles/cmTC_9b808.dir/src.cxx.o -o cmTC_9b808 
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-5YsmdO'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:305 (check_c_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:806 (add_flag_if_supported)"
+      - "CMakeLists.txt:32 (include)"
+    checks:
+      - "Performing Test C_SUPPORTS_COVERED_SWITCH_DEFAULT_FLAG"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-1wXFBe"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-1wXFBe"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/llvm-18/lib/cmake/llvm;/usr/lib/llvm-18/lib/cmake/llvm"
+    buildResult:
+      variable: "C_SUPPORTS_COVERED_SWITCH_DEFAULT_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-1wXFBe'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_61d74/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_61d74.dir/build.make CMakeFiles/cmTC_61d74.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-1wXFBe'
+        Building C object CMakeFiles/cmTC_61d74.dir/src.c.o
+        /usr/bin/cc -DC_SUPPORTS_COVERED_SWITCH_DEFAULT_FLAG  -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough    -Werror -Wcovered-switch-default -o CMakeFiles/cmTC_61d74.dir/src.c.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-1wXFBe/src.c
+        cc: error: unrecognized command-line option '-Wcovered-switch-default'; did you mean '-Wno-switch-default'?
+        gmake[1]: *** [CMakeFiles/cmTC_61d74.dir/build.make:78: CMakeFiles/cmTC_61d74.dir/src.c.o] Error 1
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-1wXFBe'
+        gmake: *** [Makefile:127: cmTC_61d74/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:307 (check_cxx_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:806 (add_flag_if_supported)"
+      - "CMakeLists.txt:32 (include)"
+    checks:
+      - "Performing Test CXX_SUPPORTS_COVERED_SWITCH_DEFAULT_FLAG"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-89hJzn"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-89hJzn"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/llvm-18/lib/cmake/llvm;/usr/lib/llvm-18/lib/cmake/llvm"
+    buildResult:
+      variable: "CXX_SUPPORTS_COVERED_SWITCH_DEFAULT_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-89hJzn'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_1dde8/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_1dde8.dir/build.make CMakeFiles/cmTC_1dde8.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-89hJzn'
+        Building CXX object CMakeFiles/cmTC_1dde8.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_SUPPORTS_COVERED_SWITCH_DEFAULT_FLAG  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough    -Werror -Wcovered-switch-default -o CMakeFiles/cmTC_1dde8.dir/src.cxx.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-89hJzn/src.cxx
+        c++: error: unrecognized command-line option '-Wcovered-switch-default'; did you mean '-Wno-switch-default'?
+        gmake[1]: *** [CMakeFiles/cmTC_1dde8.dir/build.make:78: CMakeFiles/cmTC_1dde8.dir/src.cxx.o] Error 1
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-89hJzn'
+        gmake: *** [Makefile:127: cmTC_1dde8/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:817 (check_cxx_compiler_flag)"
+      - "CMakeLists.txt:32 (include)"
+    checks:
+      - "Performing Test CXX_SUPPORTS_CLASS_MEMACCESS_FLAG"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-eNYmCm"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-eNYmCm"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/llvm-18/lib/cmake/llvm;/usr/lib/llvm-18/lib/cmake/llvm"
+    buildResult:
+      variable: "CXX_SUPPORTS_CLASS_MEMACCESS_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-eNYmCm'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_de498/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_de498.dir/build.make CMakeFiles/cmTC_de498.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-eNYmCm'
+        Building CXX object CMakeFiles/cmTC_de498.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_SUPPORTS_CLASS_MEMACCESS_FLAG  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull    -Wclass-memaccess -o CMakeFiles/cmTC_de498.dir/src.cxx.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-eNYmCm/src.cxx
+        Linking CXX executable cmTC_de498
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_de498.dir/link.txt --verbose=1
+        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull  CMakeFiles/cmTC_de498.dir/src.cxx.o -o cmTC_de498 
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-eNYmCm'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:827 (check_cxx_compiler_flag)"
+      - "CMakeLists.txt:32 (include)"
+    checks:
+      - "Performing Test CXX_SUPPORTS_REDUNDANT_MOVE_FLAG"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-OVKpQN"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-OVKpQN"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/llvm-18/lib/cmake/llvm;/usr/lib/llvm-18/lib/cmake/llvm"
+    buildResult:
+      variable: "CXX_SUPPORTS_REDUNDANT_MOVE_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-OVKpQN'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_fe11a/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_fe11a.dir/build.make CMakeFiles/cmTC_fe11a.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-OVKpQN'
+        Building CXX object CMakeFiles/cmTC_fe11a.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_SUPPORTS_REDUNDANT_MOVE_FLAG  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess    -Wredundant-move -o CMakeFiles/cmTC_fe11a.dir/src.cxx.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-OVKpQN/src.cxx
+        Linking CXX executable cmTC_fe11a
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fe11a.dir/link.txt --verbose=1
+        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess  CMakeFiles/cmTC_fe11a.dir/src.cxx.o -o cmTC_fe11a 
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-OVKpQN'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:829 (check_cxx_compiler_flag)"
+      - "CMakeLists.txt:32 (include)"
+    checks:
+      - "Performing Test CXX_SUPPORTS_PESSIMIZING_MOVE_FLAG"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-S1d2iZ"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-S1d2iZ"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/llvm-18/lib/cmake/llvm;/usr/lib/llvm-18/lib/cmake/llvm"
+    buildResult:
+      variable: "CXX_SUPPORTS_PESSIMIZING_MOVE_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-S1d2iZ'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_39f3f/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_39f3f.dir/build.make CMakeFiles/cmTC_39f3f.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-S1d2iZ'
+        Building CXX object CMakeFiles/cmTC_39f3f.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_SUPPORTS_PESSIMIZING_MOVE_FLAG  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move    -Wpessimizing-move -o CMakeFiles/cmTC_39f3f.dir/src.cxx.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-S1d2iZ/src.cxx
+        Linking CXX executable cmTC_39f3f
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_39f3f.dir/link.txt --verbose=1
+        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move  CMakeFiles/cmTC_39f3f.dir/src.cxx.o -o cmTC_39f3f 
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-S1d2iZ'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:834 (check_cxx_compiler_flag)"
+      - "CMakeLists.txt:32 (include)"
+    checks:
+      - "Performing Test CXX_SUPPORTS_NOEXCEPT_TYPE_FLAG"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-TJKeJw"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-TJKeJw"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/llvm-18/lib/cmake/llvm;/usr/lib/llvm-18/lib/cmake/llvm"
+    buildResult:
+      variable: "CXX_SUPPORTS_NOEXCEPT_TYPE_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-TJKeJw'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_2d770/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_2d770.dir/build.make CMakeFiles/cmTC_2d770.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-TJKeJw'
+        Building CXX object CMakeFiles/cmTC_2d770.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_SUPPORTS_NOEXCEPT_TYPE_FLAG  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move    -Wnoexcept-type -o CMakeFiles/cmTC_2d770.dir/src.cxx.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-TJKeJw/src.cxx
+        Linking CXX executable cmTC_2d770
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2d770.dir/link.txt --verbose=1
+        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move  CMakeFiles/cmTC_2d770.dir/src.cxx.o -o cmTC_2d770 
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-TJKeJw'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckCXXSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:842 (CHECK_CXX_SOURCE_COMPILES)"
+      - "CMakeLists.txt:32 (include)"
+    checks:
+      - "Performing Test CXX_WONT_WARN_ON_FINAL_NONVIRTUALDTOR"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-KVX2XK"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-KVX2XK"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/llvm-18/lib/cmake/llvm;/usr/lib/llvm-18/lib/cmake/llvm"
+    buildResult:
+      variable: "CXX_WONT_WARN_ON_FINAL_NONVIRTUALDTOR"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-KVX2XK'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9d0e9/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_9d0e9.dir/build.make CMakeFiles/cmTC_9d0e9.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-KVX2XK'
+        Building CXX object CMakeFiles/cmTC_9d0e9.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_WONT_WARN_ON_FINAL_NONVIRTUALDTOR  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type  -Werror=non-virtual-dtor -o CMakeFiles/cmTC_9d0e9.dir/src.cxx.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-KVX2XK/src.cxx
+        /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-KVX2XK/src.cxx:2:36: error: ‘class base’ has virtual functions and accessible non-virtual destructor [-Werror=non-virtual-dtor]
+            2 |                              class base {friend f; public: virtual void anchor();protected: ~base();};
+              |                                    ^~~~
+        cc1plus: some warnings being treated as errors
+        gmake[1]: *** [CMakeFiles/cmTC_9d0e9.dir/build.make:78: CMakeFiles/cmTC_9d0e9.dir/src.cxx.o] Error 1
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-KVX2XK'
+        gmake: *** [Makefile:127: cmTC_9d0e9/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:854 (check_cxx_compiler_flag)"
+      - "CMakeLists.txt:32 (include)"
+    checks:
+      - "Performing Test CXX_SUPPORTS_SUGGEST_OVERRIDE_FLAG"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-XBhRhY"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-XBhRhY"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/llvm-18/lib/cmake/llvm;/usr/lib/llvm-18/lib/cmake/llvm"
+    buildResult:
+      variable: "CXX_SUPPORTS_SUGGEST_OVERRIDE_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-XBhRhY'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_49fd4/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_49fd4.dir/build.make CMakeFiles/cmTC_49fd4.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-XBhRhY'
+        Building CXX object CMakeFiles/cmTC_49fd4.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_SUPPORTS_SUGGEST_OVERRIDE_FLAG  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor    -Wsuggest-override -o CMakeFiles/cmTC_49fd4.dir/src.cxx.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-XBhRhY/src.cxx
+        Linking CXX executable cmTC_49fd4
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_49fd4.dir/link.txt --verbose=1
+        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor  CMakeFiles/cmTC_49fd4.dir/src.cxx.o -o cmTC_49fd4 
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-XBhRhY'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckCXXSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:858 (CHECK_CXX_SOURCE_COMPILES)"
+      - "CMakeLists.txt:32 (include)"
+    checks:
+      - "Performing Test CXX_WSUGGEST_OVERRIDE_ALLOWS_ONLY_FINAL"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-LE4Id7"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-LE4Id7"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/llvm-18/lib/cmake/llvm;/usr/lib/llvm-18/lib/cmake/llvm"
+    buildResult:
+      variable: "CXX_WSUGGEST_OVERRIDE_ALLOWS_ONLY_FINAL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-LE4Id7'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_fbde8/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_fbde8.dir/build.make CMakeFiles/cmTC_fbde8.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-LE4Id7'
+        Building CXX object CMakeFiles/cmTC_fbde8.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_WSUGGEST_OVERRIDE_ALLOWS_ONLY_FINAL  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor  -Werror=suggest-override -o CMakeFiles/cmTC_fbde8.dir/src.cxx.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-LE4Id7/src.cxx
+        Linking CXX executable cmTC_fbde8
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fbde8.dir/link.txt --verbose=1
+        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor  -Werror=suggest-override CMakeFiles/cmTC_fbde8.dir/src.cxx.o -o cmTC_fbde8 
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-LE4Id7'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:870 (CHECK_C_SOURCE_COMPILES)"
+      - "CMakeLists.txt:32 (include)"
+    checks:
+      - "Performing Test C_WCOMMENT_ALLOWS_LINE_WRAP"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-PLYFIC"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-PLYFIC"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/llvm-18/lib/cmake/llvm;/usr/lib/llvm-18/lib/cmake/llvm"
+    buildResult:
+      variable: "C_WCOMMENT_ALLOWS_LINE_WRAP"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-PLYFIC'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_e5f4f/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_e5f4f.dir/build.make CMakeFiles/cmTC_e5f4f.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-PLYFIC'
+        Building C object CMakeFiles/cmTC_e5f4f.dir/src.c.o
+        /usr/bin/cc -DC_WCOMMENT_ALLOWS_LINE_WRAP  -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough  -Werror -Wcomment -o CMakeFiles/cmTC_e5f4f.dir/src.c.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-PLYFIC/src.c
+        /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-PLYFIC/src.c:1:1: error: multi-line comment [-Werror=comment]
+            1 | // \\
+              | ^
+        cc1: all warnings being treated as errors
+        gmake[1]: *** [CMakeFiles/cmTC_e5f4f.dir/build.make:78: CMakeFiles/cmTC_e5f4f.dir/src.c.o] Error 1
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-PLYFIC'
+        gmake: *** [Makefile:127: cmTC_e5f4f/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:305 (check_c_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:878 (add_flag_if_supported)"
+      - "CMakeLists.txt:32 (include)"
+    checks:
+      - "Performing Test C_SUPPORTS_STRING_CONVERSION_FLAG"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-IuGjnz"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-IuGjnz"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/llvm-18/lib/cmake/llvm;/usr/lib/llvm-18/lib/cmake/llvm"
+    buildResult:
+      variable: "C_SUPPORTS_STRING_CONVERSION_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-IuGjnz'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_da6a9/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_da6a9.dir/build.make CMakeFiles/cmTC_da6a9.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-IuGjnz'
+        Building C object CMakeFiles/cmTC_da6a9.dir/src.c.o
+        /usr/bin/cc -DC_SUPPORTS_STRING_CONVERSION_FLAG  -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment    -Werror -Wstring-conversion -o CMakeFiles/cmTC_da6a9.dir/src.c.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-IuGjnz/src.c
+        cc: error: unrecognized command-line option '-Wstring-conversion'; did you mean '-Wsign-conversion'?
+        gmake[1]: *** [CMakeFiles/cmTC_da6a9.dir/build.make:78: CMakeFiles/cmTC_da6a9.dir/src.c.o] Error 1
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-IuGjnz'
+        gmake: *** [Makefile:127: cmTC_da6a9/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:307 (check_cxx_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:878 (add_flag_if_supported)"
+      - "CMakeLists.txt:32 (include)"
+    checks:
+      - "Performing Test CXX_SUPPORTS_STRING_CONVERSION_FLAG"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-igRXQl"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-igRXQl"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/llvm-18/lib/cmake/llvm;/usr/lib/llvm-18/lib/cmake/llvm"
+    buildResult:
+      variable: "CXX_SUPPORTS_STRING_CONVERSION_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-igRXQl'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_99faf/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_99faf.dir/build.make CMakeFiles/cmTC_99faf.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-igRXQl'
+        Building CXX object CMakeFiles/cmTC_99faf.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_SUPPORTS_STRING_CONVERSION_FLAG  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment    -Werror -Wstring-conversion -o CMakeFiles/cmTC_99faf.dir/src.cxx.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-igRXQl/src.cxx
+        c++: error: unrecognized command-line option '-Wstring-conversion'; did you mean '-Wsign-conversion'?
+        gmake[1]: *** [CMakeFiles/cmTC_99faf.dir/build.make:78: CMakeFiles/cmTC_99faf.dir/src.cxx.o] Error 1
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-igRXQl'
+        gmake: *** [Makefile:127: cmTC_99faf/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:884 (check_cxx_compiler_flag)"
+      - "CMakeLists.txt:32 (include)"
+    checks:
+      - "Performing Test CXX_SUPPORTS_MISLEADING_INDENTATION_FLAG"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-z7s0G0"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-z7s0G0"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/llvm-18/lib/cmake/llvm;/usr/lib/llvm-18/lib/cmake/llvm"
+    buildResult:
+      variable: "CXX_SUPPORTS_MISLEADING_INDENTATION_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-z7s0G0'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_91034/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_91034.dir/build.make CMakeFiles/cmTC_91034.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-z7s0G0'
+        Building CXX object CMakeFiles/cmTC_91034.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_SUPPORTS_MISLEADING_INDENTATION_FLAG  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment    -Wmisleading-indentation -o CMakeFiles/cmTC_91034.dir/src.cxx.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-z7s0G0/src.cxx
+        Linking CXX executable cmTC_91034
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_91034.dir/link.txt --verbose=1
+        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment  CMakeFiles/cmTC_91034.dir/src.cxx.o -o cmTC_91034 
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-z7s0G0'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:305 (check_c_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:892 (add_flag_if_supported)"
+      - "CMakeLists.txt:32 (include)"
+    checks:
+      - "Performing Test C_SUPPORTS_CTAD_MAYBE_UNSPPORTED_FLAG"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-LzTcXq"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-LzTcXq"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/llvm-18/lib/cmake/llvm;/usr/lib/llvm-18/lib/cmake/llvm"
+    buildResult:
+      variable: "C_SUPPORTS_CTAD_MAYBE_UNSPPORTED_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-LzTcXq'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_30cd4/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_30cd4.dir/build.make CMakeFiles/cmTC_30cd4.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-LzTcXq'
+        Building C object CMakeFiles/cmTC_30cd4.dir/src.c.o
+        /usr/bin/cc -DC_SUPPORTS_CTAD_MAYBE_UNSPPORTED_FLAG  -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment    -Werror -Wctad-maybe-unsupported -o CMakeFiles/cmTC_30cd4.dir/src.c.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-LzTcXq/src.c
+        cc1: error: command-line option '-Wctad-maybe-unsupported' is valid for C++/ObjC++ but not for C [-Werror]
+        cc1: all warnings being treated as errors
+        gmake[1]: *** [CMakeFiles/cmTC_30cd4.dir/build.make:78: CMakeFiles/cmTC_30cd4.dir/src.c.o] Error 1
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-LzTcXq'
+        gmake: *** [Makefile:127: cmTC_30cd4/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:307 (check_cxx_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:892 (add_flag_if_supported)"
+      - "CMakeLists.txt:32 (include)"
+    checks:
+      - "Performing Test CXX_SUPPORTS_CTAD_MAYBE_UNSPPORTED_FLAG"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-bZgdAX"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-bZgdAX"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/llvm-18/lib/cmake/llvm;/usr/lib/llvm-18/lib/cmake/llvm"
+    buildResult:
+      variable: "CXX_SUPPORTS_CTAD_MAYBE_UNSPPORTED_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-bZgdAX'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_e9ea9/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_e9ea9.dir/build.make CMakeFiles/cmTC_e9ea9.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-bZgdAX'
+        Building CXX object CMakeFiles/cmTC_e9ea9.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_SUPPORTS_CTAD_MAYBE_UNSPPORTED_FLAG  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation    -Werror -Wctad-maybe-unsupported -o CMakeFiles/cmTC_e9ea9.dir/src.cxx.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-bZgdAX/src.cxx
+        Linking CXX executable cmTC_e9ea9
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e9ea9.dir/link.txt --verbose=1
+        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation  CMakeFiles/cmTC_e9ea9.dir/src.cxx.o -o cmTC_e9ea9 
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-bZgdAX'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:1084 (check_c_compiler_flag)"
+      - "CMakeLists.txt:32 (include)"
+    checks:
+      - "Performing Test C_SUPPORTS_FNO_FUNCTION_SECTIONS"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-yWVGLK"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-yWVGLK"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/llvm-18/lib/cmake/llvm;/usr/lib/llvm-18/lib/cmake/llvm"
+    buildResult:
+      variable: "C_SUPPORTS_FNO_FUNCTION_SECTIONS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-yWVGLK'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_40c07/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_40c07.dir/build.make CMakeFiles/cmTC_40c07.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-yWVGLK'
+        Building C object CMakeFiles/cmTC_40c07.dir/src.c.o
+        /usr/bin/cc -DC_SUPPORTS_FNO_FUNCTION_SECTIONS  -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment    -Werror -fno-function-sections -o CMakeFiles/cmTC_40c07.dir/src.c.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-yWVGLK/src.c
+        Linking C executable cmTC_40c07
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_40c07.dir/link.txt --verbose=1
+        /usr/bin/cc  -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment  CMakeFiles/cmTC_40c07.dir/src.c.o -o cmTC_40c07 
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-yWVGLK'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:305 (check_c_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:1088 (add_flag_if_supported)"
+      - "CMakeLists.txt:32 (include)"
+    checks:
+      - "Performing Test C_SUPPORTS_FFUNCTION_SECTIONS"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-5Uxp9l"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-5Uxp9l"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/llvm-18/lib/cmake/llvm;/usr/lib/llvm-18/lib/cmake/llvm"
+    buildResult:
+      variable: "C_SUPPORTS_FFUNCTION_SECTIONS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-5Uxp9l'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_35c5f/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_35c5f.dir/build.make CMakeFiles/cmTC_35c5f.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-5Uxp9l'
+        Building C object CMakeFiles/cmTC_35c5f.dir/src.c.o
+        /usr/bin/cc -DC_SUPPORTS_FFUNCTION_SECTIONS  -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment    -Werror -ffunction-sections -o CMakeFiles/cmTC_35c5f.dir/src.c.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-5Uxp9l/src.c
+        Linking C executable cmTC_35c5f
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_35c5f.dir/link.txt --verbose=1
+        /usr/bin/cc  -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment  CMakeFiles/cmTC_35c5f.dir/src.c.o -o cmTC_35c5f 
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-5Uxp9l'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:307 (check_cxx_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:1088 (add_flag_if_supported)"
+      - "CMakeLists.txt:32 (include)"
+    checks:
+      - "Performing Test CXX_SUPPORTS_FFUNCTION_SECTIONS"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-hyL98K"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-hyL98K"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation -Wctad-maybe-unsupported"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/llvm-18/lib/cmake/llvm;/usr/lib/llvm-18/lib/cmake/llvm"
+    buildResult:
+      variable: "CXX_SUPPORTS_FFUNCTION_SECTIONS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-hyL98K'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f56f2/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_f56f2.dir/build.make CMakeFiles/cmTC_f56f2.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-hyL98K'
+        Building CXX object CMakeFiles/cmTC_f56f2.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_SUPPORTS_FFUNCTION_SECTIONS  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation -Wctad-maybe-unsupported    -Werror -ffunction-sections -o CMakeFiles/cmTC_f56f2.dir/src.cxx.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-hyL98K/src.cxx
+        Linking CXX executable cmTC_f56f2
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f56f2.dir/link.txt --verbose=1
+        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation -Wctad-maybe-unsupported  CMakeFiles/cmTC_f56f2.dir/src.cxx.o -o cmTC_f56f2 
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-hyL98K'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:51 (cmake_check_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:305 (check_c_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:1092 (add_flag_if_supported)"
+      - "CMakeLists.txt:32 (include)"
+    checks:
+      - "Performing Test C_SUPPORTS_FDATA_SECTIONS"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-vKHiTk"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-vKHiTk"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment -ffunction-sections"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/llvm-18/lib/cmake/llvm;/usr/lib/llvm-18/lib/cmake/llvm"
+    buildResult:
+      variable: "C_SUPPORTS_FDATA_SECTIONS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-vKHiTk'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_d1ccb/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_d1ccb.dir/build.make CMakeFiles/cmTC_d1ccb.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-vKHiTk'
+        Building C object CMakeFiles/cmTC_d1ccb.dir/src.c.o
+        /usr/bin/cc -DC_SUPPORTS_FDATA_SECTIONS  -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment -ffunction-sections    -Werror -fdata-sections -o CMakeFiles/cmTC_d1ccb.dir/src.c.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-vKHiTk/src.c
+        Linking C executable cmTC_d1ccb
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d1ccb.dir/link.txt --verbose=1
+        /usr/bin/cc  -fPIC -fno-semantic-interposition -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment -ffunction-sections  CMakeFiles/cmTC_d1ccb.dir/src.c.o -o cmTC_d1ccb 
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-vKHiTk'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:307 (check_cxx_compiler_flag)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:1092 (add_flag_if_supported)"
+      - "CMakeLists.txt:32 (include)"
+    checks:
+      - "Performing Test CXX_SUPPORTS_FDATA_SECTIONS"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-Bf3Yaw"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-Bf3Yaw"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation -Wctad-maybe-unsupported -ffunction-sections"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/llvm-18/lib/cmake/llvm;/usr/lib/llvm-18/lib/cmake/llvm"
+    buildResult:
+      variable: "CXX_SUPPORTS_FDATA_SECTIONS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-Bf3Yaw'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_8c63b/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_8c63b.dir/build.make CMakeFiles/cmTC_8c63b.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-Bf3Yaw'
+        Building CXX object CMakeFiles/cmTC_8c63b.dir/src.cxx.o
+        /usr/bin/c++ -DCXX_SUPPORTS_FDATA_SECTIONS  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation -Wctad-maybe-unsupported -ffunction-sections    -Werror -fdata-sections -o CMakeFiles/cmTC_8c63b.dir/src.cxx.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-Bf3Yaw/src.cxx
+        Linking CXX executable cmTC_8c63b
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8c63b.dir/link.txt --verbose=1
+        /usr/bin/c++  -fPIC -fno-semantic-interposition -fvisibility-inlines-hidden -Werror=date-time -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-nonnull -Wno-class-memaccess -Wno-redundant-move -Wno-pessimizing-move -Wno-noexcept-type -Wdelete-non-virtual-dtor -Wsuggest-override -Wno-comment -Wno-misleading-indentation -Wctad-maybe-unsupported -ffunction-sections  CMakeFiles/cmTC_8c63b.dir/src.cxx.o -o cmTC_8c63b 
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-Bf3Yaw'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake:140 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake:66 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "/usr/lib/llvm-18/lib/cmake/llvm/HandleLLVMOptions.cmake:1307 (check_symbol_exists)"
+      - "CMakeLists.txt:32 (include)"
+    checks:
+      - "Looking for os_signpost_interval_begin"
+    directories:
+      source: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-orHcu7"
+      binary: "/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-orHcu7"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -fPIC -fno-semantic-interposition -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment -ffunction-sections -fdata-sections"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/llvm-18/lib/cmake/llvm;/usr/lib/llvm-18/lib/cmake/llvm"
+    buildResult:
+      variable: "macos_signposts_available"
+      cached: true
+      stdout: |
+        Change Dir: '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-orHcu7'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_de43c/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_de43c.dir/build.make CMakeFiles/cmTC_de43c.dir/build
+        gmake[1]: Entering directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-orHcu7'
+        Building C object CMakeFiles/cmTC_de43c.dir/CheckSymbolExists.c.o
+        /usr/bin/cc   -fPIC -fno-semantic-interposition -fno-lifetime-dse -Wall -Wextra -Wno-unused-parameter -Wwrite-strings -Wcast-qual -Wno-missing-field-initializers -Wimplicit-fallthrough -Wno-comment -ffunction-sections -fdata-sections  -o CMakeFiles/cmTC_de43c.dir/CheckSymbolExists.c.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-orHcu7/CheckSymbolExists.c
+        /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-orHcu7/CheckSymbolExists.c:2:10: fatal error: os/signpost.h: No such file or directory
+            2 | #include <os/signpost.h>
+              |          ^~~~~~~~~~~~~~~
+        compilation terminated.
+        gmake[1]: *** [CMakeFiles/cmTC_de43c.dir/build.make:78: CMakeFiles/cmTC_de43c.dir/CheckSymbolExists.c.o] Error 1
+        gmake[1]: Leaving directory '/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles/CMakeScratch/TryCompile-orHcu7'
+        gmake: *** [Makefile:127: cmTC_de43c/fast] Error 2
+        
+      exitCode: 2
+...

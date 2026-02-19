@@ -56,6 +56,6 @@ verify.o:         verify.f90  bt_data.o
 bt_data.o:        bt_data.f90  npbparams.h
 
 clean:
-	- rm -f *.o *~ *.mod mputil*
+	- rm -f *.o *~ *.mod mputil* *.ll
 	- rm -f npbparams.h core blk_par.h
 	- if [ -d rii_files ]; then rm -r rii_files; fi
