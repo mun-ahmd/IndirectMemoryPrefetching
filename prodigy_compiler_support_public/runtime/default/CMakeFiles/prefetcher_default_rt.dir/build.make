@@ -73,15 +73,15 @@ runtime/default/CMakeFiles/prefetcher_default_rt.dir/prefetcher_default_rt.cpp.o
 runtime/default/CMakeFiles/prefetcher_default_rt.dir/prefetcher_default_rt.cpp.o: runtime/default/prefetcher_default_rt.cpp
 runtime/default/CMakeFiles/prefetcher_default_rt.dir/prefetcher_default_rt.cpp.o: runtime/default/CMakeFiles/prefetcher_default_rt.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object runtime/default/CMakeFiles/prefetcher_default_rt.dir/prefetcher_default_rt.cpp.o"
-	cd /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/runtime/default && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT runtime/default/CMakeFiles/prefetcher_default_rt.dir/prefetcher_default_rt.cpp.o -MF CMakeFiles/prefetcher_default_rt.dir/prefetcher_default_rt.cpp.o.d -o CMakeFiles/prefetcher_default_rt.dir/prefetcher_default_rt.cpp.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/runtime/default/prefetcher_default_rt.cpp
+	cd /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/runtime/default && /usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT runtime/default/CMakeFiles/prefetcher_default_rt.dir/prefetcher_default_rt.cpp.o -MF CMakeFiles/prefetcher_default_rt.dir/prefetcher_default_rt.cpp.o.d -o CMakeFiles/prefetcher_default_rt.dir/prefetcher_default_rt.cpp.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/runtime/default/prefetcher_default_rt.cpp
 
 runtime/default/CMakeFiles/prefetcher_default_rt.dir/prefetcher_default_rt.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/prefetcher_default_rt.dir/prefetcher_default_rt.cpp.i"
-	cd /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/runtime/default && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/runtime/default/prefetcher_default_rt.cpp > CMakeFiles/prefetcher_default_rt.dir/prefetcher_default_rt.cpp.i
+	cd /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/runtime/default && /usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/runtime/default/prefetcher_default_rt.cpp > CMakeFiles/prefetcher_default_rt.dir/prefetcher_default_rt.cpp.i
 
 runtime/default/CMakeFiles/prefetcher_default_rt.dir/prefetcher_default_rt.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/prefetcher_default_rt.dir/prefetcher_default_rt.cpp.s"
-	cd /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/runtime/default && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/runtime/default/prefetcher_default_rt.cpp -o CMakeFiles/prefetcher_default_rt.dir/prefetcher_default_rt.cpp.s
+	cd /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/runtime/default && /usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/runtime/default/prefetcher_default_rt.cpp -o CMakeFiles/prefetcher_default_rt.dir/prefetcher_default_rt.cpp.s
 
 # Object files for target prefetcher_default_rt
 prefetcher_default_rt_OBJECTS = \

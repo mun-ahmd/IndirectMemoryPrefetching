@@ -432,48 +432,68 @@ public:
 				args.push_back(llvm::ConstantInt::get(
 						llvm::IntegerType::get(Mod->getContext(), 32), edgeCount++));
 
-				if (!insertPt) { // If insertion point hasn't been decided by Phi Node
-					if (llvm::dyn_cast<llvm::GlobalValue>(gdi.source) && llvm::dyn_cast<llvm::GlobalValue>(gdi.target)) {
-						insertPt = gdi.funcSource->getEntryBlock().getFirstNonPHIOrDbgOrLifetime();
+				if (!insertPt) {
+					// Insert after both definitions so the call's block is
+					// dominated by both def blocks (avoids "Instruction does
+					// not dominate all uses"). NCD would give a block that
+					// dominates both (too early); we need the block that is
+					// dominated by both, i.e. insert at end of the "later" block.
+					llvm::BasicBlock *blockOfSource = nullptr;
+					llvm::BasicBlock *blockOfTarget = nullptr;
+					llvm::Instruction *instr_src_def =
+					    dyn_cast<llvm::Instruction>(gdi.source);
+					llvm::Instruction *instr_tgt_def =
+					    dyn_cast<llvm::Instruction>(gdi.target);
+					if (llvm::dyn_cast<llvm::GlobalValue>(gdi.source) ||
+					    llvm::dyn_cast<llvm::Argument>(gdi.source)) {
+						blockOfSource = &gdi.funcSource->getEntryBlock();
+					} else if (instr_src_def) {
+						blockOfSource = instr_src_def->getParent();
 					}
-					else if (llvm::dyn_cast<llvm::GlobalValue>(gdi.source) && !llvm::dyn_cast<llvm::GlobalValue>(gdi.target)) {
-						if (llvm::dyn_cast<llvm::Argument>(gdi.target)) {
-							insertPt = gdi.funcSource->getEntryBlock().getFirstNonPHIOrDbgOrLifetime();
-						}
-						else {
-							insertPt = dyn_cast<llvm::Instruction>(gdi.target)->getNextNode();
-						}
+					if (llvm::dyn_cast<llvm::GlobalValue>(gdi.target) ||
+					    llvm::dyn_cast<llvm::Argument>(gdi.target)) {
+						blockOfTarget = &gdi.funcSource->getEntryBlock();
+					} else if (instr_tgt_def) {
+						blockOfTarget = instr_tgt_def->getParent();
 					}
-					else if (!llvm::dyn_cast<llvm::GlobalValue>(gdi.source) && llvm::dyn_cast<llvm::GlobalValue>(gdi.target)) {
-						if (llvm::dyn_cast<llvm::Argument>(gdi.source)) {
-							insertPt = gdi.funcSource->getEntryBlock().getFirstNonPHIOrDbgOrLifetime();
-						}
-						else {
-							insertPt = dyn_cast<llvm::Instruction>(gdi.source)->getNextNode();
-						}
-					}
-					else if (llvm::dyn_cast<llvm::Argument>(gdi.source) && llvm::dyn_cast<llvm::Argument>(gdi.target)) {
-						insertPt = gdi.funcSource->getEntryBlock().getFirstNonPHIOrDbgOrLifetime();
-					}
-					else if (llvm::dyn_cast<llvm::Argument>(gdi.source) && !llvm::dyn_cast<llvm::Argument>(gdi.target)) {
-						insertPt = dyn_cast<llvm::Instruction>(gdi.target)->getNextNode();
-					}
-					else if (!llvm::dyn_cast<llvm::Argument>(gdi.source) && llvm::dyn_cast<llvm::Argument>(gdi.target)) {
-						insertPt = dyn_cast<llvm::Instruction>(gdi.source)->getNextNode();
-					}
-					else {
-						insertPt = getSecondInstruction(*(gdi.funcSource),dyn_cast<llvm::Instruction>(gdi.source),dyn_cast<llvm::Instruction>(gdi.target))->getNextNode();
-					}
+					if (!blockOfSource)
+						blockOfSource = &gdi.funcSource->getEntryBlock();
+					if (!blockOfTarget)
+						blockOfTarget = &gdi.funcSource->getEntryBlock();
 
-					while (insertPt->getOpcode() == llvm::Instruction::PHI) {
-						insertPt = insertPt->getNextNode();
+					if (blockOfSource == blockOfTarget) {
+						// Same block: insert after the later instruction.
+						if (instr_src_def && instr_tgt_def)
+							insertPt = getSecondInstruction(
+							               *gdi.funcSource, instr_src_def,
+							               instr_tgt_def)->getNextNode();
+						else
+							insertPt = blockOfSource->getTerminator();
+					} else if (DT.dominates(blockOfSource, blockOfTarget)) {
+						// Source dominates target -> insert at end of target.
+						insertPt = blockOfTarget->getTerminator();
+					} else if (DT.dominates(blockOfTarget, blockOfSource)) {
+						// Target dominates source -> insert at end of source.
+						insertPt = blockOfSource->getTerminator();
+					} else {
+						// Neither dominates: find a block dominated by both.
+						for (llvm::BasicBlock &BB : *gdi.funcSource) {
+							llvm::BasicBlock *BBp = &BB;
+							if (DT.dominates(blockOfSource, BBp) &&
+							    DT.dominates(blockOfTarget, BBp)) {
+								insertPt = BBp->getTerminator();
+								break;
+							}
+						}
+						// If no block dominated by both, skip this edge (would be invalid).
 					}
 				}
 
-				auto *call = llvm::CallInst::Create(llvm::cast<llvm::Function>(func),
-						args, "", insertPt);
-
-				emittedTravEdges.insert(gdi);
+				if (insertPt) {
+					auto *call = llvm::CallInst::Create(llvm::cast<llvm::Function>(func),
+							args, "", insertPt);
+					emittedTravEdges.insert(gdi);
+				}
 			}
 		}
 	}
@@ -545,16 +565,22 @@ static llvm::RegisterPass<PrefetcherCodegenPass>
 Y("prefetcher-codegen", "Prefetcher Codegen Pass", false, true);
 
 static bool shouldSkip(llvm::Function &CurFunc) {
-	if (CurFunc.isIntrinsic() || CurFunc.empty()) {
-		llvm::errs() << "func is instrinsic or empty\n";
-		return true;
-	}
-
 	auto found = std::find(PrefetcherRuntime::Functions.begin(),
 			PrefetcherRuntime::Functions.end(), CurFunc.getName());
 	if (found != PrefetcherRuntime::Functions.end()) {
 		llvm::errs() << "func is in runtime\n";
 		return true;
+	}
+	
+	if (CurFunc.isIntrinsic() || CurFunc.empty()) {
+		llvm::errs() << "func is instrinsic or empty\n";
+		return true;
+	}
+
+	if (CurFunc.getName().contains("ReadInMetis")) {
+		llvm::errs() << "skipping func: " << CurFunc.getName()
+				<< " (ReadInMetis guard)\n";
+		return false;
 	}
 
 	return false;
@@ -580,8 +606,11 @@ bool PrefetcherCodegenPass::runOnModule(llvm::Module &CurMod) {
 			continue;
 		}
 
+		unsigned nInstr = 0;
+		for (auto &BB : curFunc)
+			nInstr += BB.size();
 		llvm::errs() << "processing func: "
-				<< curFunc.getName() << '\n';
+				<< curFunc.getName() << " (" << nInstr << " instructions)\n";
 
 		PrefetcherAnalysisResult * pfa =
 				this->getAnalysis<PrefetcherPass>(curFunc).getPFA();

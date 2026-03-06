@@ -10,4 +10,4 @@ If you found Prodigy to be useful in your work, please drop a citation to our HP
 
 ```
 
-
+Make sure to specify `-DLLVM_DIR` when running `cmake` you can use `llvm-config-18 --cmakedir`

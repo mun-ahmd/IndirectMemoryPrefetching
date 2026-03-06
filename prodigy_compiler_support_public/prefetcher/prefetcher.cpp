@@ -32,6 +32,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 // LLVM
+#include "llvm/ADT/SmallPtrSet.h"
 #include "llvm/ADT/SmallVector.h"
 #include "llvm/Analysis/DependenceAnalysis.h"
 #include "llvm/Analysis/MemoryBuiltins.h"
@@ -69,36 +70,43 @@ llvm::cl::opt<std::string>
                           llvm::cl::desc("function whitelist file"));
 
 namespace {
-
 bool getAllocationSizeCalc(llvm::Value &I, std::set<llvm::Value *> &vals,
                            int stack_count = 0) {
-  bool ret = false;
+    bool ret = false;
 
-  if (llvm::Instruction *Instr = dyn_cast<llvm::Instruction>(&I)) {
-
-    for (int i = 0; i < Instr->getNumOperands(); ++i) {
-      if (auto *user =
-              llvm::dyn_cast<llvm::Instruction>(Instr->getOperand(i))) {
-
-        if (user->getOpcode() == Instruction::Call) {
-          if (dyn_cast<llvm::CallInst>(user)
-                  ->getCalledFunction()
-                  ->getName()
-                  .str() == std::string("llvm.umul.with.overflow.i64")) {
-            ret = true;
-            vals.insert(user);
-            return true;
-          }
-        }
-
-        if (stack_count < 200) {
-          ret |= getAllocationSizeCalc(*user, vals, ++stack_count);
-        }
-      }
+    // Limit recursion depth to prevent stack overflow
+    if (stack_count >= 200) {
+        return false;
     }
-  }
 
-  return ret;
+    if (llvm::Instruction *Instr = llvm::dyn_cast<llvm::Instruction>(&I)) {
+        for (int i = 0; i < Instr->getNumOperands(); ++i) {
+            
+            if (auto *user = llvm::dyn_cast<llvm::Instruction>(Instr->getOperand(i))) {
+                
+                // Modern LLVM way to check for a Call instruction
+                if (auto *Call = llvm::dyn_cast<llvm::CallInst>(user)) {
+                    
+                    // CRITICAL FIX: Ensure the called function is not null (not an indirect call)
+                    if (llvm::Function *F = Call->getCalledFunction()) {
+                        
+                        // Check if it's our specific intrinsic. 
+                        // Using StringRef (==) is safe and fast here.
+                        if (F->getName() == "llvm.umul.with.overflow.i64") {
+                            ret = true;
+                            vals.insert(user);
+                            return true; // Fast exit
+                        }
+                    }
+                }
+
+                // Pass stack_count + 1 to correctly measure depth!
+                ret |= getAllocationSizeCalc(*user, vals, stack_count + 1);
+            }
+        }
+    }
+
+    return ret;
 }
 
 void identifyNewA(llvm::Function &F,
@@ -210,73 +218,58 @@ void findSourceGEPCandidates(
   }
 }
 
-void getLoadsUsingSourceGEP(llvm::Instruction *I,
-                            llvm::SmallVectorImpl<llvm::Instruction *> &loads,
-                            int iter = 0) {
-  if (dyn_cast<llvm::PHINode>(I)) {
-    llvm::PHINode *pI = dyn_cast<llvm::PHINode>(I);
-
-    for (auto &u : I->uses()) {
-      auto *user = llvm::dyn_cast<llvm::Instruction>(u.getUser());
-
-      if (user->getOpcode() == Instruction::Load) {
-        loads.push_back(user);
+void getLoadsUsingSourceGEP(llvm::Instruction *I, 
+                            llvm::SmallVectorImpl<llvm::Instruction*> &loads, 
+                            int depth = 0) {
+    // 1. Safe depth check right at the top
+    if (depth >= 20) {
         return;
-      } else if (iter < 20 && user->getOpcode() != Instruction::GetElementPtr &&
-                 user->getOpcode() !=
-                     Instruction::Store) { // Allow up to three modifications of
-                                           // value between gep calc and load,
-                                           // provided that they are not a store
-                                           // or another GEP
-        getLoadsUsingSourceGEP(user, loads, ++iter);
-      } else if (iter >= 20) {
-        return;
-      }
     }
-  } else {
-    for (auto &u : I->uses()) {
-      auto *user = llvm::dyn_cast<llvm::Instruction>(u.getUser());
 
-      if (user->getOpcode() == Instruction::Load) {
-        loads.push_back(user);
-        return;
-      } else if (iter < 20 && user->getOpcode() != Instruction::GetElementPtr &&
-                 user->getOpcode() !=
-                     Instruction::Store) { // Allow up to three modifications of
-                                           // value between gep calc and load,
-                                           // provided that they are not a store
-                                           // or another GEP
-        getLoadsUsingSourceGEP(user, loads, ++iter);
-      } else if (iter >= 20) {
-        return;
-      }
+    // 2. Modern LLVM iteration directly over users
+    for (llvm::User *U : I->users()) {
+        // 3. Safe cast: ensure the user is actually an Instruction
+        if (auto *UserInst = llvm::dyn_cast<llvm::Instruction>(U)) {
+            
+            // 4. Idiomatic type checking
+            if (auto *Load = llvm::dyn_cast<llvm::LoadInst>(UserInst)) {
+                loads.push_back(Load);
+                // We do NOT return here. We want to find ALL loads in the chain.
+            } 
+            else if (!llvm::isa<llvm::GetElementPtrInst>(UserInst) && 
+                     !llvm::isa<llvm::StoreInst>(UserInst)) {
+                
+                // 5. Pass depth + 1 (NOT ++depth) to avoid mutating the current frame
+                getLoadsUsingSourceGEP(UserInst, loads, depth + 1);
+            }
+        }
     }
-  }
 }
 
-void getGEPsUsingLoad(llvm::Instruction *I,
-                      llvm::SmallVectorImpl<llvm::Instruction *> &target_geps,
-                      int iter = 0) {
-  for (auto &u : I->uses()) {
-    auto *user = llvm::dyn_cast<llvm::Instruction>(u.getUser());
-
-    if (user->getOpcode() == Instruction::Store) {
-    } else if (user->getOpcode() == Instruction::GetElementPtr) {
-      if (user->getOperand(1) ==
-          I) { // GEP is dependent only if load result is used as an index
-        target_geps.push_back(user);
-      }
-    } else if (user->getOpcode() == Instruction::Load) {
+void getGEPsUsingLoad(llvm::Instruction *I, 
+                      llvm::SmallVectorImpl<llvm::Instruction*> &target_geps, 
+                      int depth = 0) {
+    // 1. Safe depth check at the top
+    if (depth >= 5) {
+        return;
     }
 
-    if (iter <
-        5) { // Allow up to three modifications of value between gep calc and
-             // load, provided that they are not a store or another GEP
-      getGEPsUsingLoad(user, target_geps, ++iter);
-    } else {
-      return;
+    for (llvm::User *U : I->users()) {
+        if (auto *UserInst = llvm::dyn_cast<llvm::Instruction>(U)) {
+            
+            if (auto *GEP = llvm::dyn_cast<llvm::GetElementPtrInst>(UserInst)) {
+                // Ensure the GEP has at least 2 operands to prevent out-of-bounds access.
+                // Operand(1) is the first index.
+                if (GEP->getNumOperands() > 1 && GEP->getOperand(1) == I) {
+                    target_geps.push_back(GEP);
+                }
+            }
+
+            // Recurse for ALL instruction types (which matches your original logic)
+            // Passing depth + 1 safely limits the tree depth
+            getGEPsUsingLoad(UserInst, target_geps, depth + 1);
+        }
     }
-  }
 }
 
 bool RIfindLoadUsingGEP(llvm::Instruction *src,

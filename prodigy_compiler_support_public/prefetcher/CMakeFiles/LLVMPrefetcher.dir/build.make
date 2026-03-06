@@ -73,29 +73,29 @@ prefetcher/CMakeFiles/LLVMPrefetcher.dir/prefetcher.cpp.o: prefetcher/CMakeFiles
 prefetcher/CMakeFiles/LLVMPrefetcher.dir/prefetcher.cpp.o: prefetcher/prefetcher.cpp
 prefetcher/CMakeFiles/LLVMPrefetcher.dir/prefetcher.cpp.o: prefetcher/CMakeFiles/LLVMPrefetcher.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object prefetcher/CMakeFiles/LLVMPrefetcher.dir/prefetcher.cpp.o"
-	cd /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/prefetcher && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT prefetcher/CMakeFiles/LLVMPrefetcher.dir/prefetcher.cpp.o -MF CMakeFiles/LLVMPrefetcher.dir/prefetcher.cpp.o.d -o CMakeFiles/LLVMPrefetcher.dir/prefetcher.cpp.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/prefetcher/prefetcher.cpp
+	cd /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/prefetcher && /usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT prefetcher/CMakeFiles/LLVMPrefetcher.dir/prefetcher.cpp.o -MF CMakeFiles/LLVMPrefetcher.dir/prefetcher.cpp.o.d -o CMakeFiles/LLVMPrefetcher.dir/prefetcher.cpp.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/prefetcher/prefetcher.cpp
 
 prefetcher/CMakeFiles/LLVMPrefetcher.dir/prefetcher.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/LLVMPrefetcher.dir/prefetcher.cpp.i"
-	cd /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/prefetcher && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/prefetcher/prefetcher.cpp > CMakeFiles/LLVMPrefetcher.dir/prefetcher.cpp.i
+	cd /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/prefetcher && /usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/prefetcher/prefetcher.cpp > CMakeFiles/LLVMPrefetcher.dir/prefetcher.cpp.i
 
 prefetcher/CMakeFiles/LLVMPrefetcher.dir/prefetcher.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/LLVMPrefetcher.dir/prefetcher.cpp.s"
-	cd /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/prefetcher && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/prefetcher/prefetcher.cpp -o CMakeFiles/LLVMPrefetcher.dir/prefetcher.cpp.s
+	cd /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/prefetcher && /usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/prefetcher/prefetcher.cpp -o CMakeFiles/LLVMPrefetcher.dir/prefetcher.cpp.s
 
 prefetcher/CMakeFiles/LLVMPrefetcher.dir/prefetcher_codegen.cpp.o: prefetcher/CMakeFiles/LLVMPrefetcher.dir/flags.make
 prefetcher/CMakeFiles/LLVMPrefetcher.dir/prefetcher_codegen.cpp.o: prefetcher/prefetcher_codegen.cpp
 prefetcher/CMakeFiles/LLVMPrefetcher.dir/prefetcher_codegen.cpp.o: prefetcher/CMakeFiles/LLVMPrefetcher.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object prefetcher/CMakeFiles/LLVMPrefetcher.dir/prefetcher_codegen.cpp.o"
-	cd /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/prefetcher && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT prefetcher/CMakeFiles/LLVMPrefetcher.dir/prefetcher_codegen.cpp.o -MF CMakeFiles/LLVMPrefetcher.dir/prefetcher_codegen.cpp.o.d -o CMakeFiles/LLVMPrefetcher.dir/prefetcher_codegen.cpp.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/prefetcher/prefetcher_codegen.cpp
+	cd /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/prefetcher && /usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT prefetcher/CMakeFiles/LLVMPrefetcher.dir/prefetcher_codegen.cpp.o -MF CMakeFiles/LLVMPrefetcher.dir/prefetcher_codegen.cpp.o.d -o CMakeFiles/LLVMPrefetcher.dir/prefetcher_codegen.cpp.o -c /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/prefetcher/prefetcher_codegen.cpp
 
 prefetcher/CMakeFiles/LLVMPrefetcher.dir/prefetcher_codegen.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/LLVMPrefetcher.dir/prefetcher_codegen.cpp.i"
-	cd /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/prefetcher && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/prefetcher/prefetcher_codegen.cpp > CMakeFiles/LLVMPrefetcher.dir/prefetcher_codegen.cpp.i
+	cd /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/prefetcher && /usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/prefetcher/prefetcher_codegen.cpp > CMakeFiles/LLVMPrefetcher.dir/prefetcher_codegen.cpp.i
 
 prefetcher/CMakeFiles/LLVMPrefetcher.dir/prefetcher_codegen.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/LLVMPrefetcher.dir/prefetcher_codegen.cpp.s"
-	cd /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/prefetcher && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/prefetcher/prefetcher_codegen.cpp -o CMakeFiles/LLVMPrefetcher.dir/prefetcher_codegen.cpp.s
+	cd /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/prefetcher && /usr/bin/clang++-18 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muneeb/repos/IndirectMemoryPrefetching/prodigy_compiler_support_public/prefetcher/prefetcher_codegen.cpp -o CMakeFiles/LLVMPrefetcher.dir/prefetcher_codegen.cpp.s
 
 # Object files for target LLVMPrefetcher
 LLVMPrefetcher_OBJECTS = \

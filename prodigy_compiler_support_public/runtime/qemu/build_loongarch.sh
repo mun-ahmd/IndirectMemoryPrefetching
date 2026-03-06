@@ -5,7 +5,8 @@
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-GCC_TOOLCHAIN_PATH="${1:-/home/muneeb/repos/IndirectMemoryPrefetching/loongarch-tools}"
+GCC_TOOLCHAIN_PATH="/opt/x-tools/loongarch64-unknown-linux-gnu"
+SYSROOT="/opt/x-tools/loongarch64-unknown-linux-gnu/loongarch64-unknown-linux-gnu/sysroot"
 
 if [ ! -d "$GCC_TOOLCHAIN_PATH" ]; then
     echo "Error: GCC_TOOLCHAIN_PATH '$GCC_TOOLCHAIN_PATH' does not exist"
@@ -32,6 +33,8 @@ cd "$SCRIPT_DIR"
 CXXFLAGS=(
     "--target=loongarch64-unknown-linux-gnu"
     "--gcc-toolchain=$GCC_TOOLCHAIN_PATH"
+    "--sysroot=$SYSROOT"
+    "-fuse-ld=lld"
     "-fPIC"
     "-shared"
     "-O2"
