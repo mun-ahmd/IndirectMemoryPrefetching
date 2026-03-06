@@ -1,0 +1,180 @@
+// Copyright (c) 2015, The Regents of the University of California (Regents)
+// See LICENSE.txt for license details
+
+#include <algorithm>
+#include <iostream>
+#include <vector>
+
+#include "benchmark.h"
+#include "builder.h"
+#include "command_line.h"
+#include "graph.h"
+#include "pvector.h"
+
+
+#include <omp.h>
+#include <sim_api.h>
+#include <pf_interface.h>
+#include <fstream>
+
+/*
+GAP Benchmark Suite
+Kernel: PageRank (PR)
+Author: Scott Beamer
+
+Will return pagerank scores for all vertices once total change < epsilon
+
+This PR implementation uses the traditional iterative approach. This is done
+to ease comparisons to other implementations (often use same algorithm), but
+it is not necesarily the fastest way to implement it. It does perform the
+updates in the pull direction to remove the need for atomics.
+*/
+
+
+using namespace std;
+
+typedef float ScoreT;
+const float kDamp = 0.85;
+
+pvector<ScoreT> PageRankPull(const Graph &g, int max_iters,
+                             double epsilon = 0) {
+  const ScoreT init_score = 1.0f / g.num_nodes();
+  const ScoreT base_score = (1.0f - kDamp) / g.num_nodes();
+
+  pvector<ScoreT> scores(g.num_nodes(), init_score);
+  pvector<ScoreT> outgoing_contrib(g.num_nodes());
+  
+  uint64_t num_cores = omp_get_max_threads();
+  pf_params_t* params = new pf_params_t(6, 2, 4, num_cores); 
+  pf_enable_t* enable = new pf_enable_t();
+
+  // Phase 1
+  params->RegisterNode(&(*scores.begin()), g.num_nodes(), 0);
+  params->RegisterNode(g.out_index_, g.num_nodes()+1, 1);
+  // @todo reaccess whether or not squash if larger is a good call
+  auto t_p1_0 = params->RegisterTrigEdge((NodeId)0, (NodeId)0, UpToOffset, SquashIfLarger);
+  auto t_p1_1 = params->RegisterTrigEdge((NodeId)1, (NodeId)1, UpToOffset, SquashIfLarger);
+
+  // Phase 2
+  params->RegisterNode(g.in_index_, g.num_nodes()+1, 2);
+  params->RegisterNode(g.in_neighbors_, g.num_edges(), 3);
+  params->RegisterNode(&(*outgoing_contrib.begin()), g.num_nodes(), 4);
+  params->RegisterNode(&(*scores.begin()), g.num_nodes(), 5);
+  params->RegisterTravEdge((NodeId)2, (NodeId)3, PointerBounds_int32_t);
+  params->RegisterTravEdge((NodeId)3, (NodeId)4, BaseOffset_int32_t);
+  auto t_p2_0 = params->RegisterTrigEdge((NodeId)2, (NodeId)2, UpToOffset, SquashIfLarger);
+  auto t_p2_1 = params->RegisterTrigEdge((NodeId)2, (NodeId)5, UpToOffset, SquashIfLarger);
+
+  SimUser(PF_SET_PARAM, (long unsigned int) params);
+  SimUser(PF_SET_ENABLE, (long unsigned int) enable);
+
+  SimRoiStart();
+
+  SimUser(PF_ENABLE, (long unsigned int) enable);
+
+  if (SimInSimulator() and !enable->is_enabled()) {
+      enable->wait();
+  }
+
+  for (int iter=0; iter < max_iters; iter++) {
+    double error = 0;
+    
+    // ========================================================================
+    // Phase 1
+    // ========================================================================
+
+    TriggerChange::DisableTrigger(num_cores, t_p2_0);
+    TriggerChange::DisableTrigger(num_cores, t_p2_1);
+    TriggerChange::EnableTrigger(num_cores, t_p1_0);
+    TriggerChange::EnableTrigger(num_cores, t_p1_1);
+
+    #pragma omp parallel for
+    for (NodeID n=0; n < g.num_nodes(); n++)
+      outgoing_contrib[n] = scores[n] / g.out_degree(n);
+
+    // ========================================================================
+    // Phase 2
+    // ========================================================================
+
+    TriggerChange::DisableTrigger(num_cores, t_p1_0);
+    TriggerChange::DisableTrigger(num_cores, t_p1_1);
+    TriggerChange::EnableTrigger(num_cores, t_p2_0);
+    TriggerChange::EnableTrigger(num_cores, t_p2_1);
+
+    #pragma omp parallel for reduction(+ : error) schedule(dynamic, 64)
+    for (NodeID u=0; u < g.num_nodes(); u++) {
+      ScoreT incoming_total = 0;
+      for (NodeID v : g.in_neigh(u))
+        incoming_total += outgoing_contrib[v];
+      ScoreT old_score = scores[u];
+      scores[u] = base_score + kDamp * incoming_total;
+      error += fabs(scores[u] - old_score);
+    }
+
+    printf(" %2d    %lf\n", iter, error);
+    if (error < epsilon)
+      break;
+  }
+
+  SimRoiEnd();
+  SimUser(PF_DISABLE, (long unsigned int) enable);
+
+  delete params;
+  delete enable;
+
+  return scores;
+}
+
+
+void PrintTopScores(const Graph &g, const pvector<ScoreT> &scores) {
+  vector<pair<NodeID, ScoreT>> score_pairs(g.num_nodes());
+  for (NodeID n=0; n < g.num_nodes(); n++) {
+    score_pairs[n] = make_pair(n, scores[n]);
+  }
+  int k = 5;
+  vector<pair<ScoreT, NodeID>> top_k = TopK(score_pairs, k);
+  k = min(k, static_cast<int>(top_k.size()));
+  for (auto kvp : top_k)
+    cout << kvp.second << ":" << kvp.first << endl;
+}
+
+
+// Verifies by asserting a single serial iteration in push direction has
+//   error < target_error
+bool PRVerifier(const Graph &g, const pvector<ScoreT> &scores,
+                        double target_error) {
+  const ScoreT base_score = (1.0f - kDamp) / g.num_nodes();
+  pvector<ScoreT> incomming_sums(g.num_nodes(), 0);
+  double error = 0;
+  for (NodeID u : g.vertices()) {
+    ScoreT outgoing_contrib = scores[u] / g.out_degree(u);
+    for (NodeID v : g.out_neigh(u))
+      incomming_sums[v] += outgoing_contrib;
+  }
+  for (NodeID n : g.vertices()) {
+    error += fabs(base_score + kDamp * incomming_sums[n] - scores[n]);
+    incomming_sums[n] = 0;
+  }
+  PrintTime("Total Error", error);
+  return error < target_error;
+}
+
+
+int main(int argc, char* argv[]) {
+  omp_set_num_threads(8);
+  cout << "#threads = " << omp_get_max_threads() << endl; 
+
+  CLPageRank cli(argc, argv, "pagerank", 1e-4, 20);
+  if (!cli.ParseArgs())
+    return -1;
+  Builder b(cli);
+  Graph g = b.MakeGraph();
+  auto PRBound = [&cli] (const Graph &g) {
+    return PageRankPull(g, cli.max_iters(), cli.tolerance());
+  };
+  auto VerifierBound = [&cli] (const Graph &g, const pvector<ScoreT> &scores) {
+    return PRVerifier(g, scores, cli.tolerance());
+  };
+  BenchmarkKernel(cli, g, PRBound, PrintTopScores, VerifierBound);
+  return 0;
+}
