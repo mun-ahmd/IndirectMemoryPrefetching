@@ -12,9 +12,14 @@
 #include "pvector.h"
 
 
+#if defined(__loongarch__)
+inline int omp_get_max_threads() { return 1; }
+inline void omp_set_num_threads(int) {}
+#else
 #include <omp.h>
-#include <sim_api.h>
-#include <pf_interface.h>
+#endif
+#include <qemu_pf_sim_api.h>
+
 #include <fstream>
 
 /*

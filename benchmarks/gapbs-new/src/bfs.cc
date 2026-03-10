@@ -15,11 +15,18 @@
 #include "timer.h"
 #include <stdio.h>
 
-#include <omp.h>
-#include <sim_api.h>
-#include <bfs_interface.h>
+#include <qemu_pf_sim_api.h>
 #include <fstream>
 
+// OpenMP: enabled on native builds; for LoongArch cross-builds without omp.h
+// we provide minimal stubs and run single-threaded.
+#if defined(__loongarch__)
+inline int omp_get_max_threads() { return 1; }
+inline void omp_set_num_threads(int) {}
+#else
+#include <omp.h>
+#endif
+#include <qemu_pf_sim_api.h>
 /*
 GAP Benchmark Suite
 Kernel: Breadth-First Search (BFS)
@@ -143,61 +150,35 @@ pvector<NodeID> DOBFS(const Graph &g, NodeID source, int alpha = 15,
   int64_t edges_to_check = g.num_edges_directed();
   int64_t scout_count = g.out_degree(source);
   int64_t num_nodes = g.num_nodes();
-
-  bfs_params_t params;
-  params.o                = 30;
-  params.worklist         = &(*queue.begin());
-  params.worklist_size    = g.num_nodes();
-  params.vertexlist       = g.out_index_;
-  params.vertexlist_size  = g.num_nodes() + 1;
-  params.edgelist         = g.out_neighbors_;
-  params.edgelist_size    = g.num_edges();
-  params.visitedlist      = &(*parent.begin());
-  params.visitedlist_size = g.num_nodes();
-  
   queue.push_back(source);
   queue.slide_window();
-
-  printf("offset = %d\n", params.o);
-    
-  printf("bfs: &params = %p\n", &params);
-  printf("worklist = %p [%d], vertexlist = %p [%d], edgelist = %p [%d], visitedlist = %p [%d]\n",
-         params.worklist,
-         params.worklist_size,
-         params.vertexlist,
-         params.vertexlist_size,
-         params.edgelist,
-         params.edgelist_size,
-         params.visitedlist,
-         params.visitedlist_size);
-
-  char buffer[200] = {'\0'};
-  sprintf(buffer, "%p; %p; %p; %p; %p; %p; %p; %p\n",
-          params.worklist,
-          params.worklist_size*8 + params.worklist,
-          params.vertexlist,
-          params.vertexlist_size*8 + params.vertexlist,
-          params.edgelist,
-          params.edgelist_size*8 + params.edgelist,
-          params.visitedlist,
-          params.visitedlist_size*8 + params.visitedlist);
-  myfile << buffer;
-
   int64_t awake_count, old_awake_count;
 
+  printf("initializing parameters...\n");
+  pf_params_t* params = new pf_params_t(4, 3, 1, 1);
+  pf_enable_t* enable = new pf_enable_t();
+
+  // Register all of the arrays as nodes
+  params->RegisterNode(&(*queue.begin()), g.num_nodes(), 0);
+  params->RegisterNode(g.out_index_, g.num_nodes() + 1, 1);
+  params->RegisterNode(g.out_neighbors_, g.num_edges(), 2);
+  params->RegisterNode(&(*parent.begin()), g.num_nodes(), 3);
+
+  // Register the edges that implement the traversal
+  params->RegisterTravEdge((NodeId)0, (NodeId)1, BaseOffset_int32_t);
+  params->RegisterTravEdge((NodeId)1, (NodeId)2, PointerBounds_int32_t);
+  params->RegisterTravEdge((NodeId)2, (NodeId)3, BaseOffset_int32_t);
+
+  // Register the edges that will implement the trigger functions
+  params->RegisterTrigEdge((NodeId)0, (NodeId)0, UpToOffset, SquashIfLarger);
+
+  SimUser(PF_SET_ENABLE, (long unsigned int) enable);
+  SimUser(PF_SET_PARAM, (long unsigned int) params);
+
   SimRoiStart();
-  SimUser(BFS_SET_PARAM, (long unsigned int) &params);
-  
-  bfs_enable_t enable;
-  enable.init();
-
-  printf("gapbs: bfs_enable_t @ %p\n", &enable); // don't ask why: absolutely need this print here
-                                                 // to pass correct address
-  SimUser(BFS_ENABLE, (long unsigned int) &enable);
-
-  if (SimInSimulator() && !enable.is_enabled())
-      enable.wait();
-
+  SimUser(PF_ENABLE, (long unsigned int) enable);
+  if (SimInSimulator() && !enable->is_enabled())
+      enable->wait();
   while (!queue.empty()) {
     if (scout_count > edges_to_check / 15) {
       // TIME_OP(t, QueueToBitmap(queue, front));
@@ -231,9 +212,10 @@ pvector<NodeID> DOBFS(const Graph &g, NodeID source, int alpha = 15,
     }
   }
 
-  SimUser(BFS_DISABLE, 0);
   SimRoiEnd();
-  
+  SimUser(PF_DISABLE, 0);
+  delete enable;
+  delete params;
   #pragma omp parallel for
   for (NodeID n = 0; n < g.num_nodes(); n++)
     if (parent[n] < -1)

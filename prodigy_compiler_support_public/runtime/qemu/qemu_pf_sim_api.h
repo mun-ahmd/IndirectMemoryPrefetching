@@ -109,39 +109,53 @@ static inline unsigned long SimMagic2(unsigned long cmd, unsigned long arg0,
 #define SimNamedMarker(arg0, str)  ((void)(arg0), (void)(str))
 #define SimSetInstrumentMode(opt)  ((void)(opt))
 
+/* PF_* command constants (Sniper sim_api.h / pf_interface.h compatibility) */
+#define PF_SET_PARAM     8
+#define PF_SET_ENABLE    9
+#define PF_ENABLE       10
+#define PF_DISABLE      11
+#define PF_ENABLE_TRIG  15
+#define PF_DISABLE_TRIG 16
+
+/* Small POD struct matching the PF_* trigger argument layout */
+struct PfTriggerArgs {
+  uint64_t core_id;
+  uint64_t trigger_id;
+};
+
 /* SimUser: route PF_* commands to QEMU runtime */
-// static inline unsigned long SimUser(unsigned long cmd, unsigned long arg) {
-//   switch (cmd) {
-//   case PF_SET_ENABLE:
-//     (void)sim_user_pf_set_enable();
-//     return 0;
-//   case PF_SET_PARAM:
-//     (void)sim_user_pf_set_param();
-//     return 0;
-//   case PF_ENABLE:
-//     (void)sim_user_pf_enable();
-//     return 0;
-//   case PF_DISABLE:
-//     (void)sim_user_pf_disable();
-//     return 0;
-//   case PF_ENABLE_TRIG:
-//     if (arg != 0) {
-//       const struct { uint64_t core_id; uint64_t trigger_id; } *p =
-//           reinterpret_cast<const struct { uint64_t core_id; uint64_t trigger_id; } *>(arg);
-//       (void)sim_user_pf_enable_trig(p->core_id, p->trigger_id);
-//     }
-//     return 0;
-//   case PF_DISABLE_TRIG:
-//     if (arg != 0) {
-//       const struct { uint64_t core_id; uint64_t trigger_id; } *p =
-//           reinterpret_cast<const struct { uint64_t core_id; uint64_t trigger_id; } *>(arg);
-//       (void)sim_user_pf_disable_trig(p->core_id, p->trigger_id);
-//     }
-//     return 0;
-//   default:
-//     return 0;
-//   }
-// }
+static inline unsigned long SimUser(unsigned long cmd, unsigned long arg) {
+  switch (cmd) {
+  case PF_SET_ENABLE:
+    (void)sim_user_pf_set_enable();
+    return 0;
+  case PF_SET_PARAM:
+    (void)sim_user_pf_set_param();
+    return 0;
+  case PF_ENABLE:
+    (void)sim_user_pf_enable();
+    return 0;
+  case PF_DISABLE:
+    (void)sim_user_pf_disable();
+    return 0;
+  case PF_ENABLE_TRIG:
+    if (arg != 0) {
+      const PfTriggerArgs *p =
+          reinterpret_cast<const PfTriggerArgs *>(arg);
+      (void)sim_user_pf_enable_trig(p->core_id, p->trigger_id);
+    }
+    return 0;
+  case PF_DISABLE_TRIG:
+    if (arg != 0) {
+      const PfTriggerArgs *p =
+          reinterpret_cast<const PfTriggerArgs *>(arg);
+      (void)sim_user_pf_disable_trig(p->core_id, p->trigger_id);
+    }
+    return 0;
+  default:
+    return 0;
+  }
+}
 
 /* QEMU: not in Sniper; return false so wait() never blocks */
 #define SimInSimulator() 0

@@ -12,9 +12,17 @@
 #include "pvector.h"
 
 
-#include <omp.h>
-#include <sim_api.h>
+#include <qemu_pf_sim_api.h>
 #include <fstream>
+
+// OpenMP: native builds use real omp.h; LoongArch cross-builds without OpenMP
+// headers fall back to single-threaded stubs.
+#if defined(__loongarch__)
+inline int omp_get_max_threads() { return 1; }
+inline void omp_set_num_threads(int) {}
+#else
+#include <omp.h>
+#endif
 
 /*
 GAP Benchmark Suite
